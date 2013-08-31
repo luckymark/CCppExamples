@@ -1,0 +1,12 @@
+{
+    "name":"CppExamples",
+    "version":"0.0.1",
+    "devDependencies": {
+        "grunt": "*",
+
+        "grunt-contrib-jade":"*",
+        "grunt-contrib-less": "*",
+
+        "grunt-contrib-watch": "*"
+    }
+}
