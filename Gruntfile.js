@@ -24,7 +24,8 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "index.html": ["src/jade/index.jade"],
-                    "slides/chap1_HelloWorld.html": ["src/jade/slides/chap1_HelloWorld.jade"]
+                    "slides/chap1_HelloWorld.html": ["src/jade/slides/chap1_HelloWorld.jade"],
+                    "slides/chap2_DataStructure.html": ["src/jade/slides/chap2_DataStructure.jade"]
                 }
             }
         },
