@@ -1,0 +1,205 @@
+//
+   User: luckystar
+   Date: 13-8-31
+   Time: 下午11:32
+
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title chap1 HelloWorld
+    meta(name='description', content='初识C++')
+    meta(name='author', content='俸志刚')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='css/reveal.min.css')
+    link#theme(rel='stylesheet', href='css/theme/beige.css')
+    //
+        For syntax highlighting
+    link(rel='stylesheet', href='lib/css/zenburn.css')
+    //if lt IE 9
+        script(src='lib/js/html5shiv.js')
+    body
+        .reveal
+            //
+                Any section element inside of this container is displayed as a slide
+            .slides
+                section
+                    h1 C++
+                    ul
+                        li 俸志刚（计算机学院 嵌入式软件工程中心）
+                        li.fragment Phone: 186 2800 2616
+                        li.fragment Email: luckyZhiGang@gmail.com
+                        li.fragment WebSite:
+                            a(href="https://github.com/luckymark/CppExamples") https://github.com/luckymark/CppExamples
+
+                section
+                    section
+                        h2 C++长什么样子？
+                        p HelloWorld.cpp
+                        pre
+                            code.
+                                #include "iostream"
+                                using namespace std;
+
+                                int main()
+                                {
+                                    cout&lt&lt"Hello world!"&lt&ltendl&lt&lt"I'm Mark."&lt&ltendl;
+                                    return 0;
+                                }
+                        p.fragment 新的KeyWords（关键字）:using namespace
+
+                    section
+                        p Clock.cpp
+                        pre
+                            code.
+                                class Clock{
+                                public:
+                                    void setTime(int h,int m,int s){
+                                        this->h = h;
+                                        this->m = m;
+                                        this->s = s;
+                                    }
+                                private:
+                                    int h,m,s;
+                                };
+
+                                int main()
+                                {
+                                    Clock c;
+                                    c.setTime(12,30,0);
+                                    return 0;
+                                }
+                        p.fragment 新的KeyWords（关键字）:class public private
+
+                section
+                    h2 C++可以做什么？
+                    ul
+                        li.fragment 操作系统（例如：Windows）
+                        li.fragment 大型游戏
+                        li.fragment 系统级的大型软件（例如：SQLServer、Chrome浏览器、C++自己的编译器）
+                        li.fragment 工具软件（例如：Office）
+
+                section
+                    h2 C++重要吗？
+                    img(src='img/编程语言排行榜2012-08.jpeg')
+
+                section
+                    h2 听说C++很难，是这样吗？
+                    h2.fragment 我能学会吗？
+
+                section
+                    h2 那么，我该怎么学C++呢？
+                    ul
+                        li.fragment 很简单，请记住下面的3条黄金法则：
+                        li.fragment 第一条，上机！
+                        li.fragment 第二条，上机！
+                        li.fragment 第三条，上机！
+
+                section
+                    h2 首先，安装开发工具
+                    h2 IDE(集成开发环境)
+                    ul
+                        li.fragment Windows：Visual Studio 2012(Express)
+                            br
+                            a(href="http://www.microsoft.com/visualstudio/chs/downloads") http://www.microsoft.com/visualstudio/chs/downloads
+                        li.fragment Mac: xcode
+
+                section
+                    section
+                        h2 VS2012怎么用？
+                    section
+                        h2 Main UI（主界面）
+                        img(src='img/vs2010express_main_ui.png')
+                    section
+                        h2 new project(工程or项目)
+                        img(src='img/vs2010newproject.png')
+                    section
+                        h2 new project
+                        img(src='img/vs2010newproject_step2.png')
+                    section
+                        h2 new project
+                        img(src='img/vs2010newproject_step3.png')
+                    section
+                        h2 new project
+                        img(src='img/vs2010newproject_step4.png')
+                    section
+                        h2 new project
+                        img(src='img/vs2010newproject_step5.png')
+
+                section
+                    h2 怎么交作业？
+                    p.fragment 全部网上提交！！！
+
+                section
+                    h1 great git!
+
+                section
+                    section
+                        h1 great github!
+                        a(href="https://github.com/") https://github.com/
+                    section
+                        h2 注册账号 & 登录
+                        img(src='img/github_signup.png')
+                    section
+                        ul
+                            li
+                                h2 Github for windows
+                                a(href="http://windows.github.com/") http://windows.github.com/
+                            li
+                                h2 Github for mac
+                                a(href="http://mac.github.com/") http://mac.github.com/
+                    section
+                        h2 新建git repository（仓库）
+                        img(src='img/github_newrepo.png')
+                    section
+                        h2 commit(提交)
+                        img(src='img/github_commit.png')
+                    section
+                        h2 publish（发布）/sync（同步）
+                        img(src='img/github_publish_sync.png')
+                section
+                    h2 【作业】
+                    ol
+                        li 安装: vs2012 + github
+                        br
+                        li 注册github账号，发邮件到 luckyzhigang@gmail.com
+                        br
+                        li 编写HelloWorld（输出 Hello World！I'm XXX）
+                        br
+                        li 提交到github
+                section
+                    h2 请准备：
+                    ul
+                        li 一个活页本
+                        li 一支笔
+                section
+                    h2 关于考试资格
+                    ul
+                        li 作业（以github为准，不收纸质作业本）
+                        li 实验+实验报告
+
+
+        script(src='lib/js/head.min.js')
+        script(src='js/reveal.min.js')
+        script.
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+                });

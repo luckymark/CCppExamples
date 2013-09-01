@@ -19,18 +19,22 @@ module.exports = function(grunt) {
         },
         jade: {
             compile: {
+                options: {
+                    pretty: true
+                },
                 files: {
-                    "index.html": ["src/jade/index.jade"]
+                    "index.html": ["src/jade/index.jade"],
+                    "slides/chap1_HelloWorld.html": ["src/jade/slides/chap1_HelloWorld.jade"]
                 }
             }
         },
         watch: {
             less: {
-                files: ["src/less/*.less"],
+                files: ["src/less/**/*.less"],
                 tasks: ["less:compile"]
             },
             jade: {
-                files: ["src/jade/*.jade"],
+                files: ["src/jade/**/*.jade"],
                 tasks: ["jade:compile"]
             }
         }
