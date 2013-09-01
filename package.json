@@ -6,6 +6,7 @@
 
         "grunt-contrib-jade":"*",
         "grunt-contrib-less": "*",
+        "grunt-contrib-imagemin":"*",
 
         "grunt-contrib-watch": "*"
     }
