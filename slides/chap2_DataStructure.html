@@ -17,12 +17,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link id="theme" rel="stylesheet" href="css/theme/beige.css">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
   <!--
   <For>syntax highlighting</For>
-  -->
   <link rel="stylesheet" href="lib/css/zenburn.css">
+  -->
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
@@ -38,92 +38,84 @@
         </section>
         <section>
           <h3>新增数据类型</h3>
-          <pre><code>
-              bool isDead = flase;
-              
-              isDead = true;
-              
-              if (isDead) {...}</code></pre>
+          <pre>bool isDead = flase;
+
+isDead = true;
+
+if (isDead) {...}</pre>
         </section>
         <section>
           <section>
             <h3>常量</h3>
-            <pre><code>
-                i = 255;
-                
-                area = r * r * 3.14;
-                
-                for(i = 0; i < 80; i++){
-                    ...
-                }</code></pre>
+            <pre>i = 255;
+
+area = r * r * 3.14;
+
+for(i = 0; i < 80; i++){
+    ...
+}</pre>
             <p class="fragment">magic number (幻数)</p>
           </section>
           <section>
             <h3>定义常量</h3>
-            <pre><code>
-                #define PI 3.14
-                
-                #define MaxChar 80</code></pre><br>
+            <pre>#define PI 3.14
+
+#define MaxChar 80</pre><br>
             <div class="fragment">
               <h3>常量（常变量）</h3>
-              <pre><code>
-                  const float PI = 3.14；
-                  
-                  const short int MaxChar = 80;</code></pre>
+              <pre>const float PI = 3.14；
+
+const short int MaxChar = 80;</pre>
             </div>
           </section>
         </section>
         <section>
           <h3>类型转换</h3>
           <p>自动转换</p>
-          <pre><code>
-              int n = 10 ;
-              char c = 20 ;
-              
-              n = c ;
-              c = n ;</code></pre>
+          <pre>int n = 10 ;
+char c = 20 ;
+
+n = c ;
+c = n ;</pre>
           <div class="fragment">
             <p>强制转换</p>
-            <pre><code>
-                int  n ；
-                float x = 8.57 ;
-                
-                n = ( int ) x ;
-                x = ( float ) n ;</code></pre>
+            <pre>int  n ；
+float x = 8.57 ;
+
+n = ( int ) x ;
+x = ( float ) n ;</pre>
           </div>
         </section>
         <section>
           <h3>array（数组）</h3>
           <p>定义：</p>
-          <pre><code>
-              int a[5];
-              
-              int m[2][3];</code></pre>
+          <pre>int a[5];
+int m[2][3];</pre>
           <p>用字符进行初始化：</p>
-          <pre><code>
-              char s1[ ]={'C','h','i','n','a'};
-              
-              char s2[ ][4]={{'H','o','w'},{'a','r','e'},{'y','o','u'}};</code></pre>
+          <pre>char s1[ ]={'C','h','i','n','a'};
+char s2[ ][4] = {
+    {'H','o','w'},
+    {'a','r','e'},
+    {'y','o','u'}
+};</pre>
           <p>用字符串进行初始化：</p>
-          <pre><code>
-              char s3[ ]="China";
-              
-              char s4[ ][4]={"how", "are", "you"};</code></pre>
+          <pre>char s3[ ] = "China";
+
+char s4[ ][4] = {"how", "are", "you"};</pre>
         </section>
         <section>
           <h3>struct（结构）</h3>
           <p>定义：</p>
-          <pre><code>
-              struct student
-              {
-                  long no,birthday;   //学号，生日
-                  
-                  char name[22];      //姓名
-                  
-                  char sex;         //性别 1或0 分别代表男或女
-                  
-                  float score;        //成绩
-              }；</code></pre>
+          <pre>struct student
+{
+    long no,birthday;   //学号，生日
+    
+    char name[22];      //姓名
+    
+    char sex;         //性别 1或0 分别代表男或女
+    
+    float score;        //成绩
+}；</pre>
         </section>
         <section>
           <h3>【练习2-1】班级-学生-课程-成绩</h3>
@@ -138,34 +130,34 @@
           <section>
             <h3>enum（枚举类型）</h3>
             <p>定义：</p>
-            <pre><code>
-                enum  weekday{ SUN, MON, TUE, WED, THU, FRI, SAT }；
-                
-                enum city{ Beijing,Shanghai,Tianjin=5,Chongqing }；</code></pre>
+            <pre>enum  weekday{
+    SUN, MON, TUE, WED, THU, FRI, SAT
+}；
+enum city{
+    Beijing,Shanghai,Tianjin=5,Chongqing
+}；</pre>
             <p>使用枚举类型定义变量：</p>
-            <pre><code>
-                enum  city  city1, city2;
-                
-                //省略enum
-                city  city1, city2;
-                
-                //同时定义类型及变量
-                enum city{ Beijing,Shanghai,Tianjin=5,Chongqing} city1, city2；</code></pre>
+            <pre>enum  city  city1, city2;
+
+city  city1, city2; //省略enum
+
+//同时定义类型及变量
+enum city{
+    Beijing,Shanghai,Tianjin=5,Chongqing
+} city1, city2；</pre>
           </section>
           <section>
             <p>枚举类型变量的赋值：</p>
-            <pre><code>
-                weekday d1,d2,d3,d4;
-                d1=SUN;
-                
-                d2=6;            //错误
-                d3=Shanghai;     //错误
-                </code></pre>
+            <pre>weekday d1,d2,d3,d4;
+d1=SUN;
+
+d2=6;            //错误
+d3=Shanghai;     //错误
+</pre>
             <p>在条件表达式中：</p>
-            <pre><code>
-                if( city1 == 3 )；
-                
-                if( d1 > SUN )；</code></pre>
+            <pre>if( city1 == 3 )；
+
+if( d1 > SUN )；</pre>
           </section>
         </section>
         <section>
@@ -179,121 +171,111 @@
           <section>
             <h3>指针</h3>
             <p>指针（变量）定义与初始化：</p>
-            <pre><code>
-                int x=100;
-                
-                1)  int  *ip ;
-                    ip = &x ;
-                    
-                2)  int *ip = &x ;</code></pre>
+            <pre>int x=100;
+
+1)  int  *ip ;
+    ip = &x ;
+    
+2)  int *ip = &x ;</pre>
           </section>
           <section>
             <p>指针运算：</p>
-            <pre><code>
-                *ip = 200 ;
-                
-                ip++;
-                
-                ip = ip - 10 ;
-                
-                ip += 10 ;
-                
-                offset = ip1 - ip2 ;
-                
-                if ( ip1 > ip2 ) {......};</code></pre>
+            <pre>*ip = 200 ;
+
+ip++;
+
+ip = ip - 10 ;
+
+ip += 10 ;
+
+offset = ip1 - ip2 ;
+
+if ( ip1 > ip2 ) {......};</pre>
           </section>
           <section>
             <p>void型指针：</p>
-            <pre><code>
-                void *vp ;
-                
-                int n = 100 ;
-                
-                vp = &n ;
-                
-                cout << * ( int * ) vp ;
-                
-                
-                int *ip ;
-                
-                ip = ( int * ) vp ;</code></pre>
+            <pre>void *vp ;
+
+int n = 100 ;
+
+vp = &n ;
+
+cout << * ( int * ) vp ;
+
+
+int *ip ;
+
+ip = ( int * ) vp ;</pre>
           </section>
           <section>
             <p>指针与字符串：</p>
-            <pre><code>
-                char str[5] = “abcd” ;
-                
-                char *p_str = “abcd” ;</code></pre>
+            <pre>char str[5] = “abcd” ;
+
+char *p_str = “abcd” ;</pre>
           </section>
           <section>
             <p>指针与数组：</p>
-            <pre><code>
-                cout << *str ; //将输出什么？
-                
-                cout << *( str+2 ) ; // ?
-                
-                cout << p_str[3] ; // ?
-                
-                p_str = str ;</code></pre>
+            <pre>cout << *str ; //将输出什么？
+
+cout << *( str+2 ) ; // ?
+
+cout << p_str[3] ; // ?
+
+p_str = str ;</pre>
           </section>
           <section>
             <p>二（多）重指针：</p>
-            <pre><code>
-                int **p ;
-                
-                (int *) *p ;</code></pre>
+            <pre>int **p ;
+
+(int *) *p ;</pre>
           </section>
           <section>
             <h3>动态内存分配</h3>
             <p>C：</p>
-            <pre><code>
-                char * p = (char *) malloc ( 100 ) ;
-                
-                strcpy ( p , ”Hello World!” ) ;
-                    ...
-                free ( p ) ;</code></pre>
+            <pre>char * p = (char *) malloc ( 100 ) ;
+
+strcpy ( p , ”Hello World!” ) ;
+    ...
+free ( p ) ;</pre>
             <p>C++：</p>
-            <pre><code>
-                int *p ;
-                
-                p = new int ;
-                
-                *p = 50 ;   // p = new int( 50 ) ;
-                
-                delete p ;</code></pre>
+            <pre>int *p ;
+
+p = new int ;
+
+*p = 50 ;   // p = new int( 50 ) ;
+
+delete p ;</pre>
           </section>
           <section>
             <p>C++：</p>
-            <pre><code>
-                int *p = new int[100] ;
-                
-                if( p == NULL ) {
-                
-                    cout<<“内存分配失败!” ;
-                    
-                } else {
-                
-                    for ( int i=0 ; i < 100; i++ ){
-                    
-                        p[ i ] = i ;
-                        
-                    }
-                    ... ...
-                    delete []p ;
-                }</code></pre>
+            <pre>int *p = new int[100] ;
+
+if( p == NULL ) {
+
+    cout<<“内存分配失败!” ;
+    
+} else {
+
+    for ( int i=0 ; i < 100; i++ ){
+    
+        p[ i ] = i ;
+        
+    }
+    ... ...
+    delete []p ;
+}</pre>
           </section>
           <section>
             <p>多维数组动态分配：</p>
-            <pre><code>
-                int ( *p ) [5][6] ;
-                
-                p = new int [3][5][6];
-                
-                int x = 4 ;
-                
-                p1 = new int [x][5][6];
-                
-                p2 = new int[3][x][6] ;  //错误</code></pre>
+            <pre>int ( *p ) [5][6] ;
+
+p = new int [3][5][6];
+
+int x = 4 ;
+
+p1 = new int [x][5][6];
+
+p2 = new int[3][x][6] ;  //错误</pre>
           </section>
           <section>
             <h3>【练习2-3】班级-学生-课程-成绩</h3>
@@ -306,64 +288,61 @@
           </section>
           <section>
             <p>函数指针</p>
-            <pre><code>
-                int add ( int a , int b ) ; //普通函数
-                
-                int ( *fptr ) ( int a , int b ) ;   //定义函数指针
-                
-                fptr = add ;             // 给函数指针赋值，或fptr = &add
-                
-                add ( 1 , 2 ) ;
-                
-                ( *fptr ) ( 1 , 2 ) ;    //用指向函数的指针调用函数add
-                
-                fptr ( 1 , 2 ) ;      //用指向函数的指针调用函数add</code></pre>
+            <pre>int add ( int a , int b ) ; //普通函数
+
+int ( *fptr ) ( int a , int b ) ;   //定义函数指针
+
+fptr = add ;      // 给函数指针赋值，或fptr = &add
+
+add ( 1 , 2 ) ;
+
+( *fptr ) ( 1 , 2 ) ; //用指向函数的指针调用函数add
+
+fptr ( 1 , 2 ) ;      //用指向函数的指针调用函数add</pre>
           </section>
           <section>
             <h3>指针常量与常量指针</h3>
             <p>指针常量： (指针本身是常量):</p>
-            <pre><code>
-                int a = 100 ;
-                
-                int * const p = &a;</code></pre>
+            <pre>int a = 100 ;
+
+int * const p = &a;</pre>
             <p>常量指针： （指向常量的指针）</p>
-            <pre><code>
-                const int a = 100 ;
-                
-                const int * p = &a;// 或者 int const * p = &a;
-                </code></pre>
+            <pre>const int a = 100 ;
+
+const int * p = &a;// 或者 int const * p = &a;
+</pre>
             <p>指向常量的常量指针： （都是常量）</p>
-            <pre><code>
-                const int a = 100 ;
-                
-                const int * const  p = &a;// 或者 int const * const p = &a;</code></pre>
+            <pre>const int a = 100 ;
+
+const int * const  p = &a;
+// 或者
+int const * const p = &a;</pre>
           </section>
         </section>
         <section>
           <h3>联合</h3>
-          <pre><code>
-              union UnionData
-              {
-                  char       Ch;
-                  
-                  short      Sint;
-                  
-                  long       Lint;
-                  
-                  unsigned   Uint;
-                  
-                  float       f;
-                  
-                  double     d;
-                  
-                  char       str[10]
-              }；
-              
-              </code></pre>
+          <pre>union UnionData
+{
+    char       Ch;
+    
+    short      Sint;
+    
+    long       Lint;
+    
+    unsigned   Uint;
+    
+    float       f;
+    
+    double     d;
+    
+    char       str[10]
+}；
+
+</pre>
         </section>
       </div>
     </div>
-    <script src="lib/js/head.min.js"></script>
+    <!-- script(src='lib/js/head.min.js')-->
     <script src="js/reveal.min.js"></script>
     <script>
       // Full list of configuration options available here:
@@ -377,12 +356,12 @@
           transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
           // Optional libraries used to extend on reveal.js
           dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          //{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          // { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          //{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          //{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
           ]
           });
           
