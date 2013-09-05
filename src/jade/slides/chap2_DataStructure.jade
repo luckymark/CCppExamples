@@ -3,358 +3,318 @@
    Date: 13-9-1
    Time: 下午7:45
 
-!!! 5
-html(lang='en')
-head
-    meta(charset='utf-8')
+extends base
+
+block title
     title Chap2 DataStructure
-    meta(name='description', content='数据结构')
-    meta(name='author', content='俸志刚')
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes')
-    link(rel='stylesheet', href='css/reveal_bigFont.css')
-    link#theme(rel='stylesheet', href='css/theme/simple.css')
-    //
-        For syntax highlighting
-        link(rel='stylesheet', href='lib/css/zenburn.css')
-    //if lt IE 9
-        script(src='lib/js/html5shiv.js')
-    body
-        .reveal
-            //
-                Any section element inside of this container is displayed as a slide
-            .slides
-                section
-                    h1 Chap2 DataStructure
-                    h2 (数据结构)
-                section
-                    h3 新增数据类型
-                    pre.
-                        bool isDead = flase;
-
-                        isDead = true;
-
-                        if (isDead) {...}
-                section
-                    section
-                        h3 常量
-                        pre.
-                            i = 255;
-
-                            area = r * r * 3.14;
-
-                            for(i = 0; i < 80; i++){
-                                ...
-                            }
-                        p.fragment magic number (幻数)
-                    section
-                        h3 定义常量
-                        pre.
-                            #define PI 3.14
-
-                            #define MaxChar 80
-                        br
-                        .fragment
-                            h3 常量（常变量）
-                            pre.
-                                const float PI = 3.14；
-
-                                const short int MaxChar = 80;
-                section
-                    h3 类型转换
-                    p 自动转换
-                    pre.
-                        int n = 10 ;
-                        char c = 20 ;
-
-                        n = c ;
-                        c = n ;
-                    .fragment
-                        p 强制转换
-                        pre.
-                            int  n ；
-                            float x = 8.57 ;
-
-                            n = ( int ) x ;
-                            x = ( float ) n ;
-                section
-                    h3 array（数组）
-                    p 定义：
-                    pre.
-                        int a[5];
-                        int m[2][3];
-                    p 用字符进行初始化：
-                    pre.
-                        char s1[ ]={'C','h','i','n','a'};
-                        char s2[ ][4] = {
-                            {'H','o','w'},
-                            {'a','r','e'},
-                            {'y','o','u'}
-                        };
-                    p 用字符串进行初始化：
-                    pre.
-                        char s3[ ] = "China";
-
-                        char s4[ ][4] = {"how", "are", "you"};
-                section
-                    h3 struct（结构）
-                    p 定义：
-                    pre.
-                        struct student
-                        {
-                            long no,birthday;   //学号，生日
-
-                            char name[22];      //姓名
-
-                            char sex;         //性别 1或0 分别代表男或女
-
-                            float score;        //成绩
-                        }；
-                section
-                    h3 【练习2-1】班级-学生-课程-成绩
-                    h3 定义数据结构
-                    ul
-                        li 每班<=50人；
-                        br
-                        li 每个学生<=10们课；
-                        br
-                        li int、char、float、数组、struct都要用到
-                section
-                    section
-                        h3 enum（枚举类型）
-                        p 定义：
-                        pre.
-                            enum  weekday{
-                                SUN, MON, TUE, WED, THU, FRI, SAT
-                            }；
-                            enum city{
-                                Beijing,Shanghai,Tianjin=5,Chongqing
-                            }；
-                        p 使用枚举类型定义变量：
-                        pre.
-                            enum  city  city1, city2;
-
-                            city  city1, city2; //省略enum
-
-                            //同时定义类型及变量
-                            enum city{
-                                Beijing,Shanghai,Tianjin=5,Chongqing
-                            } city1, city2；
-                    section
-                        p 枚举类型变量的赋值：
-                        pre.
-                            weekday d1,d2,d3,d4;
-                            d1=SUN;
-
-                            d2=6;            //错误
-                            d3=Shanghai;     //错误
-
-                        p 在条件表达式中：
-                        pre.
-                            if( city1 == 3 )；
-
-                            if( d1 > SUN )；
-                section
-                    h3 【练习2-2】班级-学生-课程-成绩
-                    h3 优化
-                    ul
-                        li 利用枚举类型实现“学生性别”
-                section
-                    section
-                        h3 指针
-                        p 指针（变量）定义与初始化：
-                        pre.
-                            int x=100;
-
-                            1)  int  *ip ;
-                                ip = &x ;
-
-                            2)  int *ip = &x ;
-                    section
-                        p 指针运算：
-                        pre.
-                            *ip = 200 ;
-
-                            ip++;
-
-                            ip = ip - 10 ;
-
-                            ip += 10 ;
-
-                            offset = ip1 - ip2 ;
-
-                            if ( ip1 > ip2 ) {......};
-                    section
-                        p void型指针：
-                        pre.
-                            void *vp ;
-
-                            int n = 100 ;
-
-                            vp = &n ;
-
-                            cout << * ( int * ) vp ;
-
-
-                            int *ip ;
-
-                            ip = ( int * ) vp ;
-                    section
-                        p 指针与字符串：
-                        pre.
-                            char str[5] = “abcd” ;
-
-                            char *p_str = “abcd” ;
-                    section
-                        p 指针与数组：
-                        pre.
-                            cout << *str ; //将输出什么？
-
-                            cout << *( str+2 ) ; // ?
-
-                            cout << p_str[3] ; // ?
-
-                            p_str = str ;
-                    section
-                        p 二（多）重指针：
-                        pre.
-                            int **p ;
-
-                            (int *) *p ;
-                    section
-                        h3 动态内存分配
-                        p C：
-                        pre.
-                            char * p = (char *) malloc ( 100 ) ;
-
-                            strcpy ( p , ”Hello World!” ) ;
-                                ...
-                            free ( p ) ;
-                        p C++：
-                        pre.
-                            int *p ;
-
-                            p = new int ;
-
-                            *p = 50 ;   // p = new int( 50 ) ;
-
-                            delete p ;
-                    section
-                        p C++：
-                        pre.
-                            int *p = new int[100] ;
-
-                            if( p == NULL ) {
-
-                                cout<<“内存分配失败!” ;
-
-                            } else {
-
-                                for ( int i=0 ; i < 100; i++ ){
-
-                                    p[ i ] = i ;
-
-                                }
-                                ... ...
-                                delete []p ;
-                            }
-                    section
-                        p 多维数组动态分配：
-                        pre.
-                            int ( *p ) [5][6] ;
-
-                            p = new int [3][5][6];
-
-                            int x = 4 ;
-
-                            p1 = new int [x][5][6];
-
-                            p2 = new int[3][x][6] ;  //错误
-                    section
-                        h3 【练习2-3】班级-学生-课程-成绩
-                        h3 优化
-                        ul
-                            li 改造【练习2-1】以增大系统的灵活性
-                            br
-                            li 每班人数不限；
-                            br
-                            li 每个学生选修课程不限；
-                    section
-                        p 函数指针
-                        pre.
-                            int add ( int a , int b ) ; //普通函数
-
-                            int ( *fptr ) ( int a , int b ) ;   //定义函数指针
-
-                            fptr = add ;      // 给函数指针赋值，或fptr = &add
-
-                            add ( 1 , 2 ) ;
-
-                            ( *fptr ) ( 1 , 2 ) ; //用指向函数的指针调用函数add
-
-                            fptr ( 1 , 2 ) ;      //用指向函数的指针调用函数add
-                    section
-                        h3 指针常量与常量指针
-                        p 指针常量： (指针本身是常量):
-                        pre.
-                            int a = 100 ;
-
-                            int * const p = &a;
-                        p 常量指针： （指向常量的指针）
-                        pre.
-                            const int a = 100 ;
-
-                            const int * p = &a;// 或者 int const * p = &a;
-
-                        p 指向常量的常量指针： （都是常量）
-                        pre.
-                            const int a = 100 ;
-
-                            const int * const  p = &a;
-                            // 或者
-                            int const * const p = &a;
-                section
-                    h3 联合
-                    pre.
-                        union UnionData
-                        {
-                            char       Ch;
-
-                            short      Sint;
-
-                            long       Lint;
-
-                            unsigned   Uint;
-
-                            float       f;
-
-                            double     d;
-
-                            char       str[10]
-                        }；
-
-
-        // script(src='lib/js/head.min.js')
-        script(src='js/reveal.min.js')
-        script.
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
-                center: true,
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                //{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                // { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                //{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                //{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                ]
-                });
+
+block slides
+    section
+        h1 Chap2 DataStructure
+        h2 (数据结构)
+    section
+        h3 新增数据类型
+        pre.
+            bool isDead = flase;
+
+            isDead = true;
+
+            if (isDead) {...}
+    section
+        section
+            h3 常量
+            pre.
+                i = 255;
+
+                area = r * r * 3.14;
+
+                for(i = 0; i < 80; i++){
+                    ...
+                }
+            p.fragment magic number (幻数)
+        section
+            h3 定义常量
+            pre.
+                #define PI 3.14
+
+                #define MaxChar 80
+            br
+            .fragment
+                h3 常量（常变量）
+                pre.
+                    const float PI = 3.14；
+
+                    const short int MaxChar = 80;
+    section
+        h3 类型转换
+        p 自动转换
+        pre.
+            int n = 10 ;
+            char c = 20 ;
+
+            n = c ;
+            c = n ;
+        .fragment
+            p 强制转换
+            pre.
+                int  n ；
+                float x = 8.57 ;
+
+                n = ( int ) x ;
+                x = ( float ) n ;
+    section
+        h3 array（数组）
+        p 定义：
+        pre.
+            int a[5];
+            int m[2][3];
+        p 用字符进行初始化：
+        pre.
+            char s1[ ]={'C','h','i','n','a'};
+            char s2[ ][4] = {
+                {'H','o','w'},
+                {'a','r','e'},
+                {'y','o','u'}
+            };
+        p 用字符串进行初始化：
+        pre.
+            char s3[ ] = "China";
+
+            char s4[ ][4] = {"how", "are", "you"};
+    section
+        h3 struct（结构）
+        p 定义：
+        pre.
+            struct student
+            {
+                long no,birthday;   //学号，生日
+
+                char name[22];      //姓名
+
+                char sex;         //性别 1或0 分别代表男或女
+
+                float score;        //成绩
+            }；
+    section
+        h3 【练习2-1】班级-学生-课程-成绩
+        h3 定义数据结构
+        ul
+            li 每班<=50人；
+            br
+            li 每个学生<=10们课；
+            br
+            li int、char、float、数组、struct都要用到
+    section
+        section
+            h3 enum（枚举类型）
+            p 定义：
+            pre.
+                enum  weekday{
+                    SUN, MON, TUE, WED, THU, FRI, SAT
+                }；
+                enum city{
+                    Beijing,Shanghai,Tianjin=5,Chongqing
+                }；
+            p 使用枚举类型定义变量：
+            pre.
+                enum  city  city1, city2;
+
+                city  city1, city2; //省略enum
+
+                //同时定义类型及变量
+                enum city{
+                    Beijing,Shanghai,Tianjin=5,Chongqing
+                } city1, city2；
+        section
+            p 枚举类型变量的赋值：
+            pre.
+                weekday d1,d2,d3,d4;
+                d1=SUN;
+
+                d2=6;            //错误
+                d3=Shanghai;     //错误
+
+            p 在条件表达式中：
+            pre.
+                if( city1 == 3 )；
+
+                if( d1 > SUN )；
+    section
+        h3 【练习2-2】班级-学生-课程-成绩
+        h3 优化
+        ul
+            li 利用枚举类型实现“学生性别”
+    section
+        section
+            h3 指针
+            p 指针（变量）定义与初始化：
+            pre.
+                int x=100;
+
+                1)  int  *ip ;
+                    ip = &x ;
+
+                2)  int *ip = &x ;
+        section
+            p 指针运算：
+            pre.
+                *ip = 200 ;
+
+                ip++;
+
+                ip = ip - 10 ;
+
+                ip += 10 ;
+
+                offset = ip1 - ip2 ;
+
+                if ( ip1 > ip2 ) {......};
+        section
+            p void型指针：
+            pre.
+                void *vp ;
+
+                int n = 100 ;
+
+                vp = &n ;
+
+                cout << * ( int * ) vp ;
+
+
+                int *ip ;
+
+                ip = ( int * ) vp ;
+        section
+            p 指针与字符串：
+            pre.
+                char str[5] = “abcd” ;
+
+                char *p_str = “abcd” ;
+        section
+            p 指针与数组：
+            pre.
+                cout << *str ; //将输出什么？
+
+                cout << *( str+2 ) ; // ?
+
+                cout << p_str[3] ; // ?
+
+                p_str = str ;
+        section
+            p 二（多）重指针：
+            pre.
+                int **p ;
+
+                (int *) *p ;
+        section
+            h3 动态内存分配
+            p C：
+            pre.
+                char * p = (char *) malloc ( 100 ) ;
+
+                strcpy ( p , ”Hello World!” ) ;
+                    ...
+                free ( p ) ;
+            p C++：
+            pre.
+                int *p ;
+
+                p = new int ;
+
+                *p = 50 ;   // p = new int( 50 ) ;
+
+                delete p ;
+        section
+            p C++：
+            pre.
+                int *p = new int[100] ;
+
+                if( p == NULL ) {
+
+                    cout<<“内存分配失败!” ;
+
+                } else {
+
+                    for ( int i=0 ; i < 100; i++ ){
+
+                        p[ i ] = i ;
+
+                    }
+                    ... ...
+                    delete []p ;
+                }
+        section
+            p 多维数组动态分配：
+            pre.
+                int ( *p ) [5][6] ;
+
+                p = new int [3][5][6];
+
+                int x = 4 ;
+
+                p1 = new int [x][5][6];
+
+                p2 = new int[3][x][6] ;  //错误
+        section
+            h3 【练习2-3】班级-学生-课程-成绩
+            h3 优化
+            ul
+                li 改造【练习2-1】以增大系统的灵活性
+                br
+                li 每班人数不限；
+                br
+                li 每个学生选修课程不限；
+        section
+            p 函数指针
+            pre.
+                int add ( int a , int b ) ; //普通函数
+
+                int ( *fptr ) ( int a , int b ) ;   //定义函数指针
+
+                fptr = add ;      // 给函数指针赋值，或fptr = &add
+
+                add ( 1 , 2 ) ;
+
+                ( *fptr ) ( 1 , 2 ) ; //用指向函数的指针调用函数add
+
+                fptr ( 1 , 2 ) ;      //用指向函数的指针调用函数add
+        section
+            h3 指针常量与常量指针
+            p 指针常量： (指针本身是常量):
+            pre.
+                int a = 100 ;
+
+                int * const p = &a;
+            p 常量指针： （指向常量的指针）
+            pre.
+                const int a = 100 ;
+
+                const int * p = &a;// 或者 int const * p = &a;
+
+            p 指向常量的常量指针： （都是常量）
+            pre.
+                const int a = 100 ;
+
+                const int * const  p = &a;
+                // 或者
+                int const * const p = &a;
+    section
+        h3 联合
+        pre.
+            union UnionData
+            {
+                char       Ch;
+
+                short      Sint;
+
+                long       Lint;
+
+                unsigned   Uint;
+
+                float       f;
+
+                double     d;
+
+                char       str[10]
+            }；
 

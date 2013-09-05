@@ -1,0 +1,36 @@
+//
+   User: luckystar
+   Date: 13-9-3
+   Time: 下午10:04
+
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    block title
+    meta(name='author', content='俸志刚')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes')
+    link(rel='stylesheet', href='css/reveal_bigFont.css')
+    link#theme(rel='stylesheet', href='css/theme/simple.css')
+
+    body
+        .reveal
+            .slides
+                block slides
+
+        script(src='js/reveal.min.js')
+        script.
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                loop: true,
+                mouseWheel: true,
+                //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+                });
