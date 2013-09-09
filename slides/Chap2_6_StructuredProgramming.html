@@ -1,0 +1,793 @@
+
+<!--
+<User>
+  <luckystar></luckystar>
+</User>
+<Date>
+  <13-9-3></13-9-3>
+</Date>
+<Time>下午10:04</Time>
+--><!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>Chap2-6 Structured Programming</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Structured Programming</h1><br>
+          <h2>(结构化编程)</h2>
+        </section>
+        <section>
+          <h3>Data Structure</h3><br>
+          <h3>(数据结构)</h3>
+        </section>
+        <section>
+          <section>
+            <h3>Literal constant（文字常量）</h3><br>
+            <pre>i = 255;
+
+area = r * r * 3.14;
+
+for(i = 0; i < 80; i++){
+    ...
+}</pre>
+            <p class="fragment">magic number (幻数)</p>
+          </section>
+          <section>
+            <h3>Symbol constant（符号常量）</h3>
+            <pre>#define PI 3.14
+#define MaxChar 80</pre><br>
+            <div class="fragment">
+              <h3>Named Constant（命名常量/常变量）</h3>
+              <pre>const float PI = 3.14；
+const short int MaxChar = 80;
+</pre>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>基本数据类型</h3>
+            <pre>int sum, area, i=0 ;
+char c1='a', c2='b', c3=61 ;
+
+float x, y, x ;
+double pi(3.14);</pre>
+          </section>
+          <section>
+            <h3>新引入的bool型(布尔型/逻辑型)</h3>
+            <pre>bool isDead = true;
+isDead = false;
+
+isDead = 0 ;
+isDead = 1 ;
+isDead = 100 ;
+
+if ( isDead ) {...}
+if ( !isDead && isRich ) {...}</pre>
+          </section>
+          <section>
+            <h3>enum（枚举类型）</h3>
+            <p>定义：</p>
+            <pre>enum  weekday{
+    SUN, MON, TUE, WED, THU, FRI, SAT
+}；
+
+enum city{
+    Beijing,Shanghai,Tianjin=5,Chongqing
+}；</pre>
+            <p>使用枚举类型定义变量：</p>
+            <pre>enum  city  city1, city2;
+city  city1, city2; //省略enum
+
+//同时定义类型及变量
+enum city{
+    Beijing,Shanghai,Tianjin=5,Chongqing
+} city1, city2；</pre>
+          </section>
+          <section>
+            <p>枚举类型变量的赋值：</p>
+            <pre>weekday d1,d2,d3,d4;
+d1=SUN;
+d2=6;            //错误
+d3=Shanghai;     //错误</pre>
+            <p>在条件表达式中：</p>
+            <pre>if( city1 == 3 );
+if( d1 > SUN );
+</pre>
+          </section>
+        </section>
+        <section>
+          <h3>array（数组）</h3>
+          <p>定义：</p>
+          <pre>int a[5];
+int m[2][3];</pre>
+          <p>用字符进行初始化：</p>
+          <pre>char s1[ ]={'C','h','i','n','a'};
+char s2[ ][4] = {
+    {'H','o','w'},
+    {'a','r','e'},
+    {'y','o','u'}
+};</pre>
+          <p>用字符串进行初始化：</p>
+          <pre>char s3[ ] = "China";
+char s4[ ][4] = {"how", "are", "you"};</pre>
+        </section>
+        <section>
+          <h3>struct（结构）</h3>
+          <p>定义：</p>
+          <pre>struct student
+{
+    long no,birthday;   //学号，生日
+    char name[22];      //姓名
+    char sex;         //性别 1或0 分别代表男或女
+    float score;        //成绩
+}；
+</pre>
+        </section>
+        <section>
+          <h3>联合</h3>
+          <pre>union UnionData
+{
+    char       Ch;
+    short      Sint;
+    long       Lint;
+    unsigned   Uint;
+    float       f;
+    double     d;
+    char       str[10]
+}；
+</pre>
+        </section>
+        <section>
+          <section>
+            <h3>指针</h3>
+            <p>指针（变量）定义与初始化：</p>
+            <pre>int x=100;
+
+1)  int  *ip ;
+    ip = &x ;
+    
+2)  int *ip = &x ;</pre>
+          </section>
+          <section>
+            <p>指针运算：</p>
+            <pre>*ip = 200 ;
+
+ip++;
+
+ip = ip - 10 ;
+
+ip += 10 ;
+
+offset = ip1 - ip2 ;
+
+if ( ip1 > ip2 ) {......};</pre>
+          </section>
+          <section>
+            <p>void型指针：</p>
+            <pre>void *vp ;
+
+int n = 100 ;
+
+vp = &n ;
+
+cout << * ( int * ) vp ;
+
+
+int *ip ;
+
+ip = ( int * ) vp ;</pre>
+          </section>
+          <section>
+            <p>指针与字符串：</p>
+            <pre>char str[5] = “abcd” ;
+
+char *p_str = “abcd” ;</pre>
+          </section>
+          <section>
+            <p>指针与数组：</p>
+            <pre>cout << *str ; //将输出什么？
+
+cout << *( str+2 ) ; // ?
+
+cout << p_str[3] ; // ?
+
+p_str = str ;</pre>
+          </section>
+          <section>
+            <p>二（多）重指针：</p>
+            <pre>int **p ;
+
+(int *) *p ;</pre>
+          </section>
+          <section>
+            <h3>动态内存分配</h3>
+            <p>C：</p>
+            <pre>char * p = (char *) malloc ( 100 ) ;
+
+strcpy ( p , ”Hello World!” ) ;
+    ...
+free ( p ) ;</pre>
+            <p>C++：</p>
+            <pre>int *p ;
+
+p = new int ;
+
+*p = 50 ;   // p = new int( 50 ) ;
+
+delete p ;</pre>
+          </section>
+          <section>
+            <p>C++：</p>
+            <pre>int *p = new int[100] ;
+
+if( p == NULL ) {
+
+    cout<<“内存分配失败!” ;
+    
+} else {
+
+    for ( int i=0 ; i < 100; i++ ){
+    
+        p[ i ] = i ;
+        
+    }
+    ... ...
+    delete []p ;
+}</pre>
+          </section>
+          <section>
+            <p>多维数组动态分配：</p>
+            <pre>int ( *p ) [5][6] ;
+
+p = new int [3][5][6];
+
+int x = 4 ;
+
+p1 = new int [x][5][6];
+
+p2 = new int[3][x][6] ;  //错误
+</pre>
+          </section>
+          <section>
+            <p>函数指针</p>
+            <pre>int add ( int a , int b ) ; //普通函数
+
+int ( *fptr ) ( int a , int b ) ; //定义函数指针
+
+fptr = add ;     // 给函数指针赋值，或fptr = &add
+
+add ( 1 , 2 ) ;
+
+( *fptr ) ( 1 , 2 ) ; //用指向函数的指针调用函数add
+
+fptr ( 1 , 2 ) ;      //用指向函数的指针调用函数add</pre>
+          </section>
+          <section>
+            <h3>指针常量与常量指针</h3>
+            <p>指针常量： (指针本身是常量):</p>
+            <pre>int a = 100 ;
+
+int * const p = &a;</pre>
+            <p>常量指针： （指向常量的指针）</p>
+            <pre>const int a = 100 ;
+
+const int * p = &a;// 或者 int const * p = &a;
+</pre>
+            <p>指向常量的常量指针： （都是常量）</p>
+            <pre>const int a = 100 ;
+
+const int * const  p = &a;
+// 或者
+int const * const p = &a;</pre>
+          </section>
+        </section>
+        <section>
+          <h3>类型转换</h3>
+          <p>自动转换</p>
+          <pre>int n = 10 ;
+char c = 20 ;
+
+n = c ;
+
+c = n ;</pre>
+          <div class="fragment">
+            <p>强制转换</p>
+            <pre>int  n ；
+float x = 8.57 ;
+
+n = ( int ) x ;
+
+x = ( float ) n ;
+</pre>
+          </div>
+        </section>
+        <section>
+          <h3>Control Structure</h3><br>
+          <h3>(控制结构)</h3>
+        </section>
+        <section>
+          <section>
+            <h3>单分支</h3>
+            <pre>if ( score > 100 ) score = 100 ;
+if ( score > 100 ) { score = 100 ;  }
+if ( score > 100 )
+    score = 100 ;
+if ( score > 100 ) {
+    score = 100;
+}</pre>
+          </section>
+          <section>
+            <h3>if else</h3>
+            <pre>if ( x > y ) cout << x ;
+else cout << y;</pre><br>
+            <p class="fragment">可以更简单吗？</p>
+            <div class="fragment">
+              <pre>cout << (x > y)? x:y ;</pre>
+            </div>
+          </section>
+          <section>
+            <h3>if else if</h3>
+            <pre>if( n >= 60 )
+    if ( n>= 90 ) cout << "A";
+    else if ( n >= 80 ) cout << "B";
+        else cout << "C";
+else cout << "D";</pre>
+          </section>
+          <section>
+            <h3>if else if</h3>
+            <pre>if( n >= 60 ){
+    if ( n>= 90 ){
+        cout << "A";
+    }
+    else{
+        if ( n >= 80 ){
+            cout << "B";
+        }
+        else{
+            cout << "C";
+        }
+    }
+}
+else{
+    cout << "D";
+}</pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>多分支</h3>
+            <pre>switch ( n/10 ){
+    case 10:
+    case 9:
+        cout << “A” ;
+        break;
+    case 8:
+        cout << “B” ;
+        break;
+    case 7:
+    case 6:
+        cout << “C” ;
+        break;
+    default:
+        cout << “D” ;
+}</pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>入口条件循环（while）</h3>
+            <pre>int  i = 1;
+int  sum = 0 ;
+
+while ( i <= 100 ) {
+    sum += i++ ;
+}</pre>
+          </section>
+          <section>
+            <h3>出口条件循环（do while）</h3>
+            <pre>int  i = 1;
+int  sum = 0 ;
+
+do {
+    sum += i++ ;
+}while ( i <= 100 )</pre>
+          </section>
+          <section>
+            <h3>for循环</h3>
+            <pre>int  sum = 0 ;
+
+for ( int i=1; i <= 100;i++ ) {
+    sum += i ;
+}</pre>
+          </section>
+          <section>
+            <h3>嵌套for循环</h3>
+            <pre>for ( int i=1; i <= 9; i++ ) {
+
+   for(int j=1;  j<=i ;  j++){
+       cout &lt&ltj&lt&lt“x”&lt&lti&lt&lt“=“ &lt&ltj * i&lt&lt “\t”;
+   }
+   
+   cout &lt&lt endl;
+}</pre>
+          </section>
+          <section>
+            <h3>break语句</h3>
+            <pre>int i , n ;
+cin >> n ;
+
+for ( i=2; i < n;i++ ) {
+    if ( n%i == 0 ) break;
+}
+
+if ( i >= n ) cout << n << “是素数” ;
+else cout << n << “不是素数” ；</pre><br>
+            <p class="fragment">此处，不用break，可以吗？</p>
+            <div class="fragment">
+              <pre>for ( i=2; i < n, n%i !=0;i++ ) ;</pre>
+            </div>
+          </section>
+          <section>
+            <h3>while + break</h3>
+            <pre>int i , n ;
+while（1）{
+    cin >> n ;
+    if ( n <= 1 ) break ;
+    
+    for ( i=2; i < n, n%i !=0;i++ ) ;
+    
+    cout << n << i >= n ? “是”:“不是” << "素数";
+}
+</pre>
+          </section>
+          <section>
+            <h3>while + break + continue</h3>
+            <pre>int i , n ;
+while（1）{
+    cin >> n ;
+    
+    if ( n <= 0 ) break ;
+    if ( 1 == n ) continue ;
+    
+    for ( i=2; i < n, n%i !=0;i++ ) ;
+    
+    cout << n << i >= n ? “是”:“不是” << "素数";
+}</pre>
+          </section>
+        </section>
+        <section>
+          <h3>【作业3-1】</h3><br>
+          <ol>
+            <li>
+              <p>chap3 : 1(9),1(10)</p>
+            </li><br>
+            <li>
+              <p>chap3 : 3(2),3(5),3(11)</p>
+              <p>需调试通过，并提交到github</p>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <section>
+            <h3>function</h3><br>
+            <h3>(函数)</h3>
+          </section>
+          <section>
+            <h3>一个简单例子</h3>
+            <pre>#include &ltiostream>
+using namespace std;
+
+int max( int x , int y )
+{
+    return ( x>y ) ? x : y;
+}
+
+void main()
+{
+    int a , b ;
+    
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+    
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+}</pre>
+          </section>
+          <section>
+            <h3>函数prototype（原型）</h3>
+            <pre>#include &ltiostream>
+using namespace std;
+
+int max( int x , int y )；
+
+void main()
+{
+    int a , b ;
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+}
+
+int max( int x , int y )
+{
+    return ( x>y ) ? x : y;
+}</pre>
+          </section>
+          <section>
+            <h3>递归</h3>
+            <pre>//求 n!
+
+int fac( int n )
+{
+    return  1==n ? 1 :  n * fac( n-1 ) ;
+}
+
+void main()
+{
+    cout << fac( 3 );
+}</pre>
+          </section>
+          <section>
+            <h3>【练习-P79】汉诺塔</h3><img src="img/Hanoi.jpeg" width="400" height="400">
+          </section>
+          <section>
+            <h3>函数调用及传参的原理</h3>
+          </section>
+          <section>
+            <h3> 观察下面的代码：</h3>
+            <pre>void swap ( int x , int y );
+
+void main ( ) {
+    int x = 10 , y = 20 ;
+    swap( x , y ) ;
+}
+
+void swap ( int x , int y ) {
+    int  temp = x ;
+    x = y ;
+    y = temp ;
+}</pre>
+          </section>
+          <section>
+            <h3> 传指针参数：</h3>
+            <pre>void swap ( int* x , int* y );
+
+void main ( ) {
+    int x = 10 , y = 20 ;
+    swap( &x , &y ) ;
+}
+
+void swap ( int* x , int* y ) {
+    int  temp = *x ;
+    *x = *y ;
+    *y = temp ;
+}</pre>
+          </section>
+          <section>
+            <h3>传Reference(引用)参数：</h3>
+            <pre>void swap ( int & x , int  & y );
+
+void main ( ) {
+    int x = 10 , y = 20 ;
+    swap( x , y ) ;
+}
+
+void swap ( int & x , int  & y ) {
+    int  temp = x ;
+    x = y;
+    y = temp;
+}</pre>
+          </section>
+          <section>
+            <h3>独立引用</h3><br>
+            <pre>int  x = 100 ;
+int & r = x ;
+
+r = 200 ;
+x = 300 ;</pre>
+          </section>
+          <section>
+            <h3>函数返回类型为引用(1)</h3><br>
+            <pre>int maxValue ( int a [ ] ,  int  n ) {
+    int  t = 0 ;
+    for ( int i = 0 ;  i < n ;  i++ ){
+        if ( a[ i ] > a[ t ] ) t = i ;
+    }
+    return a[ t ] ;
+}
+
+int& maxItem ( int a [ ] ,  int  n ) {
+    int  t = 0 ;
+    for ( int i = 0 ;  i < n ;  i++ ){
+        if ( a[ i ] > a[ t ] ) t = i ;
+    }
+    return a[ t ] ;
+}</pre>
+          </section>
+          <section>
+            <h3>函数返回类型为引用(2)</h3><br>
+            <pre>int  a[ 5 ] = { 1, 2, 3, 4, 5 } ;
+
+int m1 = maxValue ( a , 5 ) ;
+
+int &m2 = maxItem( a , 5 ) ;
+m3 = 100 ;
+
+maxItem( a , 5 ) = 200 ;
+
+int m3 = maxItem( a , 5 ) ;
+m2 = 300 ;
+</pre>
+          </section>
+          <section>
+            <h3>利用宏定义避免函数的调用开销</h3>
+            <pre>#define max( x , y ) ( (x)>(y) ? (x) : (y) );
+
+void main()
+{
+    int a , b ;
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+}</pre>
+          </section>
+          <section>
+            <h3>inline(内联)函数</h3>
+            <pre>#include &ltiostream>
+using namespace std;
+
+inline int max( int x , int y )
+{
+    return ( x>y ) ? x : y;
+}
+
+void main()
+{
+    int a , b ;
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+}</pre>
+          </section>
+          <section>
+            <h3>default(默认)实参</h3>
+            <pre>void drawCircle( int x, int y, int r,
+    int color )
+{
+    ...
+}
+
+void main()
+{
+    drawCircle( 0 , 0 , 1 , BLACK ) ;
+    drawCircle( 2 , 1 , 2 , BLACK ) ;
+    drawCircle( 3 , 0 , 3 , RED ) ;
+    drawCircle( 4 , 3 , 4 , BLACK ) ;
+}
+</pre>
+          </section>
+          <section>
+            <h3>default(默认)实参</h3>
+            <pre>void drawCircle( int x, int y, int r,
+    int color = BLACK )
+{
+    ...
+}
+
+void main()
+{
+    drawCircle( 0 , 0 , 1 ) ;
+    drawCircle( 2 , 1 , 2 ) ;
+    drawCircle( 3 , 0 , 3 , RED ) ;
+    drawCircle( 4 , 3 , 4 ) ;
+}</pre><br>
+            <p class="fragment">默认值必须在最后，why？</p>
+          </section>
+          <section>
+            <h3>C语言中功能相同（参数不同）的函数</h3>
+            <pre>//原型：
+int max2int ( int x , int y ) ;
+int max3int ( int x , int y , int z ) ;
+
+float max2float ( float x , float y ) ;
+
+//调用：
+n = max2int ( 1 , 2 ) ;
+n = max3int ( 1 , 2 , 3 ) ;
+
+f = max2float ( 1.0 , 2.0 ) ;</pre>
+          </section>
+          <section>
+            <h3>C++ : overload(函数重载)</h3>
+            <pre>原型：
+int max ( int x , int y ) ;
+int max ( int x , int y , int z ) ;
+
+float max ( float x , float y ) ;
+
+调用：
+n = max ( 1 , 2 ) ;
+n = max ( 1 , 2 , 3 ) ;
+
+f = max ( 1.0 , 2.0 ) ;
+</pre>
+          </section>
+          <section>
+            <h3>【作业4-1】</h3><br>
+            <p>chap4（ P95 ）：</p><br>
+            <p>5（1），5（5），5（7）</p>
+            <p>需调试通过，并提交到github</p>
+          </section>
+        </section>
+        <section>
+          <h3>作用域 & 生命期</h3><br>
+          <ul>
+            <li>作用域：
+              <ul>
+                <li>全局：
+                  <ul>
+                    <li>文件作用域</li>
+                  </ul>
+                </li>
+                <li>局部：
+                  <ul>
+                    <li>函数作用域</li>
+                    <li>块作用域</li>
+                    <li>函数原型作用域</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>生命期：
+              <ul>
+                <li>静态</li>
+                <li>动态</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h1>The End</h1>
+        </section>
+      </div>
+      <div id="clock"></div>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

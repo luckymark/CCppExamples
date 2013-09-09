@@ -189,9 +189,14 @@ private:
             <li>实验+实验报告</li>
           </ul>
         </section>
+        <section>
+          <h1>The End</h1>
+        </section>
       </div>
+      <div id="clock"></div>
     </div>
     <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
     <script>
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
@@ -205,6 +210,19 @@ private:
           //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
           });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
     </script>
   </body>
 </head>

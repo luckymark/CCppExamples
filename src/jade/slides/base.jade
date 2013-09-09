@@ -20,8 +20,10 @@ head
         .reveal
             .slides
                 block slides
+            #clock
 
         script(src='js/reveal.min.js')
+        script(src='../lib/jquery-1.10.2.min.js')
         script.
             // Full list of configuration options available here:
             // https://github.com/hakimel/reveal.js#configuration
@@ -35,3 +37,15 @@ head
                 //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
                 });
+        script.
+            $(function(){
+                function showTime(){
+                    var now = new Date()
+                    clock.html( now.getHours()+':'+now.getMinutes() )
+                }
+
+                var clock = $('#clock')
+                showTime()
+                setInterval( showTime,1000*60 )
+
+            })
