@@ -11,6 +11,7 @@ int modelCount = 0;
 void list();
 void enterWarehouse();
 void outWarehouse();
+void input(struct Computer &computer);
 int find(char* model);
 
 int main()
@@ -52,38 +53,36 @@ void list(){
 }
 void enterWarehouse(){
 	struct Computer computer;
-	cout<<"入库:"<<endl;
-	cout<<"型号：";
-	cin>>computer.model;
+	input(computer);
 
-	cout<<"数量：";
-	cin>>computer.total;
-
-	int index = find(computer.model);
-	if(index == modelCount){
-		strcpy(computers[index].model , computer.model);
-		computers[index].total = computer.total;
+	int i = find(computer.model);
+	if(i == modelCount){
+		strcpy(computers[i].model , computer.model);
+		computers[i].total = computer.total;
 		modelCount++;
 	}else{
-		computers[index].total += computer.total;
+		computers[i].total += computer.total;
 	}
 }
 
 void outWarehouse(){
 	struct Computer computer;
-	cout<<"卖出："<<endl;
+	input(computer);
+
+	int i = find(computer.model);
+	if(i == modelCount){
+		cout<<"型号错误！"<<endl;
+	}else{
+		computers[i].total -= computer.total;
+	}
+}
+
+void input(struct Computer &computer){
 	cout<<"型号：";
 	cin>>computer.model;
 
 	cout<<"数量：";
 	cin>>computer.total;
-
-	int index = find(computer.model);
-	if(index == modelCount){
-		cout<<"型号错误！"<<endl;
-	}else{
-		computers[index].total -= computer.total;
-	}
 }
 
 int find(char* model){
