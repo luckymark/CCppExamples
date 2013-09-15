@@ -1,0 +1,163 @@
+
+<!--
+<User>
+  <luckystar></luckystar>
+</User>
+<Date>
+  <13-9-3></13-9-3>
+</Date>
+<Time>下午10:04</Time>
+--><!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>Class & Object</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Class & Object</h1><br>
+          <h2>(类 与 对象)</h2>
+        </section>
+        <section>
+          <section>
+            <h3>Encapsulation</h3><br>
+            <h3>(封装)</h3>
+          </section>
+          <section>
+            <h3>使用 Queue类和对象</h3>
+            <pre>Queue q1 , q2 [ 10 ];
+if ( !q1.isFull() ) {
+    q1.append ( 100 ) ;
+}
+int n = q1.popHead ( ) ;
+if ( q1.isEmpty() ) {
+    int n = q1.popHead ( ) ;
+    cout << n ;
+}
+...
+Queue *p = new Queue() ;
+p -> append ( 100 ) ;
+p = &q1 ;
+...</pre>
+          </section>
+          <section>
+            <h3>define/declare(定义/声明）: Queue类 （ Queue.h ）</h3>
+            <pre>class Queue{
+
+public:
+    void append ( int item ) ;
+    int popHead ( ) ;
+    bool isEmpty ( ) ;
+    bool isFull ( ) ;
+    
+private：
+    int data[ 100] ;
+    int head = 10 ;
+    int tail = 10 ;
+};</pre>
+          </section>
+          <section>
+            <h3>implement(实现) Queue类 ( Queue.cpp )</h3>
+            <pre>#include “ Queue ”
+
+void Queue::append( int item ){
+    data[ head ] = item;
+    head = (head+1) % 100;
+}
+
+int Queue::popHead(){
+    tail = ( tail + 1 ) % 100 ;
+    return data[ tail-1 ] ;
+}
+bool isEmpty(){
+    return (head == tail);
+};
+bool isFull(){
+    return ((head+1)%100 == tail);
+};</pre>
+          </section>
+          <section>
+            <h3>【课堂练习7-1】IntStack类</h3><br>
+            <ul>
+              <li>LIFO(后进先出,FILO)</li><br>
+              <li>可容纳100个元素</li><br>
+              <li>可判断是否为空</li><br>
+              <li>可判断是否已满</li><br>
+              <li>push(进栈)操作</li><br>
+              <li>pop(出栈)操作</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>constructor/deconstuctor</h3><br>
+            <h3>(构造/析构)</h3>
+          </section>
+          <section>
+            <h3>改进IntStack类</h3><br>
+            <h3>初始化的时候确定最大容量</h3>
+            <pre>class IntStack{
+
+public:
+    IntStack(int capbility){
+    
+    }
+    ...
+};</pre>
+          </section>
+          <section>
+            <h3>【课堂练习7-2】安全数组(1)</h3><br>
+            <ul>
+              <li>数组满时，不能追加元素</li><br>
+              <li>数组下标越界时，报错！</li>
+            </ul>
+          </section>
+          <section>
+            <h3>【课堂练习7-2】安全数组(2)</h3><br>
+            <ul>
+              <li>数组满时，自动扩容</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+      <div id="clock"></div>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

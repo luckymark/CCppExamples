@@ -25,7 +25,8 @@ module.exports = function(grunt) {
                 files: {
                     "index.html": ["src/jade/index.jade"],
                     "slides/chap1_HelloWorld.html": ["src/jade/slides/chap1_HelloWorld.jade"],
-                    "slides/Chap2_6_StructuredProgramming.html": ["src/jade/slides/Chap2_6_StructuredProgramming.jade"]
+                    "slides/Chap2_6_StructuredProgramming.html": ["src/jade/slides/Chap2_6_StructuredProgramming.jade"],
+                    "slides/class_object.html": ["src/jade/slides/class_object.jade"]
                 }
             }
         },
