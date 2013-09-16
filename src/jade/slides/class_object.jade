@@ -20,22 +20,32 @@ block slides
             br
             h3 (封装)
         section
+            h3 【例1】Queue(队列)
+            br
+            ul
+                li.fragment append(入队)
+                li.fragment pop(出队)
+                br
+                li.fragment 队列是否满
+                li.fragment 队列是否空
+        section
             h3 使用 Queue类和对象
             pre.
-                Queue q1 , q2 [ 10 ];
-                if ( !q1.isFull() ) {
-                    q1.append ( 100 ) ;
+                Queue queue;
+                if ( !queue.isFull() ) {
+                    queue.append ( 100 ) ;
                 }
-                int n = q1.popHead ( ) ;
-                if ( q1.isEmpty() ) {
-                    int n = q1.popHead ( ) ;
-                    cout << n ;
+
+                int n ;
+                if ( queue.isEmpty() ) {
+                    n = queue.pop ( ) ;
                 }
                 ...
                 Queue *p = new Queue() ;
                 p -> append ( 100 ) ;
-                p = &q1 ;
+                p = &queue ;
                 ...
+
         section
             h3 define/declare(定义/声明）: Queue类 （ Queue.h ）
             pre.
@@ -43,7 +53,7 @@ block slides
 
                 public:
                     void append ( int item ) ;
-                    int popHead ( ) ;
+                    int pop ( ) ;
                     bool isEmpty ( ) ;
                     bool isFull ( ) ;
 
@@ -62,7 +72,7 @@ block slides
                     head = (head+1) % 100;
                 }
 
-                int Queue::popHead(){
+                int Queue::pop(){
                     tail = ( tail + 1 ) % 100 ;
                     return data[ tail-1 ] ;
                 }

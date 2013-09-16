@@ -528,7 +528,7 @@ block slides
                     cout << fac( 3 );
                 }
         section
-            h3 【练习-P79】汉诺塔
+            h3 【练习-1】p79 汉诺塔
             img(src="img/Hanoi.jpeg", width="400", height="400")
 
         section
@@ -740,6 +740,168 @@ block slides
                 ul
                     li 静态
                     li 动态
+    section
+        section
+            h3 【练习-2】电脑入库及销售
+            br
+            pre.
+                1）查看库存
+                2）电脑入库
+                3）卖出
+                4）退出程序
+        section
+            h3 【代码】菜单显示
+            pre.
+                cout&lt&lt"1)查看库存"&lt&ltendl;
+                cout&lt&lt"2)电脑入库"&lt&ltendl;
+                cout&lt&lt"3)售出"&lt&ltendl;
+                cout&lt&lt"4)退出程序"&lt&ltendl;
+        section
+            h3 【代码】菜单选择
+            pre.
+                cin&gt&gtaction;
+                switch(action){
+                case 1:
+                    list();
+                    break;
+                case 2:
+                    enterWarehouse();
+                    break;
+                case 3:
+                    outWarehouse();
+                    break;
+                case 4:
+                    return 0;
+                default:
+                    cout&lt&lt"您输入了错误的菜单项，请重新选择！";
+                }
+        section
+            h3 【代码】主循环
+            pre.
+                do{
+                    ...
+                    case 3:
+                        outWarehouse();
+                        break;
+                    case 4:
+                        return 0;
+                    ...
+                }while(1);
+        section
+            h3 【代码】list 显示库存信息
+            pre.
+                void list(){
+
+                    cout&lt&lt"型号\t"&lt&lt"数量"&lt&ltendl;
+
+                    for(int i=0;i&ltmodelCount;i++){
+
+                        cout&lt&ltcomputers[i].model&lt&lt"\t"
+
+                        cout&lt&ltcomputers[i].total&lt&ltendl;
+                    }
+                }
+        section
+            h3 【代码】Computer数据结构定义
+            pre.
+                int modelCount = 0;
+
+                struct Computer{
+
+                    char model[20];
+
+                    int total;
+
+                }computers[100];
+        section
+            h3 【代码】enterWarehouse 入库
+            pre.
+                void enterWarehouse(){
+                    struct Computer computer;
+                    cout&lt&lt"型号：";
+                    cin&gt&gtcomputer.model;
+                    cout&lt&lt"数量：";
+                    cin&gt&gtcomputer.total;
+
+                    int i = find(computer.model);
+                    if(i == modelCount){
+                        strcpy(computers[i].model,computer.model);
+                        computers[i].total = computer.total;
+                        modelCount++;
+                    }else{
+                        computers[i].total += computer.total;
+                    }
+                }
+        section
+            h3 【代码】find 按型号查找
+            pre.
+                int find(char* model){
+                   int i;
+                   for(i=0;i&ltmodelCount;i++){
+                      if(strcmp(computers[i].model,model)==0){
+                         break;
+                      }
+                   }
+                   return i;
+                }
+        section
+            h3 【代码】outWarehouse 出库
+            pre.
+                void outWarehouse(){
+                    struct Computer computer;
+                    cout&lt&lt"型号：";
+                    cin&gt&gtcomputer.model;
+                    cout&lt&lt"数量：";
+                    cin&gt&gtcomputer.total;
+
+                    int i = find(computer.model);
+                    if(i == modelCount){
+                        cout&lt&lt"型号错误！"&lt&ltendl;
+                    }else{
+                        computers[i].total -= computer.total;
+                    }
+                }
+        section
+            h3 【代码】outWarehouse 优化
+            pre.
+                void outWarehouse(){
+                    struct Computer computer;
+
+                    input(computer);
+
+                    int i = find(computer.model);
+
+                    if(i == modelCount){
+                        cout&lt&lt"型号错误！"&lt&ltendl;
+                    }else{
+                        computers[i].total -= computer.total;
+                    }
+                }
+        section
+            h3 【代码】input 输入一个computer的信息
+            pre.
+                void input(struct Computer computer){
+
+                    cout&lt&lt"型号：";
+                    cin&gt&gtcomputer.model;
+
+                    cout&lt&lt"数量：";
+                    cin&gt&gtcomputer.total;
+                }
+            p.fragment ???
+        section
+            h3 【代码】input fix(修复)bug 的版本
+            pre.
+                void input(struct Computer &computer){
+
+                    cout&lt&lt"型号：";
+                    cin&gt&gtcomputer.model;
+
+                    cout&lt&lt"数量：";
+                    cin&gt&gtcomputer.total;
+                }
+
+
     section
         h1 The End
 

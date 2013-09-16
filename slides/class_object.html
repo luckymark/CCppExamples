@@ -32,21 +32,31 @@
             <h3>(封装)</h3>
           </section>
           <section>
+            <h3>【例1】Queue(队列)</h3><br>
+            <ul>
+              <li class="fragment">append(入队)</li>
+              <li class="fragment">pop(出队)</li><br>
+              <li class="fragment">队列是否满</li>
+              <li class="fragment">队列是否空</li>
+            </ul>
+          </section>
+          <section>
             <h3>使用 Queue类和对象</h3>
-            <pre>Queue q1 , q2 [ 10 ];
-if ( !q1.isFull() ) {
-    q1.append ( 100 ) ;
+            <pre>Queue queue;
+if ( !queue.isFull() ) {
+    queue.append ( 100 ) ;
 }
-int n = q1.popHead ( ) ;
-if ( q1.isEmpty() ) {
-    int n = q1.popHead ( ) ;
-    cout << n ;
+
+int n ;
+if ( queue.isEmpty() ) {
+    n = queue.pop ( ) ;
 }
 ...
 Queue *p = new Queue() ;
 p -> append ( 100 ) ;
-p = &q1 ;
-...</pre>
+p = &queue ;
+...
+</pre>
           </section>
           <section>
             <h3>define/declare(定义/声明）: Queue类 （ Queue.h ）</h3>
@@ -54,7 +64,7 @@ p = &q1 ;
 
 public:
     void append ( int item ) ;
-    int popHead ( ) ;
+    int pop ( ) ;
     bool isEmpty ( ) ;
     bool isFull ( ) ;
     
@@ -73,7 +83,7 @@ void Queue::append( int item ){
     head = (head+1) % 100;
 }
 
-int Queue::popHead(){
+int Queue::pop(){
     tail = ( tail + 1 ) % 100 ;
     return data[ tail-1 ] ;
 }
