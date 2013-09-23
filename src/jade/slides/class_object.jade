@@ -37,7 +37,7 @@ block slides
                 }
 
                 int n ;
-                if ( queue.isEmpty() ) {
+                if ( !queue.isEmpty() ) {
                     n = queue.pop ( ) ;
                 }
                 ...
@@ -56,8 +56,8 @@ block slides
                     int pop ( ) ;
                     bool isEmpty ( ) ;
                     bool isFull ( ) ;
-
-                private：
+            pre.fragment.
+                private:
                     int data[ 100] ;
                     int head = 10 ;
                     int tail = 10 ;
@@ -65,21 +65,20 @@ block slides
         section
             h3 implement(实现) Queue类 ( Queue.cpp )
             pre.
-                #include “ Queue ”
+                #include “Queue.h”
 
                 void Queue::append( int item ){
                     data[ head ] = item;
                     head = (head+1) % 100;
                 }
-
                 int Queue::pop(){
                     tail = ( tail + 1 ) % 100 ;
                     return data[ tail-1 ] ;
                 }
-                bool isEmpty(){
+                bool Queue::isEmpty(){
                     return (head == tail);
                 };
-                bool isFull(){
+                bool Queue::isFull(){
                     return ((head+1)%100 == tail);
                 };
         section
@@ -107,14 +106,50 @@ block slides
             br
             h3 初始化的时候确定最大容量
             pre.
-                class IntStack{
+                IntStack stack(10000);
+                ...
+            .fragment
+                pre.
+                    IntStack.h:
 
-                public:
-                    IntStack(int capbility){
-
-                    }
-                    ...
+                    class IntStack{
+                    public:
+                        IntStack(int capbility);
+            pre.fragment.
+                private:
+                    int* data;
                 };
+        section
+            pre.
+                在IntStack.cpp中实现:
+
+                IntStack::IntStack(int capbility){
+                    data = new int[capbility];
+                }
+            br
+            .fragment
+                pre.
+                    或者直接在IntStack.h中实现:
+
+                    class IntStack{
+                    public:
+                        IntStack(int capbility){
+                            data = new int[capbility];
+                        }
+                        ...
+                    }
+        section
+            pre.
+                Point(int x, int y){
+                    this->x = x;
+                    this->y = y;
+                }
+            br
+            .fragment
+                pre.
+                    利用初始化列表:
+
+                    Point(int x, int y):x(x),y(y) {}
         section
             h3 【课堂练习7-2】安全数组(1)
             br
