@@ -119,7 +119,7 @@ bool Queue::isFull(){
 
 class IntStack{
 public:
-    IntStack(int capbility);</pre>
+    IntStack(int capbility);// 构造函数</pre>
             </div>
             <pre class="fragment">private:
     int* data;
@@ -153,6 +153,26 @@ public:
 
 Point(int x, int y):x(x),y(y) {}</pre>
             </div>
+          </section>
+          <section>
+            <pre>void foo(){
+    IntStack s1(100);
+    IntStack s2(10000);
+}
+???</pre>
+            <pre class="fragment">内存泄漏！！！</pre>
+          </section>
+          <section>
+            <pre>class IntStack{
+    public:
+        IntStack(int capbility){
+            data = new int[capbility];
+        }
+        ~IntStack(){ //析构函数
+            delete [] data;
+        }
+    }
+    </pre>
           </section>
           <section>
             <h3>【课堂练习7-2】安全数组(1)</h3><br>

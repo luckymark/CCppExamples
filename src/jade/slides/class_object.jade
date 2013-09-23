@@ -114,7 +114,7 @@ block slides
 
                     class IntStack{
                     public:
-                        IntStack(int capbility);
+                        IntStack(int capbility);// 构造函数
             pre.fragment.
                 private:
                     int* data;
@@ -150,6 +150,27 @@ block slides
                     利用初始化列表:
 
                     Point(int x, int y):x(x),y(y) {}
+        section
+            pre.
+                void foo(){
+                    IntStack s1(100);
+                    IntStack s2(10000);
+                }
+                ???
+            pre.fragment.
+                内存泄漏！！！
+        section
+            pre.
+                class IntStack{
+                    public:
+                        IntStack(int capbility){
+                            data = new int[capbility];
+                        }
+                        ~IntStack(){ //析构函数
+                            delete [] data;
+                        }
+                    }
+
         section
             h3 【课堂练习7-2】安全数组(1)
             br
