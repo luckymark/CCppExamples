@@ -82,12 +82,12 @@ block slides
                     return ((head+1)%100 == tail);
                 };
         section
-            h3 【课堂练习7-1】IntStack类
+            h3 【课堂练习7-1】Stack类
             br
             ul
                 li LIFO(后进先出,FILO)
                 br
-                li 可容纳100个元素
+                li 可容纳100个元素(int型)
                 br
                 li 可判断是否为空
                 br
@@ -102,38 +102,38 @@ block slides
             br
             h3 (构造/析构)
         section
-            h3 改进IntStack类
+            h3 改进Stack类
             br
             h3 初始化的时候确定最大容量
             pre.
-                IntStack stack(10000);
+                Stack stack(10000);
                 ...
             .fragment
                 pre.
-                    IntStack.h:
+                    Stack.h:
 
-                    class IntStack{
+                    class Stack{
                     public:
-                        IntStack(int capbility);// 构造函数
+                        Stack(int capbility);// 构造函数
             pre.fragment.
                 private:
                     int* data;
                 };
         section
             pre.
-                在IntStack.cpp中实现:
+                在Stack.cpp中实现:
 
-                IntStack::IntStack(int capbility){
+                Stack::Stack(int capbility){
                     data = new int[capbility];
                 }
             br
             .fragment
                 pre.
-                    或者直接在IntStack.h中实现:
+                    或者直接在Stack.h中实现:
 
-                    class IntStack{
+                    class Stack{
                     public:
-                        IntStack(int capbility){
+                        Stack(int capbility){
                             data = new int[capbility];
                         }
                         ...
@@ -153,20 +153,20 @@ block slides
         section
             pre.
                 void foo(){
-                    IntStack s1(100);
-                    IntStack s2(10000);
+                    Stack s(10000);
                 }
+
                 ???
             pre.fragment.
                 内存泄漏！！！
         section
             pre.
-                class IntStack{
+                class Stack{
                     public:
-                        IntStack(int capbility){
+                        Stack(int capbility){
                             data = new int[capbility];
                         }
-                        ~IntStack(){ //析构函数
+                        ~Stack(){ //析构函数
                             delete [] data;
                         }
                     }
@@ -179,9 +179,181 @@ block slides
                 br
                 li 数组下标越界时，报错！
         section
-            h3 【课堂练习7-2】安全数组(2)
+            h3 【课堂练习7-3】安全数组(2)
             br
             ul
                 li 数组满时，自动扩容
+        section
+            h3 默认（缺省）构造函数
+            pre.
+                int main(){
+                    Point p;
+                    ...
+                }
+                class Point{
+                public:
+                    //无构造函数
+                private:
+                    int x, y;  //x和y为随机数
+                };
+
+        section
+            h3 默认（缺省）构造函数
+            pre.
+                int main(){
+                    Point p;
+                    ...
+                }
+                class Point{
+                public:
+                    //无构造函数
+                private:
+                    int x =0 , y = 0;
+                };
+
+        section
+            h3 默认（缺省）构造函数
+            pre.
+                int main(){
+                    Point p;
+                    ...
+                }
+                class Point{
+                public:
+                    //有不带参数的构造函数
+                    Point():x(0),y(0){}
+
+                private:
+                    int x , y ;
+                };
+
+        section
+            h3 默认（缺省）构造函数
+            pre.
+                int main(){
+                    Point p;  // 错误！
+                    ...
+                }
+                class Point{
+                public:
+                    // 只有带参数构造函数，没有不带参数的构造函数
+                    Point(int x,int y):x(x),y(y){}
+                private:
+                    int x , y ;
+                };
+
+        section
+            h3 How about 默认析构函数？
+    section
+        section
+            h3 this 指针
+            pre.
+                class Point{
+                public:
+                    Point(int x,int y){
+                        this->x = x;
+                        this->y = y;
+                    }
+                private:
+                    int x , y ;
+                };
+
+        section
+            h3 this 指针
+            pre.
+                class Point{
+                public:
+                    Point(int x,int y){
+                        this->x = x;
+                        this->y = y;
+                    }
+                private:
+                    int x , y ;
+                };
+
+        section
+            h3 应用this指针
+            pre.
+                Queue q1（“青年组”），q2（“中老年组”）；
+                Person p1("张三",20),p2("李四",50);
+                p1.groupTo(&q1);
+                p2.groupTo(&q2);
+
+                Person persons[100];
+                for(int i=0;i<100;i++){
+                    if ( persons[i].age >=45 ){
+                        persons[i].groupTo(&q2);
+                    }else{
+                        persons[i].groupTo(&q1);
+                    }
+                }
+        section
+            pre.
+                class Queue{
+                public:
+                    void append(Person *p);
+                };
+
+                class Person{
+                public:
+                    void groupTo(Queue* queue);
+                };
+
+                void Person::groupTo( Queue* queue ){
+                    this->group = queue;
+
+                    queue->append( ??? );
+                }
+
+        section
+            pre.
+                void Person::groupTo( Queue* queue ){
+
+                    this->group = queue;
+
+                    queue->append( this );
+
+                }
+
+        section
+            h3 应用this指针(链式调用)
+            pre.
+                q1->append(&p1);
+                q1->append(&p2);
+
+                q1->append(&p1)->append(&p2);
+
+        section
+            h3 应用this指针(链式调用)
+            pre.
+                Queue* Queue::append(Person *p){
+                    ...
+                    return this;
+                }
+
+    section
+        section
+            h3 【练习7-4】改进Stack
+            h3 利用链表 实现 自动扩容
+
+        section
+             h3 copy构造函数
+             pre.
+                 class Stack{
+                 public:
+                     Stack(Stack & old){
+                        ...
+                     }
+                 };
+
+        section
+            h3 copy构造函数的调用时机
+            pre.
+                Stack s1;
+
+                //显式调用
+                Stack s2 = Stack(s1);
+
+
 
 
