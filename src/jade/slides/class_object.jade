@@ -151,6 +151,12 @@ block slides
 
                     Point(int x, int y):x(x),y(y) {}
         section
+            h3  单参数构造函数 实例化对象的写法
+            pre.
+                Stack s(100);
+                //等价于
+                Stack s=100;
+        section
             pre.
                 void foo(){
                     Stack s(10000);
@@ -351,9 +357,41 @@ block slides
             pre.
                 Stack s1;
 
-                //显式调用
-                Stack s2 = Stack(s1);
+                //显式调用copy构造函数
+                Stack s2 = s1;
+                Stack s3(s1);
+
+        section
+            h3 copy构造函数的调用时机
+            pre.
+                void foo(Stack s){
+                    ...
+                }
+
+                Stack s1;
+
+                //隐式调用copy构造函数
+                foo(s1);
 
 
+        section
+            h3 copy构造函数的调用时机
+            pre.
+                Stack foo(){
+                    Stack s;
+                    ...
+                    return s;
+                }
+                Stack s1;
+
+                //隐式调用copy构造函数
+                s1 = foo();
+
+        section
+            h3 copy构造函数的调用时机
+            pre.
+                Stack s1,s2;
+
+                s2 = s1; //赋值运算，不调用拷贝构造函数
 
 

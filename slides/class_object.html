@@ -155,6 +155,12 @@ Point(int x, int y):x(x),y(y) {}</pre>
             </div>
           </section>
           <section>
+            <h3> 单参数构造函数 实例化对象的写法</h3>
+            <pre>Stack s(100);
+//等价于
+Stack s=100;</pre>
+          </section>
+          <section>
             <pre>void foo(){
     Stack s(10000);
 }
@@ -357,10 +363,42 @@ public:
             <h3>copy构造函数的调用时机</h3>
             <pre>Stack s1;
 
-//显式调用
-Stack s2 = Stack(s1);
+//显式调用copy构造函数
+Stack s2 = s1;
+Stack s3(s1);
+</pre>
+          </section>
+          <section>
+            <h3>copy构造函数的调用时机</h3>
+            <pre>void foo(Stack s){
+    ...
+}
 
+Stack s1;
 
+//隐式调用copy构造函数
+foo(s1);
+
+</pre>
+          </section>
+          <section>
+            <h3>copy构造函数的调用时机</h3>
+            <pre>Stack foo(){
+    Stack s;
+    ...
+    return s;
+}
+Stack s1;
+
+//隐式调用copy构造函数
+s1 = foo();
+</pre>
+          </section>
+          <section>
+            <h3>copy构造函数的调用时机</h3>
+            <pre>Stack s1,s2;
+
+s2 = s1; //赋值运算，不调用拷贝构造函数
 
 </pre>
           </section>
