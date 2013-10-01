@@ -11,9 +11,13 @@ class WareHouse
     public:
         WareHouse();
         void list();
+        void in();
+        void out();
     protected:
     private:
-        vector<Computer> computers;
+        vector<Computer *> computers;
+
+        Computer* find(Computer* computer);
 };
 
 #endif // WAREHOUSE_H
