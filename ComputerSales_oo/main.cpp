@@ -1,7 +1,9 @@
 #include "ComputerSales.h"
 
+ComputerSales cs;
+
 int main()
 {
-    ComputerSales cs;
-    return cs.run();
+    cs.run();
+    return 0;
 }

@@ -1,15 +1,21 @@
 #include "ComputerSales.h"
 
-#include <iostream>
+#include "ListWareHouse.h"
+#include "EnterWareHouse.h"
+#include "OutWareHouse.h"
+#include "Exit.h"
 
+#include <iostream>
 using namespace std;
 
 ComputerSales::ComputerSales()
 {
-    //ctor
+    menu.append(new ListWareHouse());
+    menu.append(new EnterWareHouse());
+    menu.append(new OutWareHouse());
+    menu.append(new Exit());
 }
 
-int ComputerSales::run(){
-    cout << "ÍË³ö³ÌÐò!" << endl;
-    return 0;
+void ComputerSales::run(){
+    menu.run();
 }
