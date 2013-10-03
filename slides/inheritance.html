@@ -1,0 +1,62 @@
+
+<!--
+<User>
+  <luckystar></luckystar>
+</User>
+<Date>
+  <13-9-3></13-9-3>
+</Date>
+<Time>下午10:04</Time>
+--><!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>inheritance</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>inheritance</h3><br>
+          <h3>继承</h3>
+        </section>
+      </div>
+      <div id="clock"></div>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

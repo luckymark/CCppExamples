@@ -24,9 +24,10 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "index.html": ["src/jade/index.jade"],
-                    "slides/chap1_HelloWorld.html": ["src/jade/slides/chap1_HelloWorld.jade"],
-                    "slides/Chap2_6_StructuredProgramming.html": ["src/jade/slides/Chap2_6_StructuredProgramming.jade"],
-                    "slides/class_object.html": ["src/jade/slides/class_object.jade"]
+                    "slides/helloWorld.html": ["src/jade/slides/helloWorld.jade"],
+                    "slides/structuredProgramming.html": ["src/jade/slides/structuredProgramming.jade"],
+                    "slides/class_object.html": ["src/jade/slides/class_object.jade"],
+                    "slides/inheritance.html": ["src/jade/slides/inheritance.jade"]
                 }
             }
         },
