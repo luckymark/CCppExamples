@@ -8,6 +8,8 @@
         "grunt-contrib-less": "*",
         "grunt-contrib-imagemin":"*",
 
-        "grunt-contrib-watch": "*"
+        "grunt-contrib-watch": "*",
+
+        "express":"3.1.1"
     }
 }
