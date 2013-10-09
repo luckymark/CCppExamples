@@ -77,7 +77,7 @@ void outWarehouse(){
 	}
 }
 
-void input(struct Computer &computer){
+void input(struct Computer &computer){ 
 	cout<<"型号：";
 	cin>>computer.model;
 
