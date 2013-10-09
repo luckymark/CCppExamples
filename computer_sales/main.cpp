@@ -18,11 +18,11 @@ int main()
 {
 	int action;
 	do{
-		cout<<"-----------²Ëµ¥-----------"<<endl;
-		cout<<"1)²é¿´¿â´æ"<<endl;
-		cout<<"2)µçÄÔÈë¿â"<<endl;
-		cout<<"3)ÊÛ³ö"<<endl;
-		cout<<"4)ÍË³ö³ÌÐò"<<endl;
+		cout<<"-----------èœå•-----------"<<endl;
+		cout<<"1)æŸ¥çœ‹åº“å­˜"<<endl;
+		cout<<"2)ç”µè„‘å…¥åº“"<<endl;
+		cout<<"3)å”®å‡º"<<endl;
+		cout<<"4)é€€å‡ºç¨‹åº"<<endl;
 
 		cin>>action;
 		switch(action){
@@ -38,18 +38,18 @@ int main()
 		case 4:
 			return 0;
 		default:
-			cout<<"ÄúÊäÈëÁË´íÎóµÄ²Ëµ¥Ïî£¬ÇëÖØÐÂÑ¡Ôñ£¡";
+			cout<<"æ‚¨è¾“å…¥äº†é”™è¯¯çš„èœå•é¡¹ï¼Œè¯·é‡æ–°é€‰æ‹©ï¼";
 		}
 	}while(1);
 }
 
 void list(){
-	cout<<"-------¿â´æ-------"<<endl;
-	cout<<"ÐÍºÅ\t"<<"ÊýÁ¿"<<endl;
+	cout<<"-------åº“å­˜-------"<<endl;
+	cout<<"åž‹å·\t"<<"æ•°é‡"<<endl;
 	for(int i=0;i<modelCount;i++){
 		cout<<computers[i].model<<"\t"<<computers[i].total<<endl;
 	}
-	cout<<"-------¿â´æ-------"<<endl;
+	cout<<"-------åº“å­˜-------"<<endl;
 }
 void enterWarehouse(){
 	struct Computer computer;
@@ -69,19 +69,18 @@ void outWarehouse(){
 	struct Computer computer;
 	input(computer);
 
-	int i = find(computer.model);
-	if(i == modelCount){
-		cout<<"ÐÍºÅ´íÎó£¡"<<endl;
+	int i = find(computer.model); 
+		cout<<"åž‹å·é”™è¯¯ï¼"<<endl;
 	}else{
 		computers[i].total -= computer.total;
 	}
 }
 
-void input(struct Computer &computer){
-	cout<<"ÐÍºÅ£º";
+void input(struct Computer &computer){ 
+	cout<<"åž‹å·ï¼š";
 	cin>>computer.model;
 
-	cout<<"ÊýÁ¿£º";
+	cout<<"æ•°é‡ï¼š";
 	cin>>computer.total;
 }
 
