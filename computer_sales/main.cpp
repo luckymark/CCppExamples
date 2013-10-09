@@ -69,8 +69,7 @@ void outWarehouse(){
 	struct Computer computer;
 	input(computer);
 
-	int i = find(computer.model);
-	if(i == modelCount){
+	int i = find(computer.model); 
 		cout<<"型号错误！"<<endl;
 	}else{
 		computers[i].total -= computer.total;
