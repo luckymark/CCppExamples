@@ -18,11 +18,11 @@ int main()
 {
 	int action;
 	do{
-		cout<<"-----------�˵�-----------"<<endl;
-		cout<<"1)�鿴����"<<endl;
-		cout<<"2)��������"<<endl;
-		cout<<"3)�۳�"<<endl;
-		cout<<"4)�˳�����"<<endl;
+		cout<<"-----------菜单-----------"<<endl;
+		cout<<"1)查看库存"<<endl;
+		cout<<"2)电脑入库"<<endl;
+		cout<<"3)售出"<<endl;
+		cout<<"4)退出程序"<<endl;
 
 		cin>>action;
 		switch(action){
@@ -36,20 +36,20 @@ int main()
 			outWarehouse();
 			break;
 		case 4:
-			return 0；
+			return 0;
 		default:
-			cout<<"�������˴����Ĳ˵��������ѡ����";
+			cout<<"您输入了错误的菜单项，请重新选择！";
 		}
 	}while(1);
 }
 
 void list(){
-	cout<<"-------����-------"<<endl;
-	cout<<"�ͺ�\t"<<"����"<<endl;
+	cout<<"-------库存-------"<<endl;
+	cout<<"型号\t"<<"数量"<<endl;
 	for(int i=0;i<modelCount;i++){
 		cout<<computers[i].model<<"\t"<<computers[i].total<<endl;
 	}
-	cout<<"-------����-------"<<endl;
+	cout<<"-------库存-------"<<endl;
 }
 void enterWarehouse(){
 	struct Computer computer;
@@ -71,17 +71,17 @@ void outWarehouse(){
 
 	int i = find(computer.model);
 	if(i == modelCount){
-		cout<<"�ͺŴ�����"<<endl;
+		cout<<"型号错误！"<<endl;
 	}else{
 		computers[i].total -= computer.total;
 	}
 }
 
 void input(struct Computer &computer){
-	cout<<"�ͺţ�";
+	cout<<"型号：";
 	cin>>computer.model;
 
-	cout<<"������";
+	cout<<"数量：";
 	cin>>computer.total;
 }
 
