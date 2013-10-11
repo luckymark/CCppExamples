@@ -150,30 +150,31 @@ block slides
                 }
 
     section
-        h3 private 继承实现 组合
-        pre.
-            class Stack:private Vector&ltint&gt{
-            public:
-                void push(int item);
-                int pop();
-                bool isEmpty();
-            };
+        section
+            h3 private继承 实现组合
+            pre.
+                class Stack:private Vector&ltint&gt{
+                public:
+                    void push(int item);
+                    int pop();
+                    bool isEmpty();
+                };
 
-    section
-        h3 Stack
-        pre.
-            void Stack::push(int item){
-                push_back(item);
-            }
+        section
+            h3 private继承 实现组合
+            pre.
+                void Stack::push(int item){
+                    push_back(item);
+                }
 
-            int Stack::pop(){
-                int value = back();
-                pop_back();
-                return value;
-            }
-            bool Stack::isEmpty(){
-                return empty();
-            }
+                int Stack::pop(){
+                    int value = back();
+                    pop_back();
+                    return value;
+                }
+                bool Stack::isEmpty(){
+                    return empty();
+                }
 
 
 
