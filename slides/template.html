@@ -18,23 +18,22 @@
           <h3>模板 与 泛型编程</h3>
         </section>
         <section>
-          <section>
-            <h3>请看：</h3>
-            <pre>int max(int x,int y){
+          <h3>请看：</h3>
+          <pre>int max(int x,int y){
     return ((x) > (y) ? (x) : (y))
 }
 </pre>
-            <pre class="fragment">#define max(x, y)  ((x) > (y) ? (x) : (y))
+          <pre class="fragment">#define max(x, y)  ((x) > (y) ? (x) : (y))
 </pre>
-          </section>
-          <section>
-            <h3>利用函数模板：</h3>
-            <pre>template <class T>
+        </section>
+        <section>
+          <h3>利用函数模板：</h3>
+          <pre>template <class T>
 T max(T x, T y)
 {
     return x > y ? x : y;
 }</pre>
-            <pre class="fragment">void main(){
+          <pre class="fragment">void main(){
     double a = 1.0, b;
     b = max(a, 2.0);
     
@@ -42,14 +41,14 @@ T max(T x, T y)
     z = max(x,y);
 }
 </pre>
-          </section>
-          <section>
-            <h3>【练习】改造swap函数，使之能用于任意类型</h3>
-          </section>
-          <section>
-            <h3>类模板</h3>
-            <h3>Stack+Vector(stl)</h3>
-            <pre>template &ltclass T>
+        </section>
+        <section>
+          <h3>【练习】改造swap函数，使之能用于任意类型</h3>
+        </section>
+        <section>
+          <h3>类模板</h3>
+          <h3>Stack+Vector(stl)</h3>
+          <pre>template &ltclass T>
 class Stack{
 public:
     void push(T item);
@@ -58,10 +57,10 @@ public:
 private:
     Vector&ltT> data;
 };</pre>
-          </section>
-          <section>
-            <h3>Stack+Vector</h3>
-            <pre>template &ltclass T>
+        </section>
+        <section>
+          <h3>Stack+Vector</h3>
+          <pre>template &ltclass T>
 void Stack::push(T item){
     data.push_back(item);
 }
@@ -76,9 +75,9 @@ T Stack::pop(){
 bool Stack::isEmpty(){
     return data.empty();
 }</pre>
-          </section>
-          <section>
-            <pre>int main(){
+        </section>
+        <section>
+          <pre>int main(){
     Stack&ltint> s1;
     s1.push(100);
     
@@ -86,10 +85,9 @@ bool Stack::isEmpty(){
     s2.push(2.0);
 }
 </pre>
-          </section>
-          <section>
-            <h3>【练习】设计类型无关的安全数组</h3>
-          </section>
+        </section>
+        <section>
+          <h3>【练习】设计类型无关的安全数组</h3>
         </section>
       </div>
       <div id="clock"></div><a href="../index.html">目录</a>

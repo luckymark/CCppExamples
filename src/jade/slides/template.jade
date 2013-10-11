@@ -11,75 +11,74 @@ block slides
         h3 模板 与 泛型编程
 
     section
-        section
-            h3 请看：
-            pre.
-                int max(int x,int y){
-                    return ((x) > (y) ? (x) : (y))
-                }
+        h3 请看：
+        pre.
+            int max(int x,int y){
+                return ((x) > (y) ? (x) : (y))
+            }
 
-            pre.fragment.
-                #define max(x, y)  ((x) > (y) ? (x) : (y))
+        pre.fragment.
+            #define max(x, y)  ((x) > (y) ? (x) : (y))
 
-        section
-            h3 利用函数模板：
-            pre.
-                template <class T>
-                T max(T x, T y)
-                {
-                    return x > y ? x : y;
-                }
-            pre.fragment.
-                void main(){
-                    double a = 1.0, b;
-                    b = max(a, 2.0);
+    section
+        h3 利用函数模板：
+        pre.
+            template <class T>
+            T max(T x, T y)
+            {
+                return x > y ? x : y;
+            }
+        pre.fragment.
+            void main(){
+                double a = 1.0, b;
+                b = max(a, 2.0);
 
-                    int x=10,y=20,z;
-                    z = max(x,y);
-                }
+                int x=10,y=20,z;
+                z = max(x,y);
+            }
 
-        section
-            h3 【练习】改造swap函数，使之能用于任意类型
-        section
-            h3 类模板
-            h3 Stack+Vector(stl)
-            pre.
-                template &ltclass T>
-                class Stack{
-                public:
-                    void push(T item);
-                    T pop();
-                    bool isEmpty();
-                private:
-                    Vector&ltT> data;
-                };
-        section
-            h3 Stack+Vector
-            pre.
-                template &ltclass T>
-                void Stack::push(T item){
-                    data.push_back(item);
-                }
+    section
+        h3 【练习】改造swap函数，使之能用于任意类型
+    section
+        h3 类模板
+        h3 Stack+Vector(stl)
+        pre.
+            template &ltclass T>
+            class Stack{
+            public:
+                void push(T item);
+                T pop();
+                bool isEmpty();
+            private:
+                Vector&ltT> data;
+            };
+    section
+        h3 Stack+Vector
+        pre.
+            template &ltclass T>
+            void Stack::push(T item){
+                data.push_back(item);
+            }
 
-                template &ltclass T>
-                T Stack::pop(){
-                    T value = data.back();
-                    data.pop_back();
-                    return value;
-                }
+            template &ltclass T>
+            T Stack::pop(){
+                T value = data.back();
+                data.pop_back();
+                return value;
+            }
 
-                bool Stack::isEmpty(){
-                    return data.empty();
-                }
-        section
-            pre.
-                int main(){
-                    Stack&ltint> s1;
-                    s1.push(100);
+            bool Stack::isEmpty(){
+                return data.empty();
+            }
+    section
+        pre.
+            int main(){
+                Stack&ltint> s1;
+                s1.push(100);
 
-                    Stack&ltfloat> s2;
-                    s2.push(2.0);
-                }
+                Stack&ltfloat> s2;
+                s2.push(2.0);
+            }
 
-        section
-            h3 【练习】设计类型无关的安全数组
+    section
+        h3 【练习】设计类型无关的安全数组

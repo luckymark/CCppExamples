@@ -14,37 +14,36 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <section>
-            <h3>Operator Overload（运算符重载）</h3>
-            <pre>class Complex{
+          <h3>Operator Overload（运算符重载）</h3>
+          <pre>class Complex{
 public:
     Complex(double r,double i):real(r),imag(i){}
     Complex operator+ (Complex c2);
 private:
     double real,imag;
 };</pre>
-          </section>
-          <section>
-            <pre>Complex Complex::operator+(Complex c2){
+        </section>
+        <section>
+          <pre>Complex Complex::operator+(Complex c2){
 
     double r = c2.real + this->real;
     double i = c2.imag + this->imag;
     
     return Complex(r, i);
 }</pre>
-          </section>
-          <section>
-            <h3>如何区分 前置 及 后置 单目运算符</h3>
-            <pre>class Clock{
+        </section>
+        <section>
+          <h3>如何区分 前置 及 后置 单目运算符</h3>
+          <pre>class Clock{
 public:
     Clock operator++();      //前置++
     Clock operator++(int);   //后置++
     ...
 };</pre>
-          </section>
-          <section>
-            <h3>前置++的实现</h3>
-            <pre>Clock Clock::operator++ (){
+        </section>
+        <section>
+          <h3>前置++的实现</h3>
+          <pre>Clock Clock::operator++ (){
     s++;
     if(s >= 60){
         s = s-60;
@@ -57,10 +56,10 @@ public:
     }
     return  *this;
 }</pre>
-          </section>
-          <section>
-            <h3>后置++的实现 //有问题？？？</h3>
-            <pre>Clock Clock::operator++(int) {
+        </section>
+        <section>
+          <h3>后置++的实现 //有问题？？？</h3>
+          <pre>Clock Clock::operator++(int) {
     s++;
     if(s >= 60){
         s = s-60;
@@ -73,17 +72,16 @@ public:
     }
     return  *this;
 }</pre>
-          </section>
-          <section>
-            <h3>重载 [] 运算符，使得：</h3>
-            <pre>SafeArray a(100);
+        </section>
+        <section>
+          <h3>重载 [] 运算符，使得：</h3>
+          <pre>SafeArray a(100);
 
 a.set(50,1000); ==> a[50] = 1000;
 
 int x = a.get(50); ==> int x = a[50];
 
 </pre>
-          </section>
         </section>
       </div>
       <div id="clock"></div><a href="../index.html">目录</a>
