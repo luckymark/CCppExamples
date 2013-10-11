@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>class2</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>再论class</h3>
+        </section>
+        <section>
+          <section>
+            <h3>public or private?</h3>
+            <pre>class Rect{
+    ...
+private:
+    int w,h;
+};
+int area(Rect & rect){
+    return rect.w * rect.h;
+}</pre>
+          </section>
+          <section>
+            <h3>friend(友元)</h3>
+            <pre>class Rect{
+    ...
+private:
+    int w,h;
+    friend int area(Rect & rect);
+};
+int area(Rect & rect){
+    return rect.w * rect.h;
+}</pre>
+          </section>
+          <section>
+            <h3>另一个friend的例子</h3><br>
+            <h3>list & Iterator(迭代器)</h3>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>利用全局变量计数</h3>
+            <pre>int point_count = 0；
+class Point{
+public:
+    Point(){
+        point_count++;
+    }
+    ~Point(){
+        point_count--;
+    }
+};</pre>
+          </section>
+          <section>
+            <h3>static(静态)成员</h3>
+            <pre>class Point{
+public:
+    Point(){
+        count++;
+    }
+    ~Point(){
+        count--;
+    }
+private:
+    static int count;
+};
+int Point::count = 0;</pre>
+          </section>
+          <section>
+            <h3>singleton(单例模式)</h3>
+            <pre>class MyClass{
+public:
+    static MyClass *getInstance(){
+        if(instance==NULL)
+            instance=new MyClass();
+        return instance;
+    }
+private:
+    static MyClass *instance;
+    MyClass(){}
+};
+MyClass *MyClass::instance=NULL;
+void main()
+{
+    MyClass *obj;
+    obj=MyClass::getInstance();
+}
+</pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3> multiple inheritance(多继承)</h3>
+            <pre>class LionTiger:public Lion,public Tiger{
+    ...
+};
+</pre>
+          </section>
+          <section>
+            <h3>单继承的内存结构示意图</h3><img src="img/single_inheritance_memory.png">
+          </section>
+          <section>
+            <h3>多继承的内存结构示意图(一)</h3><img src="img/multi_inheritance_memory.png">
+          </section>
+          <section>
+            <h3>多继承的内存结构示意图(二)</h3><img src="img/2route_inheritance_memory.png">
+          </section>
+        </section>
+      </div>
+      <div id="clock"></div><a href="../index.html">目录</a>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

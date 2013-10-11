@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>exception</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>exception(异常)</h3>
+          <pre>int div ( int x , int y ){
+    return x / y ;
+}</pre>
+          <pre class="fragment">int z = div( 1,0 );</pre>
+          <pre class="fragment">int n;
+cin >> n ;
+cout << div( 100, n ) << endl;
+</pre>
+        </section>
+        <section>
+          <h3>try-catch 语句</h3>
+          <pre>int div ( int x , int y ){
+    try{
+        return x / y ;
+    }catch( DivideByZeroException e){
+        cout << e.description << endl ;
+    }
+}
+</pre>
+        </section>
+        <section>
+          <h3>throw （抛出）语句</h3>
+          <pre>int div ( int x , int y ){
+    try{
+        return x / y ;
+    }catch( DivideByZeroException e){
+        cout << e.description << endl ;
+        throw e;
+    }
+}</pre>
+          <pre class="fragment">int n;
+cin >> n ;
+try{
+    cout << div( 100, n ) << endl;
+}catch( DivideByZeroException e){
+    cout << "零不能做除数!" << endl ;
+}
+</pre>
+        </section>
+        <section>
+          <h3>可throw任何类型（例如：int）</h3>
+          <pre>int div ( int x , int y ){
+    try{
+        return x / y ;
+    }catch( DivideByZeroException e){
+        cout << e.description << endl ;
+        
+        throw 0;
+    }
+}</pre>
+          <pre>int n;
+cin >> n ;
+try{
+    cout << div( 100, n ) << endl;
+}catch( int e ){
+    cout << "零不能做除数!" << endl ;
+}
+</pre>
+        </section>
+        <section>
+          <h3>声明函数可throw的类型</h3>
+          <pre>int div ( int x , int y ) throw (int) {
+    try{
+        return x / y ;
+    }catch( DivideByZeroException e){
+        cout << e.description << endl ;
+        
+        throw 0;
+    }
+}</pre>
+        </section>
+      </div>
+      <div id="clock"></div><a href="../index.html">目录</a>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

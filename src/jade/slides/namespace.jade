@@ -1,0 +1,41 @@
+extends base/base
+
+block title
+    title namesapce
+
+block slides
+
+    section
+        h3 定义namespace
+        pre.
+            namespace man
+            {
+                int count;
+            }
+            namespace woman
+            {
+                int count;
+            }
+        br
+        pre.fragment.
+            man::count
+
+            woman::count
+    section
+        h3 简写方法
+        pre.
+            #include &ltiostream>
+
+            std::cout << "Hello World!" << std::endl ;
+        pre.fragment.
+            #include &ltiostream>
+
+            using namespace std;
+
+            cout << "Hello World!" << endl ;
+        pre.fragment.
+            #include &ltiostream>
+
+            using namespace std::cout;
+
+            cout << "Hello World!" << std::endl ;

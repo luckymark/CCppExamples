@@ -1,0 +1,33 @@
+extends base/base
+
+block title
+    title inline
+
+block slides
+
+    section
+        h3 inline(内联)函数
+        pre.
+            #include &ltiostream>
+            using namespace std;
+            inline int max( int x , int y )
+            {
+                return ( x>y ) ? x : y;
+            }
+            void main()
+            {
+                int a , b ;
+                cin >> a >> b ;
+                cout << max( a , b ) << endl ;
+            }
+    section
+        h3 class声明中的函数，默认为inline
+        pre.
+            class Clock{
+            public:
+                void setHour(int h){
+                    this->h = h;
+                }
+                ...
+            };
+

@@ -1,9 +1,4 @@
-//
-   User: luckystar
-   Date: 13-9-1
-   Time: 下午7:45
-
-extends base
+extends base/base
 
 block title
     title Chap2-6 Structured Programming
@@ -626,23 +621,6 @@ block slides
             h3 利用宏定义避免函数的调用开销
             pre.
                 #define max( x , y ) ( (x)>(y) ? (x) : (y) );
-
-                void main()
-                {
-                    int a , b ;
-                    cin >> a >> b ;
-                    cout << max( a , b ) << endl ;
-                }
-        section
-            h3 inline(内联)函数
-            pre.
-                #include &ltiostream>
-                using namespace std;
-
-                inline int max( int x , int y )
-                {
-                    return ( x>y ) ? x : y;
-                }
 
                 void main()
                 {

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>inline</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>inline(内联)函数</h3>
+          <pre>#include &ltiostream>
+using namespace std;
+inline int max( int x , int y )
+{
+    return ( x>y ) ? x : y;
+}
+void main()
+{
+    int a , b ;
+    cin >> a >> b ;
+    cout << max( a , b ) << endl ;
+}</pre>
+        </section>
+        <section>
+          <h3>class声明中的函数，默认为inline</h3>
+          <pre>class Clock{
+public:
+    void setHour(int h){
+        this->h = h;
+    }
+    ...
+};
+</pre>
+        </section>
+      </div>
+      <div id="clock"></div><a href="../index.html">目录</a>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

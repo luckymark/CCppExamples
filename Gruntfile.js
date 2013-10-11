@@ -4,7 +4,7 @@
  * Time: 下午10:41
  */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         less: {
@@ -22,23 +22,31 @@ module.exports = function(grunt) {
                 options: {
                     pretty: true
                 },
-                files: {
-                    "index.html": ["src/jade/index.jade"],
-                    "slides/helloWorld.html": ["src/jade/slides/helloWorld.jade"],
-                    "slides/structuredProgramming.html": ["src/jade/slides/structuredProgramming.jade"],
-                    "slides/class_object.html": ["src/jade/slides/class_object.jade"],
-                    "slides/inheritance.html": ["src/jade/slides/inheritance.jade"]
-                }
+                files: [
+                    {
+                        "index.html": [
+                            "src/jade/index.jade"]
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/jade/slides',
+                        src: ['*.jade'],
+                        dest: 'slides',
+                        ext: '.html'
+                    }
+                ]
             }
         },
         imagemin: {                          // Task
             dynamic: {                         // Another target
-                files: [{
-                    expand: true,                  // Enable dynamic expansion
-                    cwd: 'src/img',                   // Src matches are relative to this path
-                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'slides/img'                  // Destination path prefix
-                }]
+                files: [
+                    {
+                        expand: true,                  // Enable dynamic expansion
+                        cwd: 'src/img',                   // Src matches are relative to this path
+                        src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                        dest: 'slides/img'                  // Destination path prefix
+                    }
+                ]
             }
         },
         watch: {
@@ -48,7 +56,7 @@ module.exports = function(grunt) {
             },
             jade: {
                 files: ["src/jade/**/*.jade"],
-                tasks: ["jade:compile"]
+                tasks: [ "jade:compile"]
             },
             imagemin: {
                 files: ["src/img/**/*.{png,jpg,gif}"],

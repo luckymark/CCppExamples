@@ -1,9 +1,4 @@
-//
-   User: luckystar
-   Date: 13-10-3
-   Time: 下午4:48
-
-extends base
+extends base/base
 
 block title
     title inheritance
@@ -13,6 +8,186 @@ block slides
         h3 inheritance
         br
         h3 继承
+        br
+        h3 is-a
+
+    section
+        h3 Clock & AlarmClock
+        pre.
+            class Clock{
+            public:
+                void setTime(int h,int m);
+                void dispTime();
+            };
+            class AlarmClock:public Clock{
+            public:
+                void setAlarm(int h,int m);
+                bool checkAlarm();
+                void stopAlarm();
+                void clearAlarm();
+            };
+
+    section
+        h3 【练习8-1】 储蓄账户
+
+    section
+        section
+            h3 某图形系统，包含多种图形类Circle、Rect、Line、Point等
+            br
+            h3 能否统一管理？
+        section
+            h3 Shape & Circle
+            pre.
+                class Shape{};
+
+                class Circle:public Shape{
+                public:
+                    Circle(Point center,float r);
+                    float area(){
+                        return Pie * r * r;
+                    }
+                private:
+                };
+
+        section
+            h3 Shapes
+            pre.
+                class Shape{
+                public:
+                    Shape(char type):type(type){};
+                    char getType(){return type;};
+                private:
+                    char type;
+                };
+
+                class Circle:public Shape{
+                public:
+                    Circle(Point center,float r):center(center),r(r),Shape(0);//0表示Circle
+                    float area(){
+                        return Pie * r * r;
+                    }
+                };
+        section
+            h3 Shapes 优化
+            pre.
+                class Shape{
+                public:
+                    virtual void show(){};  //虚函数
+                    virtual float area(){return 0.0};
+                };
+
+                class Circle:public Shape{
+                public:
+                    Circle(Point center,float r):center(center),r(r){};
+                    virtual void show(){...}
+                    float area(){
+                        return Pie * r * r;
+                    }
+                };
+        section
+            h3 Shapes 优化
+            pre.
+                int  main(){
+                    Shape * shapes[100];
+                    shapes[0]=new Circle(0,0,10);
+                    shapes[1]=new Rect(1,1,10,5);
+                    ...
+                    float totalArea = 0;
+                    for(int i=0;i<100;i++){
+                        totalArea += shapes[i]->area();
+                    }
+                    cout&lt&lttotalArea;
+
+                    return 0;
+                }
+
+        section
+            h3 Shapes 优化
+            pre.
+                class Shape{  //抽象类
+                public:
+                    virtual void show() = 0; //纯虚函数
+                    virtual float area() = 0;
+                };
+        section
+            h3 Open-Close（开闭原则）
+            br
+            h3 对修改关闭
+            br
+            h3 对扩展开放
+    section
+        h3 【例】电路开关
+        pre.
+            int main(){
+                Button button;
+                Fan fan;
+                Door door;
+
+                button.bind(fan);
+                button.on(); //风扇开始转动
+                button.off(); //风扇停止转动
+                ...
+                button.bind(door);
+                button.on(); //开门
+                button.off(); //关门
+            }
+    section
+        h3 【例】电路开关
+        pre.
+            class Button{
+            public:
+                void bind(Switchable target);
+                void on();
+                void off();
+            };
+            class SwitchAble{
+            public:
+                virtual void on() = 0;
+                virtual void off() = 0;
+            };
+    section
+        pre.
+            class Fan:public SwitchAble{
+            public:
+                virtual void on(){
+                    cout<<"风扇转动";
+                }
+                virtual void off(){
+                    cout<<"风扇停止转动";
+                }
+            };
+
+            class Door:public SwitchAble{
+            public:
+                virtual void on(){
+                    cout<<"开门";
+                }
+                virtual void off(){
+                    cout<<"关门";
+                }
+            };
+    section
+        h3 Abstract Server
+        br
+        h3 抽象工厂模式
+        img(src="img/abstract_server.png", width="600", height="400")
+    section
+        h3 Abstract Server应用示例
+        br
+        img(src="img/switchable.png", width="600", height="400")
+
+    section
+        h1 Virtual
+        br
+        .fragment
+            pre 虚的, 实质的,  事实上的
+        .fragment
+            pre almost;
+        .fragment
+            pre.
+                something is so nearly
+                    that any difference is not important;
+
 
 
 

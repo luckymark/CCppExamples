@@ -1,0 +1,78 @@
+extends base/base
+
+block title
+    title Operator Overload
+
+block slides
+
+    section
+        section
+            h3 Operator Overload（运算符重载）
+            pre.
+                class Complex{
+                public:
+                    Complex(double r,double i):real(r),imag(i){}
+                    Complex operator+ (Complex c2);
+                private:
+                    double real,imag;
+                };
+        section
+            pre.
+                Complex Complex::operator+(Complex c2){
+
+                    double r = c2.real + this->real;
+                    double i = c2.imag + this->imag;
+
+                    return Complex(r, i);
+                }
+        section
+            h3 如何区分 前置 及 后置 单目运算符
+            pre.
+                class Clock{
+                public:
+                    Clock operator++();      //前置++
+                    Clock operator++(int);   //后置++
+                    ...
+                };
+        section
+            h3 前置++的实现
+            pre.
+                Clock Clock::operator++ (){
+                    s++;
+                    if(s >= 60){
+                        s = s-60;
+                        m++;
+                        if(m >= 60) {
+                            m = m-60;
+                            h++;
+                            h = h%24;
+                        }
+                    }
+                    return  *this;
+                }
+        section
+            h3 后置++的实现 //有问题？？？
+            pre.
+                Clock Clock::operator++(int) {
+                    s++;
+                    if(s >= 60){
+                        s = s-60;
+                        m++;
+                        if(m >= 60) {
+                            m = m-60;
+                            h++;
+                            h = h%24;
+                        }
+                    }
+                    return  *this;
+                }
+        section
+            h3 重载 [] 运算符，使得：
+            pre.
+                SafeArray a(100);
+
+                a.set(50,1000); ==> a[50] = 1000;
+
+                int x = a.get(50); ==> int x = a[50];
+
+

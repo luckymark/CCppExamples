@@ -1,0 +1,84 @@
+extends base/base
+
+block title
+    title exception
+
+block slides
+
+    section
+        h3 exception(异常)
+        pre.
+            int div ( int x , int y ){
+                return x / y ;
+            }
+        pre.fragment.
+            int z = div( 1,0 );
+        pre.fragment.
+            int n;
+            cin >> n ;
+            cout << div( 100, n ) << endl;
+
+    section
+        h3 try-catch 语句
+        pre.
+            int div ( int x , int y ){
+                try{
+                    return x / y ;
+                }catch( DivideByZeroException e){
+                    cout << e.description << endl ;
+                }
+            }
+
+    section
+        h3 throw （抛出）语句
+        pre.
+            int div ( int x , int y ){
+                try{
+                    return x / y ;
+                }catch( DivideByZeroException e){
+                    cout << e.description << endl ;
+                    throw e;
+                }
+            }
+        pre.fragment.
+            int n;
+            cin >> n ;
+            try{
+                cout << div( 100, n ) << endl;
+            }catch( DivideByZeroException e){
+                cout << "零不能做除数!" << endl ;
+            }
+
+    section
+        h3 可throw任何类型（例如：int）
+        pre.
+            int div ( int x , int y ){
+                try{
+                    return x / y ;
+                }catch( DivideByZeroException e){
+                    cout << e.description << endl ;
+
+                    throw 0;
+                }
+            }
+        pre.
+            int n;
+            cin >> n ;
+            try{
+                cout << div( 100, n ) << endl;
+            }catch( int e ){
+                cout << "零不能做除数!" << endl ;
+            }
+
+    section
+        h3 声明函数可throw的类型
+        pre.
+            int div ( int x , int y ) throw (int) {
+                try{
+                    return x / y ;
+                }catch( DivideByZeroException e){
+                    cout << e.description << endl ;
+
+                    throw 0;
+                }
+            }

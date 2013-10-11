@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>Operator Overload</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h3>Operator Overload（运算符重载）</h3>
+            <pre>class Complex{
+public:
+    Complex(double r,double i):real(r),imag(i){}
+    Complex operator+ (Complex c2);
+private:
+    double real,imag;
+};</pre>
+          </section>
+          <section>
+            <pre>Complex Complex::operator+(Complex c2){
+
+    double r = c2.real + this->real;
+    double i = c2.imag + this->imag;
+    
+    return Complex(r, i);
+}</pre>
+          </section>
+          <section>
+            <h3>如何区分 前置 及 后置 单目运算符</h3>
+            <pre>class Clock{
+public:
+    Clock operator++();      //前置++
+    Clock operator++(int);   //后置++
+    ...
+};</pre>
+          </section>
+          <section>
+            <h3>前置++的实现</h3>
+            <pre>Clock Clock::operator++ (){
+    s++;
+    if(s >= 60){
+        s = s-60;
+        m++;
+        if(m >= 60) {
+            m = m-60;
+            h++;
+            h = h%24;
+        }
+    }
+    return  *this;
+}</pre>
+          </section>
+          <section>
+            <h3>后置++的实现 //有问题？？？</h3>
+            <pre>Clock Clock::operator++(int) {
+    s++;
+    if(s >= 60){
+        s = s-60;
+        m++;
+        if(m >= 60) {
+            m = m-60;
+            h++;
+            h = h%24;
+        }
+    }
+    return  *this;
+}</pre>
+          </section>
+          <section>
+            <h3>重载 [] 运算符，使得：</h3>
+            <pre>SafeArray a(100);
+
+a.set(50,1000); ==> a[50] = 1000;
+
+int x = a.get(50); ==> int x = a[50];
+
+</pre>
+          </section>
+        </section>
+      </div>
+      <div id="clock"></div><a href="../index.html">目录</a>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>

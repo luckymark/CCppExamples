@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>composite</title>
+  <meta name="author" content="俸志刚">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <link rel="stylesheet" href="css/reveal_bigFont.css">
+  <link id="theme" rel="stylesheet" href="css/theme/simple.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>composite</h3><br>
+          <h3>组合（复合）</h3><br>
+          <h3>has-a</h3>
+        </section>
+        <section>
+          <section>
+            <h3> 组合类</h3>
+            <pre>class Line{
+public:
+    Line(Point p1,Ponit p2):p1(p1),p2(p2){};
+    Line(int x1,int y1,int x2,int y2):p1(x1,y1),p2(x2,y2){};
+private:
+    Point p1,p2;
+};
+class Point{
+public:
+    Point(){};
+    Ponit(int x,int y):x(x),y(y){};
+private:
+    int x = 0,y = 0;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack + Node</h3>
+            <pre>class Stack{
+public:
+    void push(int item);
+    int pop();
+    bool isEmpty();
+private:
+    Node head;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack+Node</h3>
+            <pre>void Stack::push(int item){
+    Node * node = new Node(item);
+    node->next = head.next;
+    head.next = node;
+}
+int pop(){
+    Node *first = head.next;
+    int value =first->value;
+    head.next = first->next;
+    delete first;
+    return value;
+}
+bool isEmpty(){
+    return head.next == null;
+}</pre>
+          </section>
+          <section>
+            <h3>Stack+Node</h3>
+            <pre>class Node{
+public:
+    Node(int value = 0):value(value){};
+    int value;
+    Node * next = null;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack+Node</h3>
+            <pre>struct Node{
+    Node(int value=0):value(value){};
+    int value;
+    Node * next = null;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack+Stack</h3>
+            <pre>class Stack{
+public:
+    void push(int item);
+    int pop();
+    bool isEmpty();
+private:
+    int data[100];
+    int count = 0;
+    Stack *next;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack+Stack</h3>
+            <pre>void Stack::push(int item){
+    if (count<100){
+        data[count]=item;
+    }else{
+        if(count == 100){
+            next = new Stack();
+        }
+        next->push(item);
+    }
+    count++;
+}</pre>
+          </section>
+          <section>
+            <h3>Stack+Stack</h3>
+            <pre>int pop(){
+    int value;
+    count--;
+    if (count<100){
+        value = data[count];
+    }else{
+        item = next->pop();
+        if(count == 100){
+            delete next;
+        }
+    }
+    return value;
+}
+bool isEmpty(){
+    return 0 == count;
+}
+</pre>
+          </section>
+          <section>
+            <h3>Stack+Vector(stl)</h3>
+            <pre>class Stack{
+public:
+    void push(int item);
+    int pop();
+    bool isEmpty();
+private:
+    Vector<int> data;
+};</pre>
+          </section>
+          <section>
+            <h3>Stack+Vector</h3>
+            <pre>void Stack::push(int item){
+    data.push_back(item);
+}
+
+int Stack::pop(){
+    int value = data.back();
+    data.pop_back();
+    return value;
+}
+bool Stack::isEmpty(){
+    return data.empty();
+}
+</pre>
+          </section>
+        </section>
+        <section>
+          <h3>private 继承实现 组合</h3>
+          <pre>class Stack:private Vector&ltint&gt{
+public:
+    void push(int item);
+    int pop();
+    bool isEmpty();
+};
+</pre>
+        </section>
+        <section>
+          <h3>Stack</h3>
+          <pre>void Stack::push(int item){
+    push_back(item);
+}
+
+int Stack::pop(){
+    int value = back();
+    pop_back();
+    return value;
+}
+bool Stack::isEmpty(){
+    return empty();
+}
+
+
+</pre>
+        </section>
+      </div>
+      <div id="clock"></div><a href="../index.html">目录</a>
+    </div>
+    <script src="js/reveal.min.js"></script>
+    <script src="../lib/jquery-1.10.2.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          loop: true,
+          mouseWheel: true,
+          //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
+          });
+    </script>
+    <script>
+      $(function(){
+          function showTime(){
+              var now = new Date()
+              clock.html( now.getHours()+':'+now.getMinutes() )
+          }
+          
+          var clock = $('#clock')
+          showTime()
+          setInterval( showTime,1000*60 )
+          
+      })
+    </script>
+  </body>
+</head>
