@@ -2,7 +2,7 @@
 <html lang="en"></html>
 <head>
   <meta charset="utf-8">
-  <title>Operator Overload</title>
+  <title>homework</title>
   <meta name="author" content="俸志刚">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -13,73 +13,47 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h3>Operator Overload（运算符重载）</h3>
-          <pre>class Complex{
-public:
-    Complex(double r,double i):real(r),imag(i){}
-    Complex operator+ (Complex c2);
-private:
-    double real,imag;
-};</pre>
+        <section id="homework1_1">
+          <h2>【作业1-1】</h2><br>
+          <ol>
+            <li>安装: vs2012 + github</li><br>
+            <li>注册github账号，发邮件到 luckyzhigang@gmail.com</li><br>
+            <li>编写HelloWorld（输出 Hello World！I'm XXX）</li><br>
+            <li>提交到github</li>
+          </ol>
         </section>
-        <section>
-          <pre>Complex Complex::operator+(Complex c2){
-
-    double r = c2.real + this->real;
-    double i = c2.imag + this->imag;
-    
-    return Complex(r, i);
-}</pre>
+        <section id="homework2_1">
+          <h3>【作业2-1】</h3><br>
+          <ol>
+            <li>
+              <p>chap3 : 1(9),1(10)</p>
+            </li><br>
+            <li>
+              <p>chap3 : 3(2),3(5),3(11)</p>
+              <p>需调试通过，并提交到github</p>
+            </li>
+          </ol>
         </section>
-        <section>
-          <h3>如何区分 前置 及 后置 单目运算符</h3>
-          <pre>class Clock{
-public:
-    Clock operator++();      //前置++
-    Clock operator++(int);   //后置++
-    ...
-};</pre>
+        <section id="homework2_2">
+          <h3>【作业2-2】</h3><br>
+          <p>chap4（ P95 ）：</p><br>
+          <p>5（1），5（5），5（7）</p>
+          <p>需调试通过，并提交到github</p>
         </section>
-        <section>
-          <h3>前置++的实现</h3>
-          <pre>Clock Clock::operator++ (){
-    s++;
-    if(s >= 60){
-        s = s-60;
-        m++;
-        if(m >= 60) {
-            m = m-60;
-            h++;
-            h = h%24;
-        }
-    }
-    return  *this;
-}</pre>
+        <section id="homework2_3">
+          <h3>【作业2-3】C++考试成绩管理</h3><br>
+          <pre>基本功能：
+    1）查看学生名单（含所有信息）
+    2）选课（添加学生）
+    3）退选（删除学生）
+    4）录入成绩（从特定学号开始，每录入完一人，询问是否继续）
+    5）退出程序</pre>
+          <pre class="fragment">选做：支持录入多门课程
+</pre>
         </section>
-        <section>
-          <h3>后置++的实现 //有问题？？？</h3>
-          <pre>Clock Clock::operator++(int) {
-    s++;
-    if(s >= 60){
-        s = s-60;
-        m++;
-        if(m >= 60) {
-            m = m-60;
-            h++;
-            h = h%24;
-        }
-    }
-    return  *this;
-}</pre>
-        </section>
-        <section>
-          <h3>重载 [] 运算符，使得：</h3>
-          <pre>SafeArray a(100);
-
-a.set(50,1000); ==> a[50] = 1000;
-
-int x = a.get(50); ==> int x = a[50];
+        <section id="homework3_1">
+          <h3>【作业3-1】</h3>
+          <pre>P238:   7（7）
 </pre>
         </section>
         <section>

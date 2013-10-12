@@ -14,8 +14,8 @@ block slides
             h3 Encapsulation
             br
             h3 (封装)
-        section
-            h3 【例1】Queue(队列)
+        section#example3_1
+            h3 【例3-1】Queue(队列)
             br
             ul
                 li.fragment append(入队)
@@ -76,8 +76,8 @@ block slides
                 bool Queue::isFull(){
                     return ((head+1)%100 == tail);
                 };
-        section
-            h3 【课堂练习7-1】Stack类
+        section#practice3_1
+            h3 【课堂练习3-1】Stack类
             br
             ul
                 li LIFO(后进先出,FILO)
@@ -96,8 +96,8 @@ block slides
             h3 constructor/deconstuctor
             br
             h3 (构造/析构)
-        section
-            h3 改进Stack类
+        section#example3_2_1
+            h3 【例3-2-1】改进Stack类
             br
             h3 初始化的时候确定最大容量
             pre.
@@ -160,7 +160,10 @@ block slides
                 ???
             pre.fragment.
                 内存泄漏！！！
-        section
+        section#example3_2_2
+            h3 【例3-2-2】改进Stack类
+            br
+            h3 析构的时候回收内存
             pre.
                 class Stack{
                     public:
@@ -172,8 +175,8 @@ block slides
                         }
                     }
 
-        section
-            h3 【课堂练习7-2】安全数组
+        section#practice3_2
+            h3 【课堂练习3-2】安全数组
             br
             ul
                 li 数组下标越界时，报错！
@@ -265,8 +268,8 @@ block slides
                     int x , y ;
                 };
 
-        section
-            h3 应用this指针
+        section#example3_3
+            h3 【例3-3】应用this指针
             pre.
                 Queue q1（“青年组”），q2（“中老年组”）；
                 Person p1("张三",20),p2("李四",50);
@@ -326,8 +329,8 @@ block slides
                 }
 
     section
-        section
-            h3 【练习7-4】改进Stack
+        section#practice3_3
+            h3 【课堂练习3-3】改进Stack
             h3 利用链表 实现 自动扩容
 
         section
@@ -382,12 +385,7 @@ block slides
 
                 s2 = s1; //赋值运算，不调用拷贝构造函数
 
-    section
-        h3 UML(Unified Modeling Language)
-        h3 (统一建模语言)
-        img(src="img/uml.png",width="700",height="400")
+    include homework/3_1
 
-    section#homework3_1
-        h3 【作业3-1】
-        pre.
-           P238:   7（7）
+    section
+        h1 The End

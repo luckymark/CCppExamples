@@ -454,11 +454,12 @@ while（1）{
     for ( i=2; i < n, n%i !=0;i++ ) ;
     
     cout << n << i >= n ? “是”:“不是” << "素数";
-}</pre>
+}
+</pre>
           </section>
         </section>
-        <section>
-          <h3>【作业3-1】</h3><br>
+        <section id="homework2_1">
+          <h3>【作业2-1】</h3><br>
           <ol>
             <li>
               <p>chap3 : 1(9),1(10)</p>
@@ -528,8 +529,8 @@ void main()
     cout << fac( 3 );
 }</pre>
           </section>
-          <section>
-            <h3>【练习-1】p79 汉诺塔</h3><img src="img/Hanoi.jpeg" width="400" height="400">
+          <section id="practice2_1">
+            <h3>【课堂练习2-1】p79 汉诺塔</h3><img src="img/Hanoi.jpeg" width="400" height="400">
           </section>
           <section>
             <h3>函数调用及传参的原理</h3>
@@ -694,12 +695,12 @@ n = max ( 1 , 2 , 3 ) ;
 f = max ( 1.0 , 2.0 ) ;
 </pre>
           </section>
-          <section>
-            <h3>【作业4-1】</h3><br>
-            <p>chap4（ P95 ）：</p><br>
-            <p>5（1），5（5），5（7）</p>
-            <p>需调试通过，并提交到github</p>
-          </section>
+        </section>
+        <section id="homework2_2">
+          <h3>【作业2-2】</h3><br>
+          <p>chap4（ P95 ）：</p><br>
+          <p>5（1），5（5），5（7）</p>
+          <p>需调试通过，并提交到github</p>
         </section>
         <section>
           <h3>作用域 & 生命期</h3><br>
@@ -729,8 +730,8 @@ f = max ( 1.0 , 2.0 ) ;
           </ul>
         </section>
         <section>
-          <section>
-            <h3>【练习-2】电脑入库及销售</h3><br>
+          <section id="practice2_2">
+            <h3>【课堂练习2-2】电脑入库及销售</h3><br>
             <pre>1）查看库存
 2）电脑入库
 3）卖出
@@ -887,17 +888,17 @@ struct Computer{
     cin&gt&gtcomputer.total;
 }</pre>
           </section>
-          <section>
-            <h3>【作业1】C++考试成绩管理</h3><br>
-            <pre>基本功能：
+        </section>
+        <section id="homework2_3">
+          <h3>【作业2-3】C++考试成绩管理</h3><br>
+          <pre>基本功能：
     1）查看学生名单（含所有信息）
     2）选课（添加学生）
     3）退选（删除学生）
     4）录入成绩（从特定学号开始，每录入完一人，询问是否继续）
     5）退出程序</pre>
-            <pre class="fragment">选做：支持录入多门课程
+          <pre class="fragment">选做：支持录入多门课程
 </pre>
-          </section>
         </section>
         <section>
           <h1>The End</h1>
@@ -915,7 +916,7 @@ struct Computer{
           progress: true,
           history: true,
           center: true,
-          loop: true,
+          loop: false,
           mouseWheel: true,
           //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: 'default' // default/cube/page/concave/zoom/linear/fade/none

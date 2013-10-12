@@ -18,8 +18,8 @@
           <h3>继承</h3><br>
           <h3>is-a</h3>
         </section>
-        <section>
-          <h3>Clock & AlarmClock</h3>
+        <section id="example3_4">
+          <h3>【例3-4】Clock & AlarmClock</h3>
           <pre>class Clock{
 public:
     void setTime(int h,int m);
@@ -34,12 +34,12 @@ public:
 };
 </pre>
         </section>
-        <section>
-          <h3>【练习8-1】 储蓄账户</h3>
+        <section id="practice3_4">
+          <h3>【课堂练习3-4】 储蓄账户</h3>
         </section>
-        <section>
+        <section id="example3_5">
           <section>
-            <h3>某图形系统，包含多种图形类Circle、Rect、Line、Point等</h3><br>
+            <h3>【例3-5】某图形系统，包含多种图形类Circle、Rect、Line、Point等</h3><br>
             <h3>能否统一管理？</h3>
           </section>
           <section>
@@ -122,9 +122,10 @@ public:
             <h3>对扩展开放</h3>
           </section>
         </section>
-        <section>
-          <h3>【例】电路开关</h3>
-          <pre>int main(){
+        <section id="example3_6">
+          <section>
+            <h3>【例3-6】电路开关</h3>
+            <pre>int main(){
     Button button;
     Fan fan;
     Door door;
@@ -137,10 +138,10 @@ public:
     button.on(); //开门
     button.off(); //关门
 }</pre>
-        </section>
-        <section>
-          <h3>【例】电路开关</h3>
-          <pre>class Button{
+          </section>
+          <section>
+            <h3>电路开关</h3>
+            <pre>class Button{
 public:
     void bind(Switchable target);
     void on();
@@ -151,9 +152,9 @@ public:
     virtual void on() = 0;
     virtual void off() = 0;
 };</pre>
-        </section>
-        <section>
-          <pre>class Fan:public SwitchAble{
+          </section>
+          <section>
+            <pre>class Fan:public SwitchAble{
 public:
     virtual void on(){
         cout<<"风扇转动";
@@ -172,13 +173,16 @@ public:
         cout<<"关门";
     }
 };</pre>
+          </section>
         </section>
         <section>
-          <h3>Abstract Server</h3><br>
-          <h3>抽象工厂模式</h3><img src="img/abstract_server.png" width="600" height="400">
-        </section>
-        <section>
-          <h3>Abstract Server应用示例</h3><br><img src="img/switchable.png" width="600" height="400">
+          <section>
+            <h3>Abstract Server</h3><br>
+            <h3>抽象工厂模式</h3><img src="img/abstract_server.png" width="600" height="400">
+          </section>
+          <section>
+            <h3>Abstract Server应用示例</h3><br><img src="img/switchable.png" width="600" height="400">
+          </section>
         </section>
         <section>
           <h1>Virtual</h1><br>
@@ -191,13 +195,11 @@ public:
           <div class="fragment">
             <pre>something is so nearly
     that any difference is not important;
-    
-    
-    
-    
-    
     </pre>
           </div>
+        </section>
+        <section>
+          <h1>The End</h1>
         </section>
       </div>
       <div id="clock"></div><a href="../index.html">目录</a>
@@ -212,7 +214,7 @@ public:
           progress: true,
           history: true,
           center: true,
-          loop: true,
+          loop: false,
           mouseWheel: true,
           //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: 'default' // default/cube/page/concave/zoom/linear/fade/none

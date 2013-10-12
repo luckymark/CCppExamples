@@ -19,8 +19,8 @@
           <h3>has-a</h3>
         </section>
         <section>
-          <section>
-            <h3> 组合类</h3>
+          <section id="example3_7">
+            <h3> 【例3-7】Line & Point</h3>
             <pre>class Line{
 public:
     Line(Point p1,Ponit p2):p1(p1),p2(p2){};
@@ -36,8 +36,10 @@ private:
     int x = 0,y = 0;
 };</pre>
           </section>
-          <section>
-            <h3>Stack + Node</h3>
+        </section>
+        <section>
+          <section id="example3_8">
+            <h3>【例3-8】Stack + Node</h3>
             <pre>class Stack{
 public:
     void push(int item);
@@ -82,8 +84,10 @@ public:
     Node * next = null;
 };</pre>
           </section>
-          <section>
-            <h3>Stack+Stack</h3>
+        </section>
+        <section>
+          <section id="example3_9">
+            <h3>【例3-9】Stack+Stack</h3>
             <pre>class Stack{
 public:
     void push(int item);
@@ -126,11 +130,12 @@ private:
 }
 bool isEmpty(){
     return 0 == count;
-}
-</pre>
+}</pre>
           </section>
-          <section>
-            <h3>Stack+Vector(stl)</h3>
+        </section>
+        <section>
+          <section id="example3_10_1">
+            <h3>【例3-10-1】Stack+Vector(stl)</h3>
             <pre>class Stack{
 public:
     void push(int item);
@@ -156,10 +161,8 @@ bool Stack::isEmpty(){
 }
 </pre>
           </section>
-        </section>
-        <section>
-          <section>
-            <h3>private继承 实现组合</h3>
+          <section id="example3_10_2">
+            <h3>【例3-10-2】private继承 实现组合</h3>
             <pre>class Stack:private Vector&ltint&gt{
 public:
     void push(int item);
@@ -181,11 +184,21 @@ int Stack::pop(){
 }
 bool Stack::isEmpty(){
     return empty();
-}
-
-
-</pre>
+}</pre>
           </section>
+        </section>
+        <section>
+          <section>
+            <h3>UML(Unified Modeling Language)</h3>
+            <h3>(统一建模语言)</h3><img src="img/uml_class.png" width="700" height="400">
+          </section>
+          <section>
+            <h3>UML(Unified Modeling Language)</h3>
+            <h3>(统一建模语言)</h3><img src="img/uml_relationship.png" width="700" height="400">
+          </section>
+        </section>
+        <section>
+          <h1>The End</h1>
         </section>
       </div>
       <div id="clock"></div><a href="../index.html">目录</a>
@@ -200,7 +213,7 @@ bool Stack::isEmpty(){
           progress: true,
           history: true,
           center: true,
-          loop: true,
+          loop: false,
           mouseWheel: true,
           //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: 'default' // default/cube/page/concave/zoom/linear/fade/none

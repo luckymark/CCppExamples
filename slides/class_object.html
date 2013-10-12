@@ -22,8 +22,8 @@
             <h3>Encapsulation</h3><br>
             <h3>(封装)</h3>
           </section>
-          <section>
-            <h3>【例1】Queue(队列)</h3><br>
+          <section id="example3_1">
+            <h3>【例3-1】Queue(队列)</h3><br>
             <ul>
               <li class="fragment">append(入队)</li>
               <li class="fragment">pop(出队)</li><br>
@@ -83,8 +83,8 @@ bool Queue::isFull(){
     return ((head+1)%100 == tail);
 };</pre>
           </section>
-          <section>
-            <h3>【课堂练习7-1】Stack类</h3><br>
+          <section id="practice3_1">
+            <h3>【课堂练习3-1】Stack类</h3><br>
             <ul>
               <li>LIFO(后进先出,FILO)</li><br>
               <li>可容纳100个元素(int型)</li><br>
@@ -100,8 +100,8 @@ bool Queue::isFull(){
             <h3>constructor/deconstuctor</h3><br>
             <h3>(构造/析构)</h3>
           </section>
-          <section>
-            <h3>改进Stack类</h3><br>
+          <section id="example3_2_1">
+            <h3>【例3-2-1】改进Stack类</h3><br>
             <h3>初始化的时候确定最大容量</h3>
             <pre>Stack stack(10000);
 ...</pre>
@@ -159,7 +159,9 @@ Stack s=100;</pre>
 ???</pre>
             <pre class="fragment">内存泄漏！！！</pre>
           </section>
-          <section>
+          <section id="example3_2_2">
+            <h3>【例3-2-2】改进Stack类</h3><br>
+            <h3>析构的时候回收内存</h3>
             <pre>class Stack{
     public:
         Stack(int capbility){
@@ -171,8 +173,8 @@ Stack s=100;</pre>
     }
     </pre>
           </section>
-          <section>
-            <h3>【课堂练习7-2】安全数组</h3><br>
+          <section id="practice3_2">
+            <h3>【课堂练习3-2】安全数组</h3><br>
             <ul>
               <li>数组下标越界时，报错！</li>
             </ul>
@@ -267,8 +269,8 @@ private:
 };
 </pre>
           </section>
-          <section>
-            <h3>应用this指针</h3>
+          <section id="example3_3">
+            <h3>【例3-3】应用this指针</h3>
             <pre>Queue q1（“青年组”），q2（“中老年组”）；
 Person p1("张三",20),p2("李四",50);
 p1.groupTo(&q1);
@@ -329,8 +331,8 @@ q1->append(&p1)->append(&p2);
           </section>
         </section>
         <section>
-          <section>
-            <h3>【练习7-4】改进Stack</h3>
+          <section id="practice3_3">
+            <h3>【课堂练习3-3】改进Stack</h3>
             <h3>利用链表 实现 自动扩容</h3>
           </section>
           <section>
@@ -386,13 +388,13 @@ s2 = s1; //赋值运算，不调用拷贝构造函数
 </pre>
           </section>
         </section>
-        <section>
-          <h3>UML(Unified Modeling Language)</h3>
-          <h3>(统一建模语言)</h3><img src="img/uml.png" width="700" height="400">
-        </section>
         <section id="homework3_1">
           <h3>【作业3-1】</h3>
-          <pre>P238:   7（7）</pre>
+          <pre>P238:   7（7）
+</pre>
+        </section>
+        <section>
+          <h1>The End</h1>
         </section>
       </div>
       <div id="clock"></div><a href="../index.html">目录</a>
@@ -407,7 +409,7 @@ s2 = s1; //赋值运算，不调用拷贝构造函数
           progress: true,
           history: true,
           center: true,
-          loop: true,
+          loop: false,
           mouseWheel: true,
           //theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: 'default' // default/cube/page/concave/zoom/linear/fade/none
