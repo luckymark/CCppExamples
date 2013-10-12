@@ -17,7 +17,7 @@ block slides
             pre.
                 class Line{
                 public:
-                    Line(Point p1,Ponit p2):p1(p1),p2(p2){};
+                    Line(Point p1,Point p2):p1(p1),p2(p2){};
                     Line(int x1,int y1,int x2,int y2):p1(x1,y1),p2(x2,y2){};
                 private:
                     Point p1,p2;
@@ -25,7 +25,7 @@ block slides
                 class Point{
                 public:
                     Point(){};
-                    Ponit(int x,int y):x(x),y(y){};
+                    Point(int x,int y):x(x),y(y){};
                 private:
                     int x = 0,y = 0;
                 };
