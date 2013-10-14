@@ -113,6 +113,16 @@ public:
 </pre>
           </section>
           <section>
+            <h3>虚函数多态的条件</h3><br>
+            <ol>
+              <li>public 继承</li><br>
+              <li>基类中定义virtual函数</li><br>
+              <li>子类override（覆写）该函数（函数原型与基类完全相同）</li><br>
+              <li>通过基类指针（或引用）指向子类对象实例</li><br>
+              <li>通过基类指针（或引用）调用虚函数</li>
+            </ol>
+          </section>
+          <section>
             <h3>Shapes 优化</h3>
             <pre>class Shape{  //抽象类
 public:
