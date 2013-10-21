@@ -5,13 +5,19 @@ using namespace std;
 
 WareHouse wareHouse;
 
+WareHouse::~WareHouse(){
+    for(auto &computer : computers){
+        delete computer;
+    }
+}
+
 void WareHouse::list()
 {
     cout<<"-------库存-------"<<endl;
     cout<<"型号\t"<<"数量"<<endl;
     
-    for(int i=0; i<this->computers.size(); i++)
-    {
+    //传统的for循环
+    for(int i=0; i<this->computers.size(); i++){
         cout<<this->computers[i]->getModel()<<"\t"<<this->computers[i]->getTotal()<<endl;
     }
     cout<<"-------库存-------"<<endl;
@@ -43,9 +49,10 @@ void WareHouse::out(){
 }
 
 Computer* WareHouse::find(Computer* computer){
-	for(int i=0;i<computers.size();i++){
-		if(computers[i]->getModel() == computer->getModel()){
-			return computers[i];
+    //C++11 中新引入的基于范围的for循环，更简介！
+	for(auto &item : computers){
+		if(item->equal(computer)){
+			return item;
 		}
 	}
 	return NULL;

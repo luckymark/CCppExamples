@@ -4,10 +4,10 @@
 #include <string>
 using namespace std;
 
-class MenuItem
-{
+class MenuItem{
 public:
     MenuItem(string c):caption(c){}
+    virtual ~MenuItem(){}
     string getCaption(){
         return caption;
     }

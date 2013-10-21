@@ -8,8 +8,7 @@
 #include <iostream>
 using namespace std;
 
-ComputerSales::ComputerSales()
-{
+ComputerSales::ComputerSales(){
     menu.append(new ListWareHouse());
     menu.append(new EnterWareHouse());
     menu.append(new OutWareHouse());

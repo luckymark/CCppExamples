@@ -5,8 +5,7 @@
 
 #include "WareHouse.h"
 
-class EnterWareHouse:public MenuItem
-{
+class EnterWareHouse:public MenuItem{
 public:
     EnterWareHouse():MenuItem("电脑入库"){}
     virtual bool act(){

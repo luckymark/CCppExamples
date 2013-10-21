@@ -1,7 +1,6 @@
 #include "ComputerSales.h"
 
-int main()
-{
+int main(){
     ComputerSales cs;
     return cs.run();
 }

@@ -5,9 +5,9 @@
 
 #include "MenuItem.h"
 
-class Menu
-{
+class Menu{
 public:
+    virtual ~Menu();
     void append(MenuItem* mi);
     int run();
 private:

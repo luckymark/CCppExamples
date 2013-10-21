@@ -5,8 +5,7 @@
 
 #include "WareHouse.h"
 
-class ListWareHouse:public MenuItem
-{
+class ListWareHouse:public MenuItem{
 public:
     ListWareHouse():MenuItem("查看库存"){}
     bool act(){

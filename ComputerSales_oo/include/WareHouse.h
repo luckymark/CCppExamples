@@ -6,9 +6,9 @@ using namespace std;
 
 #include "Computer.h"
 
-class WareHouse
-{
+class WareHouse{
 public:
+    virtual ~WareHouse();
     void list();
     void in();
     void out();

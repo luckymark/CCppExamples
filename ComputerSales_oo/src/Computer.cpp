@@ -3,8 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void Computer::input()
-{
+void Computer::input(){
     cout<<"型号：";
     cin>>this->model;
     

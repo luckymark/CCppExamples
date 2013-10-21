@@ -7,21 +7,20 @@ using std::string;
 class Computer
 {
 public:
-    string getModel()
-    {
+    string getModel(){
         return this->model;
     }
-    int getTotal()
-    {
+    int getTotal(){
         return this->total;
     }
-    void add(int num)
-    {
+    void add(int num){
         this->total+=num;
     }
-    void sub(int num)
-    {
+    void sub(int num){
         this->total-=num;
+    }
+    bool equal(Computer* other){
+        return this->model == other->model;
     }
     void input();
     

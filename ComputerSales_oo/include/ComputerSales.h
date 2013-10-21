@@ -3,8 +3,7 @@
 
 #include "Menu.h"
 
-class ComputerSales
-{
+class ComputerSales{
 public:
     ComputerSales();
     int run();

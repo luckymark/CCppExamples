@@ -3,20 +3,22 @@
 #include <iostream>
 using namespace std;
 
-void Menu::append(MenuItem* mi)
-{
+Menu::~Menu(){
+    for(auto &item:items){
+        delete item;
+    }
+}
+
+void Menu::append(MenuItem* mi){
     this->items.push_back(mi);
 }
 
-int Menu::run()
-{
+int Menu::run(){
     int index;
-    while(1)
-    {
+    while(1){
         this->show();
         cin>>index;
-        if(!cin || index<1 || index>items.size())
-        {
+        if(!cin || index<1 || index>items.size()){
             cout << "错误的菜单项，请重新输入："<<endl;
             if(!cin){
                 cin.clear();
@@ -29,10 +31,9 @@ int Menu::run()
     return 0;
 }
 
-void Menu::show()
-{
-    for(int i=0; i<this->items.size(); i++)
-    {
-        cout<< i+1 <<")" <<this->items[i]->getCaption() <<endl;
+void Menu::show(){
+    int i=0;
+    for(auto &item:items){
+        cout<< ++i <<")" <<item->getCaption() <<endl;
     }
 }

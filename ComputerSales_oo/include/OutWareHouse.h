@@ -5,8 +5,7 @@
 
 #include "WareHouse.h"
 
-class OutWareHouse:public MenuItem
-{
+class OutWareHouse:public MenuItem{
 public:
     OutWareHouse():MenuItem("售出"){}
     bool act(){

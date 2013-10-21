@@ -6,12 +6,10 @@ using namespace std;
 
 #include "MenuItem.h"
 
-class Exit:public MenuItem
-{
+class Exit:public MenuItem{
 public:
     Exit():MenuItem("退出程序"){}
-    bool act()
-    {
+    bool act(){
         cout << "退出程序！" << endl;
         return true;
     }
