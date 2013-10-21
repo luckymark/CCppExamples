@@ -14,67 +14,85 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h3>Operator Overload（运算符重载）</h3>
-          <pre>class Complex{
+          <section>
+            <h3>【例4-1-1】Operator Overload（运算符重载）</h3>
+            <h3>重载为成员函数</h3>
+            <pre>class Complex{
 public:
     Complex(double r,double i):real(r),imag(i){}
-    Complex operator+ (Complex c2);
+    Complex operator+ (Complex& c2);
 private:
     double real,imag;
 };</pre>
-        </section>
-        <section>
-          <pre>Complex Complex::operator+(Complex c2){
+          </section>
+          <section>
+            <pre>Complex Complex::operator+(Complex& c2){
 
     double r = c2.real + this->real;
     double i = c2.imag + this->imag;
     
     return Complex(r, i);
 }</pre>
+          </section>
         </section>
         <section>
-          <h3>如何区分 前置 及 后置 单目运算符</h3>
-          <pre>class Clock{
+          <section>
+            <h3>【例4-1-2】重载为友元（普通函数）</h3>
+            <pre>class Complex{
+public:
+    Complex(double r,double i):real(r),imag(i){}
+    friend Complex operator+ (Complex& c1,Complex& c2);
+private:
+    double real,imag;
+};</pre>
+          </section>
+          <section>
+            <pre>Complex operator+(Complex& c1,Complex& c2){
+    double r = c1.real + c2.real;
+    double i = c1.imag + c2.imag;
+    
+    return Complex(r, i);
+}</pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>【例4-2】如何区分 前置 及 后置 单目运算符</h3>
+            <pre>class Clock{
 public:
     Clock operator++();      //前置++
     Clock operator++(int);   //后置++
     ...
 };</pre>
-        </section>
-        <section>
-          <h3>前置++的实现</h3>
-          <pre>Clock Clock::operator++ (){
+          </section>
+          <section>
+            <h3>前置++的实现</h3>
+            <pre>Clock& Clock::operator++ (){
     s++;
     if(s >= 60){
         s = s-60;
         m++;
         if(m >= 60) {
             m = m-60;
-            h++;
-            h = h%24;
+            h = (++h)%24;
         }
     }
     return  *this;
 }</pre>
-        </section>
-        <section>
-          <h3>后置++的实现 //有问题？？？</h3>
-          <pre>Clock Clock::operator++(int) {
-    s++;
-    if(s >= 60){
-        s = s-60;
-        m++;
-        if(m >= 60) {
-            m = m-60;
-            h++;
-            h = h%24;
-        }
-    }
-    return  *this;
+          </section>
+          <section>
+            <h3>后置++的实现</h3>
+            <pre>Clock Clock::operator++(int) {
+    Clock copy(*this);
+    
+    ++(*this);
+    
+    return  copy;
 }</pre>
+          </section>
         </section>
         <section>
-          <h3>重载 [] 运算符，使得：</h3>
+          <h3>【习4-1】重载 [] 运算符，使得：</h3>
           <pre>SafeArray a(100);
 
 a.set(50,1000); ==> a[50] = 1000;
