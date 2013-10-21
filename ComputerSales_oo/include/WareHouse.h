@@ -13,7 +13,6 @@ class WareHouse
         void list();
         void in();
         void out();
-    protected:
     private:
         vector<Computer *> computers;
 

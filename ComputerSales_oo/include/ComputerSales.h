@@ -10,8 +10,8 @@ class ComputerSales
     public:
         ComputerSales();
         void run();
-        WareHouse getWareHouse(){
-            return wareHouse;
+        WareHouse& getWareHouse(){
+            return this->wareHouse;
         }
     protected:
     private:
