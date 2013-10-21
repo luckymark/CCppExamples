@@ -21,9 +21,13 @@ void Menu::run()
     {
         this->show();
         cin>>index;
-        if(index<1 || index>4)
+        if(!cin || index<1 || index>4)
         {
             cout << "错误的菜单项，请重新输入："<<endl;
+            if(!cin){
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
             continue;
         }
         selected = items[index-1];
