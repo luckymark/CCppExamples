@@ -3,10 +3,7 @@
 #include <iostream>
 using namespace std;
 
-WareHouse::WareHouse()
-{
-    //ctor
-}
+WareHouse wareHouse;
 
 void WareHouse::list()
 {
@@ -21,27 +18,27 @@ void WareHouse::list()
 }
 
 void WareHouse::in(){
-    Computer* computer = new Computer;
-    computer->input();
+    Computer* temp = new Computer;
+    temp->input();
     
-    Computer* c = this->find(computer);
-    if(c == NULL){
-        this->computers.push_back(computer);
+    Computer* result = this->find(temp);
+    if(result == NULL){
+        this->computers.push_back(temp);
     }else{
-        c->addTotal(computer->getTotal());
-        delete computer;
+        result->add(temp->getTotal());
+        delete temp;
     }
 }
 
 void WareHouse::out(){
-    Computer* computer = new Computer;
-    computer->input();
+    Computer* temp = new Computer;
+    temp->input();
     
-    Computer* c = this->find(computer);
-    if(c == NULL){
+    Computer* result = this->find(temp);
+    if(result == NULL){
         cout<<"型号错误！"<<endl;
     }else{
-        c->addTotal(- computer->getTotal());
+        result->sub(temp->getTotal());
     }
 }
 

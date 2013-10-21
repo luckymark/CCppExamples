@@ -3,25 +3,19 @@
 #include <iostream>
 using namespace std;
 
-Menu::Menu()
-{
-    //ctor
-}
-
 void Menu::append(MenuItem* mi)
 {
-    items.push_back(mi);
+    this->items.push_back(mi);
 }
 
-void Menu::run()
+int Menu::run()
 {
     int index;
-    MenuItem* selected;
     while(1)
     {
         this->show();
         cin>>index;
-        if(!cin || index<1 || index>4)
+        if(!cin || index<1 || index>items.size())
         {
             cout << "错误的菜单项，请重新输入："<<endl;
             if(!cin){
@@ -30,17 +24,15 @@ void Menu::run()
             }
             continue;
         }
-        selected = items[index-1];
-        if(selected->isExit()) break;
-
-        selected->act();
+        if(items[index-1]->act()) break;
     }
+    return 0;
 }
 
 void Menu::show()
 {
-    for(int i=0; i<items.size(); i++)
+    for(int i=0; i<this->items.size(); i++)
     {
-        cout<< i+1 <<")" <<items[i]->getCaption() <<endl;
+        cout<< i+1 <<")" <<this->items[i]->getCaption() <<endl;
     }
 }

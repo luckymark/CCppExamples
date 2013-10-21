@@ -7,15 +7,12 @@ using namespace std;
 class MenuItem
 {
 public:
+    MenuItem(string c):caption(c){}
     string getCaption(){
         return caption;
     }
-    virtual bool isExit()
-    {
-        return false;
-    };
-    virtual void act() = 0;
-protected:
+    virtual bool act() = 0;  //if return true ,then exit program
+private:
     string caption;
 };
 

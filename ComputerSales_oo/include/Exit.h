@@ -9,20 +9,12 @@ using namespace std;
 class Exit:public MenuItem
 {
 public:
-    Exit()
-    {
-        this->caption = "退出程序";
-    }
-    void act()
+    Exit():MenuItem("退出程序"){}
+    bool act()
     {
         cout << "退出程序！" << endl;
-    }
-    bool isExit()
-    {
         return true;
     }
-protected:
-private:
 };
 
 #endif // EXIT_H

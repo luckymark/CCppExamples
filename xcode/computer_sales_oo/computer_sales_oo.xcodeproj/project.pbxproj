@@ -11,12 +11,7 @@
 		F46262E8181413060040B416 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262DD181413060040B416 /* main.cpp */; };
 		F46262E9181413060040B416 /* Computer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262DF181413060040B416 /* Computer.cpp */; };
 		F46262EA181413060040B416 /* ComputerSales.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E0181413060040B416 /* ComputerSales.cpp */; };
-		F46262EB181413060040B416 /* EnterWareHouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E1181413060040B416 /* EnterWareHouse.cpp */; };
-		F46262EC181413060040B416 /* Exit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E2181413060040B416 /* Exit.cpp */; };
-		F46262ED181413060040B416 /* ListWareHouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E3181413060040B416 /* ListWareHouse.cpp */; };
 		F46262EE181413060040B416 /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E4181413060040B416 /* Menu.cpp */; };
-		F46262EF181413060040B416 /* MenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E5181413060040B416 /* MenuItem.cpp */; };
-		F46262F0181413060040B416 /* OutWareHouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E6181413060040B416 /* OutWareHouse.cpp */; };
 		F46262F1181413060040B416 /* WareHouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46262E7181413060040B416 /* WareHouse.cpp */; };
 /* End PBXBuildFile section */
 
@@ -48,12 +43,7 @@
 		F46262DD181413060040B416 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../ComputerSales_oo/main.cpp; sourceTree = "<group>"; };
 		F46262DF181413060040B416 /* Computer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Computer.cpp; sourceTree = "<group>"; };
 		F46262E0181413060040B416 /* ComputerSales.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComputerSales.cpp; sourceTree = "<group>"; };
-		F46262E1181413060040B416 /* EnterWareHouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnterWareHouse.cpp; sourceTree = "<group>"; };
-		F46262E2181413060040B416 /* Exit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Exit.cpp; sourceTree = "<group>"; };
-		F46262E3181413060040B416 /* ListWareHouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListWareHouse.cpp; sourceTree = "<group>"; };
 		F46262E4181413060040B416 /* Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
-		F46262E5181413060040B416 /* MenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuItem.cpp; sourceTree = "<group>"; };
-		F46262E6181413060040B416 /* OutWareHouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OutWareHouse.cpp; sourceTree = "<group>"; };
 		F46262E7181413060040B416 /* WareHouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WareHouse.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,12 +107,7 @@
 			children = (
 				F46262DF181413060040B416 /* Computer.cpp */,
 				F46262E0181413060040B416 /* ComputerSales.cpp */,
-				F46262E1181413060040B416 /* EnterWareHouse.cpp */,
-				F46262E2181413060040B416 /* Exit.cpp */,
-				F46262E3181413060040B416 /* ListWareHouse.cpp */,
 				F46262E4181413060040B416 /* Menu.cpp */,
-				F46262E5181413060040B416 /* MenuItem.cpp */,
-				F46262E6181413060040B416 /* OutWareHouse.cpp */,
 				F46262E7181413060040B416 /* WareHouse.cpp */,
 			);
 			name = src;
@@ -180,16 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46262EB181413060040B416 /* EnterWareHouse.cpp in Sources */,
 				F46262F1181413060040B416 /* WareHouse.cpp in Sources */,
-				F46262EF181413060040B416 /* MenuItem.cpp in Sources */,
 				F46262E9181413060040B416 /* Computer.cpp in Sources */,
 				F46262E8181413060040B416 /* main.cpp in Sources */,
-				F46262ED181413060040B416 /* ListWareHouse.cpp in Sources */,
 				F46262EE181413060040B416 /* Menu.cpp in Sources */,
 				F46262EA181413060040B416 /* ComputerSales.cpp in Sources */,
-				F46262EC181413060040B416 /* Exit.cpp in Sources */,
-				F46262F0181413060040B416 /* OutWareHouse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

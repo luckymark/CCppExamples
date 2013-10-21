@@ -3,20 +3,16 @@
 
 #include "MenuItem.h"
 
-#include "ComputerSales.h"
-extern ComputerSales cs;
+#include "WareHouse.h"
 
 class EnterWareHouse:public MenuItem
 {
 public:
-    EnterWareHouse(){
-        this->caption="电脑入库";
+    EnterWareHouse():MenuItem("电脑入库"){}
+    virtual bool act(){
+        wareHouse.in();
+        return false;
     }
-    virtual void act(){
-        cs.getWareHouse().in();
-    }
-protected:
-private:
 };
 
 #endif // ENTERWAREHOUSE_H

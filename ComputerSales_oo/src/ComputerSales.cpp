@@ -16,6 +16,6 @@ ComputerSales::ComputerSales()
     menu.append(new Exit());
 }
 
-void ComputerSales::run(){
-    menu.run();
+int ComputerSales::run(){
+    return menu.run();
 }

@@ -8,15 +8,16 @@ using namespace std;
 
 class WareHouse
 {
-    public:
-        WareHouse();
-        void list();
-        void in();
-        void out();
-    private:
-        vector<Computer *> computers;
-
-        Computer* find(Computer* computer);
+public:
+    void list();
+    void in();
+    void out();
+private:
+    vector<Computer *> computers;
+    
+    Computer* find(Computer* computer);
 };
+
+extern WareHouse wareHouse;
 
 #endif // WAREHOUSE_H

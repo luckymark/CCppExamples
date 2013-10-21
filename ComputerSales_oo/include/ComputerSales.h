@@ -1,22 +1,15 @@
 #ifndef COMPUTERSALES_H
 #define COMPUTERSALES_H
 
-#include "wareHouse.h"
-
 #include "Menu.h"
 
 class ComputerSales
 {
-    public:
-        ComputerSales();
-        void run();
-        WareHouse& getWareHouse(){
-            return this->wareHouse;
-        }
-    protected:
-    private:
-        Menu menu;
-        WareHouse wareHouse;
+public:
+    ComputerSales();
+    int run();
+private:
+    Menu menu;
 };
 
 #endif // COMPUTERSALES_H

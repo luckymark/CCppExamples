@@ -2,12 +2,11 @@
 #define COMPUTER_H
 
 #include <string>
-using namespace std;
+using std::string;
 
 class Computer
 {
 public:
-    Computer();
     string getModel()
     {
         return this->model;
@@ -16,12 +15,16 @@ public:
     {
         return this->total;
     }
-    void addTotal(int num)
+    void add(int num)
     {
         this->total+=num;
     }
+    void sub(int num)
+    {
+        this->total-=num;
+    }
     void input();
-protected:
+    
 private:
     string model;
     int total;
