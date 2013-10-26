@@ -23,7 +23,7 @@
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(480, 800), L"打飞机Fighters");
+    sf::RenderWindow window(sf::VideoMode(480, 800), L"飞机大战");
 
     // Set the Icon
     sf::Image icon;
@@ -44,7 +44,7 @@ int main()
     if (!font.loadFromFile(resourcePath() + "font/STHeiti Light.ttc")) {
         return EXIT_FAILURE;
     }
-    sf::Text text(L"打飞机Hello SFML1232138238", font, 50);
+    sf::Text text(L"飞机大战", font, 50);
     text.setColor(sf::Color::Black);
 
     // Load a music to play
@@ -55,6 +55,14 @@ int main()
 
     // Play the music
     music.play();
+    
+    // my plane: the Hero!
+    sf::Texture textureHero;
+    if (!textureHero.loadFromFile(resourcePath() + "image/shoot.png", sf::IntRect(0, 99, 102, 126))) {
+        return EXIT_FAILURE;
+    }
+    sf::Sprite spriteHero(textureHero);
+
 
     // Start the game loop
     while (window.isOpen())
@@ -82,6 +90,11 @@ int main()
 
         // Draw the string
         window.draw(text);
+        
+        // Draw hero
+        spriteHero.setPosition(180, 600);
+        window.draw(spriteHero);
+
 
         // Update the window
         window.display();
