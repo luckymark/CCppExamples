@@ -20,6 +20,8 @@
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
 
+#include "Plane.h"
+
 int main()
 {
     // Create the main window
@@ -57,13 +59,7 @@ int main()
     music.play();
     
     // my plane: the Hero!
-    sf::Texture textureHero;
-    if (!textureHero.loadFromFile(resourcePath() + "image/shoot.png", sf::IntRect(0, 99, 102, 126))) {
-        return EXIT_FAILURE;
-    }
-    sf::Sprite spriteHero(textureHero);
-    spriteHero.setPosition(180, 600);
-    
+    Plane hero(window);
     
     // Start the game loop
     while (window.isOpen())
@@ -84,12 +80,12 @@ int main()
             
             // Left Arrow pressed
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Left) {
-                spriteHero.move(-10,0);
+                hero.move2left();
             }
             
             // Right Arrow pressed
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right) {
-                spriteHero.move(10,0);
+                hero.move2right();
             }
         }
         
@@ -103,8 +99,7 @@ int main()
         window.draw(text);
         
         // Draw hero
-        window.draw(spriteHero);
-        
+        hero.draw();
         
         // Update the window
         window.display();
