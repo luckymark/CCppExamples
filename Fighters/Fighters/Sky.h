@@ -19,12 +19,23 @@ using namespace std;
 
 class Sky{
 public:
-    static sf::RenderWindow window;
-    static void add(Sprite *);
-    static void del(Sprite *);
-    static void refresh();
+    static Sky* getInstance();
+    
+    sf::RenderWindow* getWindow(){
+        return this->window;
+    }
+    void add(Sprite *);
+    void del(Sprite *);
+    void refresh();
 private:
-    static vector<Sprite * > sprites;
+    Sky();
+    
+    sf::RenderWindow* window;
+    vector<Sprite * > sprites;
+    
+    sf::Sprite* background=NULL;
+    
+    static Sky* instance;
 };
 
 #endif /* defined(__Fighters__Sky__) */

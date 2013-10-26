@@ -14,7 +14,7 @@
 
 void Gun::fire(){
     sf::Vector2f pos = this->owner->getPosition();
-    Sky::add(new Bullet(pos.x+15,pos.y+30));
+    Sky::getInstance()->add(new Bullet(pos.x+15,pos.y+30));
 }
 
 sf::Vector2f Gun::getPosition(){

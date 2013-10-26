@@ -7,3 +7,8 @@
 //
 
 #include "Sprite.h"
+#include "Sky.h"
+
+void Sprite::draw(){
+    Sky::getInstance()->getWindow()->draw(*this);
+}

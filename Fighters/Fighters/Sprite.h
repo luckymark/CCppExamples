@@ -16,6 +16,7 @@
 class Sprite:public sf::Sprite{
 public:
     virtual void heartBeat()=0;
+    void draw();
 };
 
 #endif /* defined(__Fighters__Sprite__) */

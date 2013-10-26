@@ -24,7 +24,6 @@ public:
     void move2left();
     void move2right();
     void fire();
-    void draw();
     void heartBeat(){};
 private:
     sf::Texture textureHero;

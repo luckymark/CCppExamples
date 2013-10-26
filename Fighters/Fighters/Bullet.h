@@ -20,7 +20,6 @@ using std::endl;
 class Bullet:public Sprite{
 public:
     Bullet(float x,float y);
-    void draw();
     void heartBeat();
 private:
     sf::Texture texture;

@@ -23,7 +23,3 @@ Bullet::Bullet(float x,float y){
 void Bullet::heartBeat(){
     this->move(0,-10);
 }
-
-void Bullet::draw(){
-    Sky::window.draw(*this);
-}

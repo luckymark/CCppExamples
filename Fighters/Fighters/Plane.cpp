@@ -32,7 +32,3 @@ void Plane::move2right(){
 void Plane::fire(){
     this->gun.fire();
 }
-
-void Plane::draw(){
-    Sky::window.draw(*this);
-}
