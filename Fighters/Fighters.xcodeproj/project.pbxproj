@@ -17,6 +17,7 @@
 		F46CF44C181BC19D001ED527 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF44A181BC19D001ED527 /* Bullet.cpp */; };
 		F46CF44F181BC418001ED527 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF44D181BC418001ED527 /* Sky.cpp */; };
 		F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF450181BD0DA001ED527 /* Sprite.cpp */; };
+		F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF453181C0C21001ED527 /* Enemy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		F46CF44E181BC418001ED527 /* Sky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sky.h; sourceTree = "<group>"; };
 		F46CF450181BD0DA001ED527 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		F46CF451181BD0DA001ED527 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		F46CF453181C0C21001ED527 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		F46CF454181C0C21001ED527 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				F46CF44E181BC418001ED527 /* Sky.h */,
 				F46CF450181BD0DA001ED527 /* Sprite.cpp */,
 				F46CF451181BD0DA001ED527 /* Sprite.h */,
+				F46CF453181C0C21001ED527 /* Enemy.cpp */,
+				F46CF454181C0C21001ED527 /* Enemy.h */,
 			);
 			path = Fighters;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */,
 				F46CF44C181BC19D001ED527 /* Bullet.cpp in Sources */,
 				F46CF443181BB492001ED527 /* Plane.cpp in Sources */,
 				F46CF3ED181B5861001ED527 /* main.cpp in Sources */,

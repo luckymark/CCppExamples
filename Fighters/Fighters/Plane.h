@@ -25,7 +25,7 @@ public:
     void move2right();
     void fire();
     void heartBeat(){};
-private:
+protected:
     sf::Texture textureHero;
     
     Gun gun;

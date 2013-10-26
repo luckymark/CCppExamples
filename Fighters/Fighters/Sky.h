@@ -13,6 +13,8 @@
 
 #include "Sprite.h"
 
+#include <random>
+#include <ctime>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -27,6 +29,7 @@ public:
     void add(Sprite *);
     void del(Sprite *);
     void refresh();
+    unsigned randomX();
 private:
     Sky();
     
@@ -36,6 +39,11 @@ private:
     sf::Sprite* background=NULL;
     
     static Sky* instance;
+    
+    void createEnemies();
+    
+    uniform_int_distribution<unsigned> u;
+    default_random_engine e;
 };
 
 #endif /* defined(__Fighters__Sky__) */

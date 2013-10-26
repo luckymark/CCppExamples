@@ -9,10 +9,11 @@
 #include "ResourcePath.hpp"
 
 #include "Sky.h"
+#include "Enemy.h"
 
 Sky* Sky::instance = NULL;
 
-Sky::Sky(){
+Sky::Sky():u(0,480),e(time(0)){
     this->window = new sf::RenderWindow(sf::VideoMode(480, 800), L"飞机大战");
     
     // Set the Icon
@@ -29,7 +30,7 @@ Sky::Sky(){
 }
 
 void Sky::add(Sprite* sprite){
-    sprites.push_back(sprite);
+    this->sprites.push_back(sprite);
 }
 
 void Sky::del(Sprite* sprite){
@@ -39,14 +40,31 @@ void Sky::del(Sprite* sprite){
 void Sky::refresh(){
     this->window->draw(*this->background);
     
+    this->createEnemies();
+    
     // Draw the sprite
-    for(auto &sprite : Sky::sprites){
+    for(auto &sprite : this->sprites){
         sprite->heartBeat();
         this->window->draw(*sprite);
     }
     
     // Update the window
     this->window->display();
+}
+
+void Sky::createEnemies(){
+    static int count=0;
+    
+    //每10个GameFrame产生一个敌机
+    if(++count>=10){
+        this->sprites.push_back(new Enemy());
+        count = 0;
+    }
+    
+}
+
+unsigned Sky::randomX(){
+    return this->u(this->e);
 }
 
 Sky* Sky::getInstance(){
