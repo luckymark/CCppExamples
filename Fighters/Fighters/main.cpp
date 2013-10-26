@@ -20,19 +20,19 @@
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
 
+#include "Sky.h"
 #include "Plane.h"
 
 int main()
 {
-    // Create the main window
-    sf::RenderWindow window(sf::VideoMode(480, 800), L"飞机大战");
+    
     
     // Set the Icon
     sf::Image icon;
     if (!icon.loadFromFile(resourcePath() + "image/shoot.png")) {
         return EXIT_FAILURE;
     }
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+    Sky::window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
     // Load a sprite to display
     sf::Texture texture;
@@ -59,23 +59,24 @@ int main()
     music.play();
     
     // my plane: the Hero!
-    Plane hero(window);
+    Plane hero;
+    Sky::add(&hero);
     
     // Start the game loop
-    while (window.isOpen())
+    while (Sky::window.isOpen())
     {
         // Process events
         sf::Event event;
-        while (window.pollEvent(event))
+        while (Sky::window.pollEvent(event))
         {
             // Close window : exit
             if (event.type == sf::Event::Closed) {
-                window.close();
+                Sky::window.close();
             }
             
             // Escape pressed : exit
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                window.close();
+                Sky::window.close();
             }
             
             // Left Arrow pressed
@@ -87,22 +88,15 @@ int main()
             if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Right) {
                 hero.move2right();
             }
+            
+            
+            // Up Arrow pressed：hero fire
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) {
+                hero.fire();
+            }
         }
         
-        // Clear screen
-        window.clear();
-        
-        // Draw the sprite
-        window.draw(sprite);
-        
-        // Draw the string
-        window.draw(text);
-        
-        // Draw hero
-        hero.draw();
-        
-        // Update the window
-        window.display();
+        Sky::refresh();
     }
     
     return EXIT_SUCCESS;

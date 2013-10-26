@@ -11,20 +11,25 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Gun.h"
+#include "Sprite.h"
+
 #include <iostream>
 using std::cout;
 using std::endl;
 
-class Plane{
+class Plane:public Sprite{
 public:
-    Plane(sf::RenderWindow& window);
+    Plane();
     void move2left();
     void move2right();
+    void fire();
     void draw();
+    void heartBeat(){};
 private:
     sf::Texture textureHero;
-    sf::Sprite spriteHero;
-    sf::RenderWindow& window;
+    
+    Gun gun;
 };
 
 #endif /* defined(__Fighters__Plane__) */
