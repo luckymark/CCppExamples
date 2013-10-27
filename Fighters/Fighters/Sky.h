@@ -12,11 +12,16 @@
 #include <SFML/Graphics.hpp>
 
 #include "Sprite.h"
+#include "Enemy.h"
+#include "Bullet.h"
+
+#include "Rect.h"
 
 #include <random>
 #include <ctime>
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 using namespace std;
 
 class Sky{
@@ -27,19 +32,27 @@ public:
         return this->window;
     }
     void add(Sprite *);
-    void del(Sprite *);
+    
+    void addEnemy(Enemy*);
+        
+    void addMyBullet(Bullet *);
+    
     void refresh();
     unsigned randomX();
 private:
     Sky();
     
     sf::RenderWindow* window;
-    vector<Sprite * > sprites;
+    unordered_set<Sprite * > sprites;
+    unordered_set<Enemy * > enemies;
+    unordered_set<Bullet * > myBullets;
     
     sf::Sprite* background=NULL;
     
     static Sky* instance;
     
+    void sweep();
+    bool isCollision(const Rect& r1,const Rect& r2);
     void createEnemies();
     
     uniform_int_distribution<unsigned> u;
