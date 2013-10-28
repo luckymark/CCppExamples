@@ -97,8 +97,30 @@ block slides
                     MyClass *obj;
                     obj=MyClass::getInstance();
                 }
+    section
+        h3 const object
+        br
+        h3 常对象
 
     include topics/multiple_inheritance
+
+    section
+        h3 代码执行顺序问题
+        br
+        pre.
+            1）构造函数 vs 析构函数
+
+            2）子对象声明顺序 vs 构造函数初始化列表
+
+            3）父类 vs 子类
+        br
+        pre.fragment.
+            类似于堆栈： FILO
+
+            最先创建 的 最后销毁 ！！！
+
+
+
 
     section
         h1 The End

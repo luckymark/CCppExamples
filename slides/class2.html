@@ -102,9 +102,12 @@ void main()
 {
     MyClass *obj;
     obj=MyClass::getInstance();
-}
-</pre>
+}</pre>
           </section>
+        </section>
+        <section>
+          <h3>const object</h3><br>
+          <h3>常对象</h3>
         </section>
         <section>
           <section>
@@ -123,6 +126,21 @@ void main()
           <section>
             <h3>多继承的内存结构示意图(二)</h3><img src="img/2route_inheritance_memory.png">
           </section>
+        </section>
+        <section>
+          <h3>代码执行顺序问题</h3><br>
+          <pre>1）构造函数 vs 析构函数
+
+2）子对象声明顺序 vs 构造函数初始化列表
+
+3）父类 vs 子类</pre><br>
+          <pre class="fragment">类似于堆栈： FILO
+
+最先创建 的 最后销毁 ！！！
+
+
+
+</pre>
         </section>
         <section>
           <h1>The End</h1>
