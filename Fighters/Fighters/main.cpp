@@ -22,9 +22,13 @@
 
 #include "Sky.h"
 #include "Plane.h"
+#include "Texture.h"
+#include "Hero.h"
 
 int main()
 {
+    Texture::load();
+    
     Sky* sky = Sky::getInstance();
     sf::RenderWindow* window = sky->getWindow();
     
@@ -38,7 +42,7 @@ int main()
     music.play();
     
     // my plane: the Hero!
-    Plane hero;
+    Hero hero;
     sky->add(&hero);
     
     // Start the game loop

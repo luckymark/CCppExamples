@@ -9,20 +9,12 @@
 #ifndef __Fighters__Bullet__
 #define __Fighters__Bullet__
 
-#include <SFML/Graphics.hpp>
-
 #include "Sprite.h"
-
-#include <iostream>
-using std::cout;
-using std::endl;
 
 class Bullet:public Sprite{
 public:
     Bullet(float x,float y);
     void heartBeat();
-private:
-    sf::Texture texture;
 };
 
 #endif /* defined(__Fighters__Bullet__) */

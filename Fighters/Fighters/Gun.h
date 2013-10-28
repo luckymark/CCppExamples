@@ -12,16 +12,17 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
-#include "Sprite.h"
+
+class Plane;
 
 class Gun{
 public:
-    void setOwner(Sprite * owner);
+    void setOwner(Plane * owner);
     void fire();
 private:
     sf::Vector2f getPosition();
     
-    Sprite* owner;
+    Plane* owner;
 };
 
 #endif /* defined(__Fighters__Gun__) */

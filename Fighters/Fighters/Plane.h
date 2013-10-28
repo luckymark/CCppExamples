@@ -11,8 +11,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Gun.h"
 #include "Sprite.h"
+#include "Gun.h"
 
 #include <iostream>
 using std::cout;
@@ -20,14 +20,8 @@ using std::endl;
 
 class Plane:public Sprite{
 public:
-    Plane();
-    void move2left();
-    void move2right();
     void fire();
-    void heartBeat(){};
 protected:
-    sf::Texture textureHero;
-    
     Gun gun;
 };
 

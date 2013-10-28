@@ -16,7 +16,7 @@
 
 class Sprite:public sf::Sprite{
 public:
-    virtual void heartBeat()=0;
+    virtual void heartBeat(){};
     void draw();
     Rect getRect();
 };

@@ -11,9 +11,6 @@
 
 #include "Plane.h"
 
-#include <iostream>
-
-
 class Enemy:public Plane{
 public:
     Enemy();

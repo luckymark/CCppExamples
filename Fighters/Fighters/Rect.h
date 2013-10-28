@@ -9,8 +9,6 @@
 #ifndef __Fighters__Rect__
 #define __Fighters__Rect__
 
-#include <iostream>
-
 struct Rect{
     float x;
     float y;
