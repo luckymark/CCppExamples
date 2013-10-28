@@ -21,6 +21,7 @@
 		F46CF458181CA8E7001ED527 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF456181CA8E7001ED527 /* Rect.cpp */; };
 		F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC68181E0D3A00A33FC4 /* Texture.cpp */; };
 		F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6B181E0F5000A33FC4 /* Hero.cpp */; };
+		F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6E181E32AB00A33FC4 /* Sound.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		F479EC69181E0D3A00A33FC4 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		F479EC6B181E0F5000A33FC4 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
 		F479EC6C181E0F5000A33FC4 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		F479EC6E181E32AB00A33FC4 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
+		F479EC6F181E32AB00A33FC4 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				F479EC69181E0D3A00A33FC4 /* Texture.h */,
 				F479EC6B181E0F5000A33FC4 /* Hero.cpp */,
 				F479EC6C181E0F5000A33FC4 /* Hero.h */,
+				F479EC6E181E32AB00A33FC4 /* Sound.cpp */,
+				F479EC6F181E32AB00A33FC4 /* Sound.h */,
 			);
 			path = Fighters;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				F46CF449181BBFFE001ED527 /* Gun.cpp in Sources */,
 				F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */,
 				F46CF3EA181B5861001ED527 /* ResourcePath.mm in Sources */,
+				F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

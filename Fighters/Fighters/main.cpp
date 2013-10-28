@@ -24,22 +24,17 @@
 #include "Plane.h"
 #include "Texture.h"
 #include "Hero.h"
+#include "Sound.h"
 
 int main()
 {
     Texture::load();
+    Sound::load();
     
     Sky* sky = Sky::getInstance();
     sf::RenderWindow* window = sky->getWindow();
     
-    // Load a music to play
-    sf::Music music;
-    if (!music.openFromFile(resourcePath() + "sound/game_music.ogg")) {
-        return EXIT_FAILURE;
-    }
-    
-    // Play the music
-    music.play();
+    Sound::BACK_GROUND.play();
     
     // my plane: the Hero!
     Hero hero;

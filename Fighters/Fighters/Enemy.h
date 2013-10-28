@@ -15,6 +15,11 @@ class Enemy:public Plane{
 public:
     Enemy();
     void heartBeat();
+    void hit();
+    bool needClear();
+    bool isDead();
+private:
+    int state=0;
 };
 
 #endif /* defined(__Fighters__Enemy__) */
