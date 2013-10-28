@@ -21,7 +21,6 @@
 #include "ResourcePath.hpp"
 
 #include "Sky.h"
-#include "Plane.h"
 #include "Texture.h"
 #include "Hero.h"
 #include "Sound.h"
@@ -36,7 +35,7 @@ int main()
     
     Sound::BACK_GROUND.play();
     
-    // my plane: the Hero!
+    // Hero就是自己的飞机哈！
     Hero hero;
     sky->add(&hero);
     

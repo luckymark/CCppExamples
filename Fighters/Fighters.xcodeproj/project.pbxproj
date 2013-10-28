@@ -22,6 +22,7 @@
 		F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC68181E0D3A00A33FC4 /* Texture.cpp */; };
 		F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6B181E0F5000A33FC4 /* Hero.cpp */; };
 		F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6E181E32AB00A33FC4 /* Sound.cpp */; };
+		F479EC73181E392400A33FC4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC71181E392400A33FC4 /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		F479EC6C181E0F5000A33FC4 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		F479EC6E181E32AB00A33FC4 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		F479EC6F181E32AB00A33FC4 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		F479EC71181E392400A33FC4 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		F479EC72181E392400A33FC4 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				F479EC6C181E0F5000A33FC4 /* Hero.h */,
 				F479EC6E181E32AB00A33FC4 /* Sound.cpp */,
 				F479EC6F181E32AB00A33FC4 /* Sound.h */,
+				F479EC71181E392400A33FC4 /* Game.cpp */,
+				F479EC72181E392400A33FC4 /* Game.h */,
 			);
 			path = Fighters;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				F46CF443181BB492001ED527 /* Plane.cpp in Sources */,
 				F46CF3ED181B5861001ED527 /* main.cpp in Sources */,
 				F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */,
+				F479EC73181E392400A33FC4 /* Game.cpp in Sources */,
 				F46CF44F181BC418001ED527 /* Sky.cpp in Sources */,
 				F46CF449181BBFFE001ED527 /* Gun.cpp in Sources */,
 				F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */,

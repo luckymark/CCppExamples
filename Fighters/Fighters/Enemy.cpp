@@ -8,9 +8,11 @@
 
 #include "Enemy.h"
 
-#include "Sky.h"
 #include "Texture.h"
 #include "Sound.h"
+#include "Game.h"
+
+#include <random>
 
 #include <iostream>
 using namespace std;
@@ -18,7 +20,9 @@ using namespace std;
 Enemy::Enemy(){
     this->setTexture(Texture::ENEMY);
     
-    this->setPosition(Sky::getInstance()->randomX(), 20);
+    uniform_int_distribution<unsigned> u(0,480);
+    std::default_random_engine random_engine;
+    this->setPosition(u(Game::random_engine), 20);
     
     this->gun.setOwner(this);
 }

@@ -13,9 +13,9 @@
 
 #include "Texture.h"
 
-Sky* Sky::instance = NULL;
+Sky* Sky::instance = nullptr;
 
-Sky::Sky():u(0,480),e(time(0)){
+Sky::Sky(){
     this->window = new sf::RenderWindow(sf::VideoMode(480, 800), L"飞机大战");
     
     // Set the Icon
@@ -32,10 +32,6 @@ void Sky::add(Sprite* sprite){
     this->sprites.insert(sprite);
 }
 
-void Sky::addEnemy(Enemy* enemy){
-    this->enemies.insert(enemy);
-}
-
 void Sky::addMyBullet(Bullet * bullet){
     this->myBullets.insert(bullet);
 }
@@ -43,7 +39,9 @@ void Sky::addMyBullet(Bullet * bullet){
 void Sky::refresh(){
     this->window->draw(*this->background);
     
-    this->sweep();
+    this->clear();
+    
+    this->collision();
     
     this->createEnemies();
     
@@ -57,7 +55,7 @@ void Sky::refresh(){
     this->window->display();
 }
 
-void Sky::sweep(){
+void Sky::clear(){
     for(auto it_enemy= this->enemies.begin();it_enemy!=this->enemies.end();){
         if((*it_enemy)->needClear()){
             delete *it_enemy;
@@ -68,7 +66,8 @@ void Sky::sweep(){
             ++it_enemy;
         }
     }
-    
+}
+void Sky::collision(){
     for(auto it_enemy= this->enemies.begin();it_enemy!=this->enemies.end();++it_enemy){
         if((*it_enemy)->isDead()) continue;
         
@@ -100,15 +99,11 @@ void Sky::createEnemies(){
     if(++count>=10){
         Enemy* enemy = new Enemy;
         this->sprites.insert(enemy);
-        this->addEnemy(enemy);
+        this->enemies.insert(enemy);
         
         count = 0;
     }
     
-}
-
-unsigned Sky::randomX(){
-    return this->u(this->e);
 }
 
 Sky* Sky::getInstance(){

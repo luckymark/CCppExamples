@@ -17,8 +17,6 @@
 
 #include "Rect.h"
 
-#include <random>
-#include <ctime>
 #include <iostream>
 #include <vector>
 #include <unordered_set>
@@ -32,13 +30,10 @@ public:
         return this->window;
     }
     void add(Sprite *);
-    
-    void addEnemy(Enemy*);
         
     void addMyBullet(Bullet *);
     
     void refresh();
-    unsigned randomX();
 private:
     Sky();
     
@@ -47,16 +42,14 @@ private:
     unordered_set<Enemy * > enemies;
     unordered_set<Bullet * > myBullets;
     
-    sf::Sprite* background=NULL;
+    sf::Sprite* background=nullptr;
     
     static Sky* instance;
     
-    void sweep();
+    void clear();
+    void collision();
     bool isCollision(const Rect& r1,const Rect& r2);
     void createEnemies();
-    
-    uniform_int_distribution<unsigned> u;
-    default_random_engine e;
 };
 
 #endif /* defined(__Fighters__Sky__) */
