@@ -1,6 +1,6 @@
 # C++代码示例汇集
 
-# Fighters(打飞机)子项目：
+# Fighters(打飞机)子项目说明：
 
 * 基于小巧玲珑的图形库SFML 
 * SFML的github网址 [https://github.com/LaurentGomila/SFML](https://github.com/LaurentGomila/SFML)
