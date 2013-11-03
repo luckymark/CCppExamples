@@ -84,11 +84,12 @@ void Sky::collision(){
     }
 }
 bool Sky::isCollision(const Rect& r1,const Rect& r2){
-    //TODO 化简表达式
-    return (r2.x>=r1.x && r2.x<=(r1.x+r1.w) && r2.y>=r1.y && r2.y<=(r1.y+r1.h))
-    || ((r2.x+r2.w)>=r1.x && (r2.x+r2.w)<=(r1.x+r1.w) && r2.y>=r1.y && r2.y<=(r1.y+r1.h))
-    || (r2.x>=r1.x && r2.x<=(r1.x+r1.w) && (r2.y+r2.h)>=r1.y && (r2.y+r2.h)<=(r1.y+r1.h))
-    || ((r2.x+r2.w)>=r1.x && (r2.x+r2.w)<=(r1.x+r1.w) && r2.y>=r1.y && r2.y<=(r1.y+r1.h));
+    return !(
+             r1.x>(r2.x+r2.w)
+             || r2.x>(r1.x+r1.w)
+             || r1.y>(r2.y+r2.h)
+             || r2.y>(r1.y+r1.h)
+             );
 }
 
 
