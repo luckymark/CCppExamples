@@ -72,7 +72,7 @@ void Sky::collision(){
         if((*it_enemy)->isDead()) continue;
         
         for(auto it_bullet= this->myBullets.begin();it_bullet!=this->myBullets.end();++it_bullet){
-            if(this->isCollision((*it_enemy)->getRect(), (*it_bullet)->getRect())){
+            if((*it_enemy)->intersects(*it_bullet)){
                 delete *it_bullet;
                 this->sprites.erase(*it_bullet);
                 (this->myBullets).erase(it_bullet);
@@ -83,15 +83,6 @@ void Sky::collision(){
         }
     }
 }
-bool Sky::isCollision(const Rect& r1,const Rect& r2){
-    return !(
-             r1.x>(r2.x+r2.w)
-             || r2.x>(r1.x+r1.w)
-             || r1.y>(r2.y+r2.h)
-             || r2.y>(r1.y+r1.h)
-             );
-}
-
 
 void Sky::createEnemies(){
     static int count=0;
@@ -104,7 +95,6 @@ void Sky::createEnemies(){
         
         count = 0;
     }
-    
 }
 
 Sky* Sky::getInstance(){

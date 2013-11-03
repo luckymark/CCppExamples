@@ -18,7 +18,6 @@
 		F46CF44F181BC418001ED527 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF44D181BC418001ED527 /* Sky.cpp */; };
 		F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF450181BD0DA001ED527 /* Sprite.cpp */; };
 		F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF453181C0C21001ED527 /* Enemy.cpp */; };
-		F46CF458181CA8E7001ED527 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF456181CA8E7001ED527 /* Rect.cpp */; };
 		F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC68181E0D3A00A33FC4 /* Texture.cpp */; };
 		F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6B181E0F5000A33FC4 /* Hero.cpp */; };
 		F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6E181E32AB00A33FC4 /* Sound.cpp */; };
@@ -46,8 +45,6 @@
 		F46CF451181BD0DA001ED527 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		F46CF453181C0C21001ED527 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		F46CF454181C0C21001ED527 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		F46CF456181CA8E7001ED527 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rect.cpp; sourceTree = "<group>"; };
-		F46CF457181CA8E7001ED527 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rect.h; sourceTree = "<group>"; };
 		F479EC68181E0D3A00A33FC4 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		F479EC69181E0D3A00A33FC4 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		F479EC6B181E0F5000A33FC4 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
@@ -105,8 +102,6 @@
 				F46CF451181BD0DA001ED527 /* Sprite.h */,
 				F46CF453181C0C21001ED527 /* Enemy.cpp */,
 				F46CF454181C0C21001ED527 /* Enemy.h */,
-				F46CF456181CA8E7001ED527 /* Rect.cpp */,
-				F46CF457181CA8E7001ED527 /* Rect.h */,
 				F479EC68181E0D3A00A33FC4 /* Texture.cpp */,
 				F479EC69181E0D3A00A33FC4 /* Texture.h */,
 				F479EC6B181E0F5000A33FC4 /* Hero.cpp */,
@@ -218,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46CF458181CA8E7001ED527 /* Rect.cpp in Sources */,
 				F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */,
 				F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */,
 				F46CF44C181BC19D001ED527 /* Bullet.cpp in Sources */,

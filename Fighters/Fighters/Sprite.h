@@ -12,13 +12,12 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
-#include "Rect.h"
 
 class Sprite:public sf::Sprite{
 public:
     virtual void heartBeat(){};
     void draw();
-    Rect getRect();
+    bool intersects(Sprite* other);
 };
 
 #endif /* defined(__Fighters__Sprite__) */

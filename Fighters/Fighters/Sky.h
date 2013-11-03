@@ -15,8 +15,6 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
-#include "Rect.h"
-
 #include <iostream>
 #include <vector>
 #include <unordered_set>
@@ -48,7 +46,6 @@ private:
     
     void clear();
     void collision();
-    bool isCollision(const Rect& r1,const Rect& r2);
     void createEnemies();
 };
 
