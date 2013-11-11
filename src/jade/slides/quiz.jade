@@ -1,0 +1,286 @@
+extends base/base
+
+block title
+    title 半期测验
+
+block slides
+    section
+        h3    一、单项选择题
+        pre.
+            1．以下代码中，哪个变量的内存空间是在堆中分配的：
+
+            int  max;
+            int handler (int v1){ return v1+5;}
+            void main(){
+                int v2=handler(7);
+                char *p=new char[6];
+                ……
+            }
+
+            A) max
+            B) v1
+            C) v2
+            D) p所指向的内存空间
+    section
+        pre.
+            2．有关友元函数，以下描述正确的是：
+
+            A) 必须通过对象来调用友元函数
+
+            B) 友元函数的声明必须放在public之下
+
+            C) 友元函数是类的成员函数
+
+            D) 友元函数可以访问private成员
+    section
+        pre.
+            3．假设有一个类CAccount，其成员函数的定义有误的是：
+
+            A) CAccount(float v);　
+
+            B) ~CAccount(float v);
+
+            C) CAccount();
+
+            D) float getAccount();
+    section
+        pre.
+            4．以下描述或用法正确的是：
+
+            A) class Staff{...};
+               class Teacher:public Staff{...};
+               Staff  aStaff;
+               Teacher *p = &aStaff;
+
+            B)在非公有派生方式下，基类中的公有成员在派生类中仍然是公有成员。
+
+            C)在销毁派生类对象时，派生类析构函数的调用优先于基类析构函数的调用。
+
+            D)在创建派生类的对象时，派生类构造函数的调用优先于基类构造函数的调用。
+    section
+        pre.
+            5．假设类CStudent的定义如下，哪个选项是错误的实例化CStudent的方式：
+
+            class CStudent{
+                string Id, Name;
+                int Age;
+            public:
+                CStudent(CStudent &obj){Id=obj.Id; Name=obj.Name; Age=obj.Age;}
+                CStudent(char *id,char *name,int age=0):Id(id),Name(name){Age=age;}
+                ….
+            };
+
+            A) CStudent obj;
+            B) CStudent obj1(“1”, “qzj”);
+            C) CStudent obj2(“2”,”hlq”,18);
+            D) CStudent obj3(“3”,”lium”, 20); CStudent obj4(obj3);
+    section
+        pre.
+            6．以下程序的输出结果为：
+            int& handle(int *p){ *p-=7; return *p ; }
+            int main(){
+                int v1=9;  int &v2=handle(&v1);
+                cout&lt&ltv1&lt&lt":";
+                v2+=8;
+                cout&lt&ltv1&lt&lt":"&lt&ltv2&lt&ltendl;
+                return 0;
+            }
+
+            A) 9:10:9
+            B) 9:10:10
+            C) 2:10:10
+            D) 2:9:10
+
+    section
+        pre.
+            7．以下描述错误的是：
+
+            A) 程序运行时可以修改常变量的值
+
+            B) 定义常变量时必须对其进行初始化
+
+            C) 符号常量在程序运行时不占据内存空间
+
+            D) 符号常量只是在编译时进行宏替换
+    section
+        pre.
+            8．以下说法错误的是：
+
+            A) 在同一个类中，可以定义参数列表不同的同名函数
+
+            B) 在同一个类中，可以定义参数列表相同，但返回值不同的同名函数
+
+            C) 在派生类中可以定义与基类中的函数原型一致的函数
+
+            D) 在派生类中可以定义与基类中的参数列表不同的同名函数
+
+    section
+        h3  二、多项选择题
+        pre.
+            1．有关运算符重载，以下描述正确的是：
+
+            A）“<<”运算符可以被重载为成员函数形式
+
+            B) 运算符必须被重载为成员函数形式
+
+            C) 一元运算符（前缀形式）重载为成员函数形式时无参数列表
+
+            D）对--按后缀方式进行重载时，需要占位参数
+    section
+        pre.
+            2．下列函数原型的声明中，哪个是正确的________。
+
+            A）int handler1 (int v1) ;
+
+            B）int handler 2(int v1=0, int v3) ;
+
+            C）int handler 3(int v1, v2,int v3=4) ;
+
+            D）int handler 4(int v1,int v2=8,int v3) ;
+    section
+        pre.
+            3、以下描述错误的是：
+
+            A) 友元函数和静态函数都有this指针
+
+            B）派生类在重载与基类中同名的函数时，函数原型必须一致
+
+            C) 可以不为类定义构造函数
+
+            D) 类的析构函数最多只能有一个
+    section
+        pre.
+            4．有关虚函数，以下描述正确的是：
+
+            A) 不可以实例化具有纯虚函数的类
+
+            B) 派生类必须重载基类中的纯虚函数
+
+            C) 抽象类中不一定所有的成员函数都必须是纯虚函数
+
+            D) 构造函数可以是虚函数
+    section
+        pre.
+            5．在win32平台下，对于变量p，sizeof(p)的值为4的是：
+
+            A) int **p;
+
+            B) short p;
+
+            C) char p[4];
+
+            D) char *p=”may”;
+
+    section
+        h3    三、填空题
+        pre.
+            使用____________关键字来定义名字空间，名字空间机制的作用是_______________________；
+
+            template关键字的作用是_________________；
+
+            赋值兼容规则是指____________________________；
+
+            类组合是指______________________；
+
+            operator关键字的作用是__________________；
+
+            new的作用是__________，delete的作用______________。
+    section
+        pre.
+            class MyClass{
+                float v;
+            public:
+                MyClass (float v);
+                MyClass ();
+                ~ MyClass ();
+            };
+
+            int main(){
+                MyClass *p=new MyClass[3];
+
+                delete[] p;
+
+                return 0;
+            }
+
+            MyClass()被称作____函数，一共被调用___次；
+            MyClass(float v)被称作____函数，一共被调用___次；
+            ~MyClass()被称作____函数，一共被调用___次。
+    section
+        pre.
+            四、判断题
+
+            1．析构函数可以设置形参缺省值
+
+            2．如果A是B的友元，那么B是也是A的友元
+
+            3．一个类的静态成员函数可以定义为虚函数形式
+
+            4．在一个类中，可以不定义任何数据成员
+
+            5．Teacher类的拷贝构造函数原型为Teacher（Teacher obj）
+
+            6．如果派生类没有全部实现基类所定义的纯虚函数，该派生类不够被实例化
+
+            7．重载“*”运算符为成员函数形式时，运算符重载函数只有1个参数
+
+    section
+        section
+            h3 五、读程序题
+            pre.
+                class Sample {
+                    int n;
+                    static int sum;
+                public:
+                    Sample(int x) {n=x;}
+                    void add() {sum+=n;}
+                    void disp(){
+                        cout&lt&lt"n="&lt&ltn&lt&lt" sum="&lt&ltsum&lt&ltendl;
+                    }
+                };
+                int Sample::sum=10;
+                void main(){
+                    Sample a(2), b(3);
+                    a.add(); a.disp();
+                    b.add(); b.disp();
+                }
+                屏幕输出的信息是：
+        section
+            pre.
+                class A{
+                public:
+                    A() {cout&lt&lt”Construct A”&lt&ltendl;}
+                    ~A() {cout&lt&lt”Destruct A”&lt&ltendl;}
+                };
+                class B: public A{
+                    A * p;
+                public:
+                    B() { p=new A(); cout&lt&lt”Construct B”&lt&ltendl;}
+                    ~B() { delete p; cout&lt&lt”Destruct B”&lt&ltendl;}
+                };
+                void  main() {
+                    B obj;
+                }
+                屏幕输出的信息是：
+
+    section
+        h3 六、编程题(设计充值卡管理程序)
+        pre.
+            1、设计一个描述单个充值卡信息的Card类，满足：
+             1）具有姓名和金额两个信息，并提供获取和修改这些信息的方法
+             2）具有用于初始化姓名、金额的构造函数，其中金额缺省值为0
+             3）能够为充值卡充值（recharge）
+
+            2、设计一个管理所有充值卡的CardManager类，满足：
+             1）能够添加（add）和根据姓名删除（del）指定充值卡，最多管理1024个充值卡
+             2）能够根据姓名查询充值卡信息（query）
+
+            3、在main函数中，接受用户输入进行相应操作：
+             1）输入1代表添加充值卡：需要提示是否添加成功
+             2）输入2代表删除充值卡：需要提示是否删除成功
+             3）输入3代表查询名片信息：如果查询到，则将充值卡的信息显示到屏幕上，否则提示无相关信息
+             4）输入4代表为充值卡充值：需要提示是否充值成功
+             5）输入5代表退出程序
+
+    section
+        h1 The End
