@@ -1,5 +1,9 @@
 # C++代码示例汇集
 
+# wiki首页:
+
+* [https://github.com/luckymark/CppExamples/wiki](https://github.com/luckymark/CppExamples/wiki)
+
 # Fighters(打飞机)子项目说明：
 
 * 基于小巧玲珑的图形库SFML 
