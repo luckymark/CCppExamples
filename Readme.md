@@ -1,8 +1,8 @@
-# C++代码示例汇集
+# C/C++代码示例汇集
 
 # wiki首页:
 
-* [https://github.com/luckymark/CppExamples/wiki](https://github.com/luckymark/CppExamples/wiki)
+* [https://github.com/luckymark/CCppExamples/wiki](https://github.com/luckymark/CCppExamples/wiki)
 
 # Fighters(打飞机)子项目说明：
 
