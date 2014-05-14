@@ -5,162 +5,35 @@ block title
 
 block slides
     section
-        h1 C++
+        h1 C & C++
         ul
             li 俸志刚（计算机学院 嵌入式软件工程中心）
             br
             li.fragment Email: luckyZhiGang@gmail.com
             br
             li.fragment WebSite:
-                a(href="https://github.com/luckymark/CppExamples") https://github.com/luckymark/CppExamples
+                a(href="https://github.com/luckymark/CCppExamples") https://github.com/luckymark/CCppExamples
             br
             li.fragment 新浪微博:
-                a(href="http://weibo.com/luckymark1968") luckymark
-
+                a(href="http://weibo.com/luckymark1968") luckymark1968
     section
-        section
-            h2 C++长什么样子？
-            p HelloWorld.cpp
-            pre.
-                #include "iostream"
+        h2 程序长什么样子？
+        p HelloWorld.c
+        pre.
+            #include &ltstdio.h>
+            #include &ltstdlib.h>
 
-                using namespace std;
+            int main()
+            {
+                printf("Hello world!");
 
-                int main()
-                {
-                    cout&lt&lt"Hello world!"&lt&ltendl&lt&lt"I'm Mark.";
-
-                    return 0;
-                }
-            p.fragment 新的KeyWords（关键字）:using namespace
-
-        section
-            p Clock.cpp
-            pre.
-                class Clock{
-                public:
-                    void setTime(int h,int m,int s){
-                        this->h = h;
-                        this->m = m;
-                        this->s = s;
-                    }
-                private:
-                    int h,m,s;
-                };
-        section
-            p Clock.cpp
-            pre.
-                int main()
-                {
-                    Clock c;
-                    c.setTime(12,30,0);
-                    return 0;
-                }
-            p.fragment 新的KeyWords（关键字）:class public private
-
-    section
-        h2 C++可以做什么？
-        ul
-            li.fragment 操作系统（例如：Windows）
-            br
-            li.fragment 大型游戏
-            br
-            li.fragment 系统级的大型软件（例如：SQLServer、Chrome浏览器、C++自己的编译器）
-            br
-            li.fragment 工具软件（例如：Office）
+                ﻿system("pause");
+                return 0;
+            }
 
     section
         h2 C++重要吗？
         img(src='img/program_language_rank2012-08.jpg')
-
-    section
-        h2 听说C++很难，是这样吗？
-        br
-        h2.fragment 我能学会吗？
-
-    section
-        section
-            h2 那么，我该怎么学C++呢？
-            br
-            ul
-                li.fragment 很简单，请记住下面的3条黄金法则：
-                br
-                li.fragment 第一条，上机！
-                li.fragment 第二条，上机！
-                li.fragment 第三条，上机！
-        section
-            h3 没时间上机，多看看教材，行不？
-            img(src='img/岸上学游泳.jpg', height="500", width="600").fragment
-
-    section
-        h2 首先，安装开发工具
-        h2 IDE(集成开发环境)
-        br
-        ul
-            li.fragment Windows：Visual Studio 2012(Express)
-                br
-                a(href="http://www.microsoft.com/visualstudio/chs/downloads") http://www.microsoft.com/visualstudio/chs/downloads
-            br
-            li.fragment Mac: xcode
-
-    section
-        section
-            h2 VS2012怎么用？
-        section
-            h2 Main UI（主界面）
-            img(src='img/vs2010express_main_ui.png')
-        section
-            h2 new project(工程or项目)
-            img(src='img/vs2010newproject.png')
-        section
-            h2 new project
-            img(src='img/vs2010newproject_step2.png')
-        section
-            h2 new project
-            img(src='img/vs2010newproject_step3.png')
-        section
-            h2 new project
-            img(src='img/vs2010newproject_step4.png')
-        section
-            h2 new project
-            img(src='img/vs2010newproject_step5.png')
-
-    section
-        h2 怎么交作业？
-        br
-        p.fragment 全部网上提交！！！
-
-    section
-        h1 great git!
-
-    section
-        section
-            h1 great github!
-            br
-            a(href="https://github.com/") https://github.com/
-        section
-            h2 注册账号 & 登录
-            img(src='img/github_signup.png')
-        section
-            ul
-                li
-                    h2 Github for windows
-                    a(href="http://windows.github.com/") http://windows.github.com/
-                br
-                li
-                    h2 Github for mac
-                    a(href="http://mac.github.com/") http://mac.github.com/
-        section
-            h2 新建git repository（仓库）
-            img(src='img/github_newrepo.png')
-        section
-            h2 commit(提交)
-            img(src='img/github_commit.png')
-        section
-            h2 publish/sync（发布/同步）
-            img(src='img/github_publish_sync.png')
-
-    include homework/1_1
 
     section
         h2 请准备：

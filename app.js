@@ -8,8 +8,8 @@ var express = require('express')
     , app = express()
 
 app.configure(function () {
-    app.use("/slides", express.directory(__dirname + "/slides"))
-    app.use("/slides", express["static"](__dirname + "/slides"))
+    app.use("/", express.directory(__dirname + "/"))
+    app.use("/", express["static"](__dirname + "/"))
 })
 
 app.listen(3000, function () {
