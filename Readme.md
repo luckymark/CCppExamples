@@ -1,5 +1,9 @@
 # C/C++代码示例汇集
 
+# slides:
+
+* [http://luckymark.github.io/CCppExamples/](http://luckymark.github.io/CCppExamples/)
+
 # wiki首页:
 
 * [https://github.com/luckymark/CCppExamples/wiki](https://github.com/luckymark/CCppExamples/wiki)
