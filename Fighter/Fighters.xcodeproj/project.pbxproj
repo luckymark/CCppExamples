@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F46CF3EA181B5861001ED527 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = F46CF3E9181B5861001ED527 /* ResourcePath.mm */; };
+		F46CF3ED181B5861001ED527 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF3EC181B5861001ED527 /* main.cpp */; };
+		F46CF43E181B5F28001ED527 /* font in Resources */ = {isa = PBXBuildFile; fileRef = F46CF43B181B5F28001ED527 /* font */; };
+		F46CF43F181B5F28001ED527 /* image in Resources */ = {isa = PBXBuildFile; fileRef = F46CF43C181B5F28001ED527 /* image */; };
+		F46CF440181B5F28001ED527 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = F46CF43D181B5F28001ED527 /* sound */; };
+		F46CF443181BB492001ED527 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF441181BB492001ED527 /* Plane.cpp */; };
+		F46CF449181BBFFE001ED527 /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF447181BBFFE001ED527 /* Gun.cpp */; };
+		F46CF44C181BC19D001ED527 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF44A181BC19D001ED527 /* Bullet.cpp */; };
+		F46CF44F181BC418001ED527 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF44D181BC418001ED527 /* Sky.cpp */; };
+		F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF450181BD0DA001ED527 /* Sprite.cpp */; };
+		F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF453181C0C21001ED527 /* Enemy.cpp */; };
+		F46CF458181CA8E7001ED527 /* Rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F46CF456181CA8E7001ED527 /* Rect.cpp */; };
+		F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC68181E0D3A00A33FC4 /* Texture.cpp */; };
+		F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6B181E0F5000A33FC4 /* Hero.cpp */; };
+		F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC6E181E32AB00A33FC4 /* Sound.cpp */; };
+		F479EC73181E392400A33FC4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F479EC71181E392400A33FC4 /* Game.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F46CF3E4181B5861001ED527 /* Fighters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fighters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46CF3E8181B5861001ED527 /* Fighters-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fighters-Info.plist"; sourceTree = "<group>"; };
+		F46CF3E9181B5861001ED527 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
+		F46CF3EB181B5861001ED527 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
+		F46CF3EC181B5861001ED527 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F46CF43B181B5F28001ED527 /* font */ = {isa = PBXFileReference; lastKnownFileType = folder; name = font; path = resources/font; sourceTree = "<group>"; };
+		F46CF43C181B5F28001ED527 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = image; path = resources/image; sourceTree = "<group>"; };
+		F46CF43D181B5F28001ED527 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sound; path = resources/sound; sourceTree = "<group>"; };
+		F46CF441181BB492001ED527 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
+		F46CF442181BB492001ED527 /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		F46CF447181BBFFE001ED527 /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
+		F46CF448181BBFFE001ED527 /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
+		F46CF44A181BC19D001ED527 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		F46CF44B181BC19D001ED527 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		F46CF44D181BC418001ED527 /* Sky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sky.cpp; sourceTree = "<group>"; };
+		F46CF44E181BC418001ED527 /* Sky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sky.h; sourceTree = "<group>"; };
+		F46CF450181BD0DA001ED527 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		F46CF451181BD0DA001ED527 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		F46CF453181C0C21001ED527 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		F46CF454181C0C21001ED527 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		F46CF456181CA8E7001ED527 /* Rect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rect.cpp; sourceTree = "<group>"; };
+		F46CF457181CA8E7001ED527 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rect.h; sourceTree = "<group>"; };
+		F479EC68181E0D3A00A33FC4 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		F479EC69181E0D3A00A33FC4 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		F479EC6B181E0F5000A33FC4 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
+		F479EC6C181E0F5000A33FC4 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		F479EC6E181E32AB00A33FC4 /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
+		F479EC6F181E32AB00A33FC4 /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		F479EC71181E392400A33FC4 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		F479EC72181E392400A33FC4 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F46CF3E0181B5861001ED527 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F46CF3DA181B5861001ED527 = {
+			isa = PBXGroup;
+			children = (
+				F46CF3E6181B5861001ED527 /* Fighters */,
+				F46CF3E5181B5861001ED527 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F46CF3E5181B5861001ED527 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F46CF3E4181B5861001ED527 /* Fighters.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F46CF3E6181B5861001ED527 /* Fighters */ = {
+			isa = PBXGroup;
+			children = (
+				F46CF447181BBFFE001ED527 /* Gun.cpp */,
+				F46CF448181BBFFE001ED527 /* Gun.h */,
+				F46CF3E9181B5861001ED527 /* ResourcePath.mm */,
+				F46CF3EB181B5861001ED527 /* ResourcePath.hpp */,
+				F46CF3EC181B5861001ED527 /* main.cpp */,
+				F46CF441181BB492001ED527 /* Plane.cpp */,
+				F46CF442181BB492001ED527 /* Plane.h */,
+				F46CF3EE181B5861001ED527 /* Resources */,
+				F46CF3E7181B5861001ED527 /* Supporting Files */,
+				F46CF44A181BC19D001ED527 /* Bullet.cpp */,
+				F46CF44B181BC19D001ED527 /* Bullet.h */,
+				F46CF44D181BC418001ED527 /* Sky.cpp */,
+				F46CF44E181BC418001ED527 /* Sky.h */,
+				F46CF450181BD0DA001ED527 /* Sprite.cpp */,
+				F46CF451181BD0DA001ED527 /* Sprite.h */,
+				F46CF453181C0C21001ED527 /* Enemy.cpp */,
+				F46CF454181C0C21001ED527 /* Enemy.h */,
+				F46CF456181CA8E7001ED527 /* Rect.cpp */,
+				F46CF457181CA8E7001ED527 /* Rect.h */,
+				F479EC68181E0D3A00A33FC4 /* Texture.cpp */,
+				F479EC69181E0D3A00A33FC4 /* Texture.h */,
+				F479EC6B181E0F5000A33FC4 /* Hero.cpp */,
+				F479EC6C181E0F5000A33FC4 /* Hero.h */,
+				F479EC6E181E32AB00A33FC4 /* Sound.cpp */,
+				F479EC6F181E32AB00A33FC4 /* Sound.h */,
+				F479EC71181E392400A33FC4 /* Game.cpp */,
+				F479EC72181E392400A33FC4 /* Game.h */,
+			);
+			path = Fighters;
+			sourceTree = "<group>";
+		};
+		F46CF3E7181B5861001ED527 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F46CF3E8181B5861001ED527 /* Fighters-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F46CF3EE181B5861001ED527 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F46CF43B181B5F28001ED527 /* font */,
+				F46CF43C181B5F28001ED527 /* image */,
+				F46CF43D181B5F28001ED527 /* sound */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F46CF3E3181B5861001ED527 /* Fighters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46CF3F9181B5861001ED527 /* Build configuration list for PBXNativeTarget "Fighters" */;
+			buildPhases = (
+				F46CF3DF181B5861001ED527 /* Sources */,
+				F46CF3E0181B5861001ED527 /* Frameworks */,
+				F46CF3E1181B5861001ED527 /* Resources */,
+				F46CF3E2181B5861001ED527 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fighters;
+			productName = Fighters;
+			productReference = F46CF3E4181B5861001ED527 /* Fighters.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F46CF3DB181B5861001ED527 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = luckymark;
+			};
+			buildConfigurationList = F46CF3DE181B5861001ED527 /* Build configuration list for PBXProject "Fighters" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F46CF3DA181B5861001ED527;
+			productRefGroup = F46CF3E5181B5861001ED527 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F46CF3E3181B5861001ED527 /* Fighters */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F46CF3E1181B5861001ED527 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46CF43F181B5F28001ED527 /* image in Resources */,
+				F46CF43E181B5F28001ED527 /* font in Resources */,
+				F46CF440181B5F28001ED527 /* sound in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F46CF3E2181B5861001ED527 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This shell script simply copies required sfml dylibs/frameworks into the application bundle frameworks folder.\n# If you're using static libraries (which is not recommended) you should remove this script from your project.\n\n# Are we building a project that uses framework or dylibs ?\ncase \"$SFML_BINARY_TYPE\" in\n    DYLIBS)\n        frameworks=\"false\"\n        ;;\n    *)\n        frameworks=\"true\"\n        ;;\nesac\n\n# Echoes to stderr\nerror () # $* message to display\n{\n    echo $* 1>&2\n    exit 2\n}\n\nassert () # $1 is a boolean, $2...N is an error message\n{\n    if [ $# -lt 2 ]\n    then\n        error \"Internal error in assert : not enough args\"\n    fi\n\n    if [ $1 -ne 0 ]\n    then\n        shift\n        error \"$*\"\n    fi\n}\n\nforce_remove () # $1 is a path\n{\n    test $# -eq 1\n    assert $? \"force_remove() requires one parameter\"\n    rm -fr \"$1\"\n    assert $? \"couldn't remove $1\"\n}\n\ncopy () # $1 is a source, $2 is a destination\n{\n    test $# -eq 2\n    assert $? \"copy() requires two parameters\"\n    ditto \"$1\" \"$2\"\n    assert $? \"couldn't copy $1 to $2\"\n}\n\nrequire () # $1 is a SFML module like 'system' or 'audio'\n{\n    dest=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app/Contents/Frameworks\"\n\n    if [ -z \"$1\" ]\n    then\n        error \"require() requires one parameter!\"\n    else\n        # clean potentially old stuff\n        force_remove \"$dest/libsfml-$1.2.dylib\"\n        force_remove \"$dest/libsfml-$1-d.2.dylib\"\n        force_remove \"$dest/sfml-$1.framework\"\n\n        # copy SFML libraries\n        if [ \"$frameworks\" = \"true\" ]\n        then\n            copy \"/Library/Frameworks/sfml-$1.framework\" \"$dest/sfml-$1.framework\"\n        elif [ \"$SFML_LINK_DYLIBS_SUFFIX\" = \"-d\" ]\n        then\n            copy \"/usr/local/lib/libsfml-$1-d.2.dylib\" \"$dest/libsfml-$1-d.2.dylib\"\n        else\n            copy \"/usr/local/lib/libsfml-$1.2.dylib\" \"$dest/libsfml-$1.2.dylib\"\n        fi\n\n        if [ \"$1\" = \"audio\" ]\n        then\n            # copy sndfile framework too\n            copy \"/Library/Frameworks/sndfile.framework\" \"$dest/sndfile.framework\"\n        fi\n\n        if [ \"$1\" = \"graphics\" ]\n        then\n            # copy freetype framework too\n            copy \"/Library/Frameworks/freetype.framework\" \"$dest/freetype.framework\"\n        fi\n    fi\n}\n\nif [ -n \"$SFML_SYSTEM\" ]\nthen\n    require \"system\"\nfi\n\nif [ -n \"$SFML_AUDIO\" ]\nthen\n    require \"audio\"\nfi\n\nif [ -n \"$SFML_NETWORK\" ]\nthen\n    require \"network\"\nfi\n\nif [ -n \"$SFML_WINDOW\" ]\nthen\n    require \"window\"\nfi\n\nif [ -n \"$SFML_GRAPHICS\" ]\nthen\n    require \"graphics\"\nfi\n\n                ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F46CF3DF181B5861001ED527 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46CF458181CA8E7001ED527 /* Rect.cpp in Sources */,
+				F46CF455181C0C21001ED527 /* Enemy.cpp in Sources */,
+				F479EC6D181E0F5000A33FC4 /* Hero.cpp in Sources */,
+				F46CF44C181BC19D001ED527 /* Bullet.cpp in Sources */,
+				F46CF443181BB492001ED527 /* Plane.cpp in Sources */,
+				F46CF3ED181B5861001ED527 /* main.cpp in Sources */,
+				F479EC6A181E0D3A00A33FC4 /* Texture.cpp in Sources */,
+				F479EC73181E392400A33FC4 /* Game.cpp in Sources */,
+				F46CF44F181BC418001ED527 /* Sky.cpp in Sources */,
+				F46CF449181BBFFE001ED527 /* Gun.cpp in Sources */,
+				F46CF452181BD0DA001ED527 /* Sprite.cpp in Sources */,
+				F46CF3EA181B5861001ED527 /* ResourcePath.mm in Sources */,
+				F479EC70181E32AB00A33FC4 /* Sound.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F46CF3F7181B5861001ED527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		F46CF3F8181B5861001ED527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks/,
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(SFML_SYSTEM)",
+					"$(SFML_WINDOW)",
+					"$(SFML_GRAPHICS)",
+					"$(SFML_AUDIO)",
+					"$(SFML_NETWORK)",
+				);
+				SFML_AUDIO = "$(SFML_LINK_PREFIX) sfml-audio$(SFML_LINK_SUFFIX)";
+				SFML_BINARY_TYPE = FRAMEWORKS;
+				SFML_GRAPHICS = "$(SFML_LINK_PREFIX) sfml-graphics$(SFML_LINK_SUFFIX)";
+				SFML_LINK_DYLIBS_PREFIX = "-l";
+				SFML_LINK_DYLIBS_SUFFIX = "";
+				SFML_LINK_FRAMEWORKS_PREFIX = "-framework";
+				SFML_LINK_FRAMEWORKS_SUFFIX = "";
+				SFML_LINK_PREFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_PREFIX)";
+				SFML_LINK_SUFFIX = "$(SFML_LINK_$(SFML_BINARY_TYPE)_SUFFIX)";
+				SFML_NETWORK = "";
+				SFML_SYSTEM = "$(SFML_LINK_PREFIX) sfml-system$(SFML_LINK_SUFFIX)";
+				SFML_WINDOW = "$(SFML_LINK_PREFIX) sfml-window$(SFML_LINK_SUFFIX)";
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Release;
+		};
+		F46CF3FA181B5861001ED527 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Fighters/Fighters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F46CF3FB181B5861001ED527 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Fighters/Fighters-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F46CF3DE181B5861001ED527 /* Build configuration list for PBXProject "Fighters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46CF3F7181B5861001ED527 /* Debug */,
+				F46CF3F8181B5861001ED527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F46CF3F9181B5861001ED527 /* Build configuration list for PBXNativeTarget "Fighters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46CF3FA181B5861001ED527 /* Debug */,
+				F46CF3FB181B5861001ED527 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F46CF3DB181B5861001ED527 /* Project object */;
+}
